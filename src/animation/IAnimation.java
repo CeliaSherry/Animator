@@ -98,11 +98,4 @@ public interface IAnimation {
    */
   String toStringAnimationChange();
 
-  //below are just some thoughts on the potential usage of the class
-  /**
-   * Return the shape at instant t resulted from this animation.
-   * @param t given time
-   * @return shape at instant t
-   */
-  /*ITransitionalShape shapeAtT(int t) throws IllegalArgumentException;*/
 }

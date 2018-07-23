@@ -51,6 +51,91 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     this.animations = new ArrayList<>();
   }
 
+
+  @Override
+  public void addRectangle(String name,
+                           float lx, float ly,
+                           float width, float height,
+                           float red, float green, float blue,
+                           int startOfLife, int endOfLife)
+          throws IllegalArgumentException {
+    if (red < 0 || green < 0 || blue < 0 || red > 1.0 || green > 1.0 || blue > 1.0) {
+      throw new IllegalArgumentException("Color component must be within 0.0 and 1.0");
+    }
+    IShape rectangle = new Rectangle(new Point2D.Double(lx, ly), new Color(red, green, blue),
+            width, height);
+    this.addShape(rectangle, name);
+    this.addTransShape(name, startOfLife, endOfLife);
+  }
+
+
+  @Override
+  public void addOval(String name,
+                      float cx, float cy,
+                      float xRadius, float yRadius,
+                      float red, float green, float blue,
+                      int startOfLife, int endOfLife)
+          throws IllegalArgumentException {
+    IShape oval = new Oval(new Point2D.Double(cx, cy), new Color(red, green, blue),
+            xRadius, yRadius);
+    this.addShape(oval, name);
+    this.addTransShape(name, startOfLife, endOfLife);
+  }
+
+  @Override
+  public void addMove(String name,
+                      float moveFromX, float moveFromY, float moveToX, float moveToY,
+                      int startTime, int endTime) {
+    IAnimation move = new MoveAnimation(startTime, endTime, name,
+            new Point2D.Double(moveFromX, moveFromY), new Point2D.Double(moveToX, moveToY));
+
+    addAnimation(move);
+  }
+
+  @Override
+  public void addChangeColor(String name,
+                             float oldR, float oldG, float oldB, float newR, float newG,
+                             float newB, int startTime, int endTime) {
+    IAnimation changeColor = new ColorChangeAnimation(startTime, endTime,
+            name, new Color(oldR, oldG, oldB), new Color(newR, newG, newB));
+    addAnimation(changeColor);
+  }
+
+  @Override
+  public void addScaleAnimation(String name, float fromSx, float fromSy, float toSx,
+                                float toSy, int startTime, int endTime) {
+
+    IAnimation scale = new ScaleAnimation(startTime, endTime, name, fromSx, fromSy, toSx, toSy);
+    addAnimation(scale);
+  }
+
+  @Override
+  public String toString() {
+    String result = "";
+    int lenShapes = transShapes.size();
+    int lenAnimations = animations.size();
+    if (lenShapes == 0) {
+      return result;
+    }
+    result += "Shapes:\n";
+    for (ITransitionalShape transShape : transShapes) {
+      result += "Name: " + transShape.getShapeID() + "\n"
+              + shapes.get(transShape.getShapeID()).toString()
+              + transShape.toString();
+    }
+
+    if (lenAnimations == 0) {
+      return result;
+    }
+
+    String temp = "";
+    for (IAnimation animation : animations) {
+      temp += animation.toString();
+    }
+    return result + temp.substring(1);
+  }
+
+
   /**
    * Add an IShape to the hashMap that stores all shape and IDs, and store it with the given ID. If
    * the shapeID already existed in the hashMap, an exception will be thrown.
@@ -61,7 +146,7 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
    */
 
- private void addShape(IShape aShape, String shapeID) throws IllegalArgumentException {
+  private void addShape(IShape aShape, String shapeID) throws IllegalArgumentException {
     if (aShape == null) {
       throw new IllegalArgumentException("shape is null!");
     }
@@ -70,54 +155,6 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     }
     this.shapes.put(shapeID, aShape);
   }
-
-
-  /**
-   * Add a rectangle to the collection of ITransitional shape
-   * @param name
-   * @param lx
-   * @param ly
-   * @param width
-   * @param height
-   * @param red
-   * @param green
-   * @param blue
-   * @param startOfLife
-   * @param endOfLife
-   */
-  public void addRectangle(String name,
-                           float lx, float ly,
-                           float width, float height,
-                           float red, float green, float blue,
-                           int startOfLife, int endOfLife)
-  throws IllegalArgumentException{
-    IShape rectangle = new Rectangle(new Point2D.Double(lx, ly),  new Color(red, green, blue),
-            width, height);
-    this.addShape(rectangle, name);
-    this.addTransShape(name, startOfLife, endOfLife);
-  }
-
-
-
-
-
-  public void addOval(String name,
-                      float cx, float cy,
-                      float xRadius, float yRadius,
-                      float red, float green, float blue,
-                      int startOfLife, int endOfLife)
-  throws IllegalArgumentException {
-    IShape oval = new Oval(new Point2D.Double(cx, cy),  new Color(red, green, blue),
-            xRadius, yRadius);
-    this.addShape(oval, name);
-    this.addTransShape(name, startOfLife, endOfLife);
-  }
-
-
-
-
-
-
 
 
   /**
@@ -183,37 +220,6 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   }
 
 
-
-  @Override
-  public void addMove(String name,
-                      float moveFromX, float moveFromY, float moveToX, float moveToY,
-                      int startTime, int endTime) {
-    IAnimation move = new MoveAnimation(startTime,endTime,name,
-            new Point2D.Double(moveFromX,moveFromY), new Point2D.Double(moveToX,moveToY));
-
-    addAnimation(move);
-  }
-
-  @Override
-  public void addChangeColor(String name,
-                             float oldR, float oldG, float oldB, float newR, float newG,
-                             float newB, int startTime, int endTime) {
-    IAnimation changeColor = new ColorChangeAnimation(startTime,endTime,
-            name,new Color(oldR,oldG,oldB), new Color(newR,newG,newB));
-    addAnimation(changeColor);
-  }
-
-  @Override
-  public void addScaleAnimation(String name, float fromSx, float fromSy, float toSx,
-                                float toSy, int startTime, int endTime) {
-
-    IAnimation scale = new ScaleAnimation(startTime,endTime,name,fromSx,fromSy,toSx,toSy);
-    addAnimation(scale);
-  }
-
-
-
-
   /**
    * Add the given IAnimation to ArrayList animations according to the appear time of the given
    * IAnimation. Insertion occurs at the position where all IAnimations in the list appearing at the
@@ -223,13 +229,13 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * will be thrown.
    *
    * @param animation given IAnimation
-   * @throws IllegalArgumentException if given animation is null
    * @throws IllegalArgumentException if time conflict with other animations of the same type
    * @throws IllegalArgumentException if the shapeID of the animation doesn't exist
    * @throws IllegalArgumentException if start and end time are not within shape existing time
+   * @throws IllegalArgumentException if any scale parameter is negative
    */
-  @Override
-  public void addAnimation(IAnimation animation) throws IllegalArgumentException {
+
+  private void addAnimation(IAnimation animation) throws IllegalArgumentException {
     if (animation == null) {
       throw new IllegalArgumentException("animation to be added is null!");
     }
@@ -266,43 +272,14 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   }
 
 
-  @Override
-  public String toString() {
-    String result = "";
-    int lenShapes = transShapes.size();
-    int lenAnimations = animations.size();
-    if (lenShapes == 0) {
-      return result;
-    }
-    result += "Shapes:\n";
-    for (ITransitionalShape transShape : transShapes) {
-      result += "Name: " + transShape.getShapeID() + "\n"
-              + shapes.get(transShape.getShapeID()).toString()
-              + transShape.toString();
-    }
-
-    if (lenAnimations == 0) {
-      return result;
-    }
-
-    String temp = "";
-    for (IAnimation animation : animations) {
-      temp += animation.toString();
-    }
-    return result + temp.substring(1);
-  }
-
-
-
-
   public static final class TweenModelBuilderImpl<T> implements TweenModelBuilder<T> {
 
     IEasyAnimatorModel model;
 
-
     public TweenModelBuilderImpl() {
       this.model = new EasyAnimatorModelImpl();
     }
+
     /**
      * Add a new oval to the model with the given specifications.
      *
@@ -319,10 +296,18 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      * @return the builder object
      */
     @Override
-    public TweenModelBuilder<T> addOval(String name, float cx, float cy, float xRadius,
-                                        float yRadius, float red, float green, float blue, int startOfLife, int endOfLife) {
+    public TweenModelBuilder<T> addOval(String name,
+                                        float cx,
+                                        float cy,
+                                        float xRadius,
+                                        float yRadius,
+                                        float red,
+                                        float green,
+                                        float blue,
+                                        int startOfLife,
+                                        int endOfLife) {
 
-      model.addOval(name,cx,cy,xRadius,yRadius,red,green,blue,startOfLife,endOfLife);
+      model.addOval(name, cx, cy, xRadius, yRadius, red, green, blue, startOfLife, endOfLife);
       return this;
 
     }
@@ -343,8 +328,17 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      * @return the builder object
      */
     @Override
-    public TweenModelBuilder<T> addRectangle(String name, float lx, float ly, float width, float height, float red, float green, float blue, int startOfLife, int endOfLife) {
-      model.addRectangle(name,lx,ly,width,height,red,green,blue,startOfLife,endOfLife);
+    public TweenModelBuilder<T> addRectangle(String name,
+                                             float lx,
+                                             float ly,
+                                             float width,
+                                             float height,
+                                             float red,
+                                             float green,
+                                             float blue,
+                                             int startOfLife,
+                                             int endOfLife) {
+      model.addRectangle(name, lx, ly, width, height, red, green, blue, startOfLife, endOfLife);
       return this;
     }
 
@@ -352,10 +346,10 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      * Move the specified shape to the given position during the given time interval.
      *
      * @param name      the unique name of the shape to be moved
-     * @param moveFromX the x-coordinate of the initial position of this shape. What this x-coordinate
-     *                  represents depends on the shape.
-     * @param moveFromY the y-coordinate of the initial position of this shape. what this y-coordinate
-     *                  represents depends on the shape.
+     * @param moveFromX the x-coordinate of the initial position of this shape. What this
+     *                  x-coordinate represents depends on the shape.
+     * @param moveFromY the y-coordinate of the initial position of this shape. what this
+     *                  y-coordinate represents depends on the shape.
      * @param moveToX   the x-coordinate of the final position of this shape. What this x-coordinate
      *                  represents depends on the shape.
      * @param moveToY   the y-coordinate of the final position of this shape. what this y-coordinate
@@ -366,7 +360,7 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     @Override
     public TweenModelBuilder<T> addMove(String name, float moveFromX, float moveFromY,
                                         float moveToX, float moveToY, int startTime, int endTime) {
-      model.addMove(name,moveFromX,moveFromY,moveToX,moveToY,startTime,endTime);
+      model.addMove(name, moveFromX, moveFromY, moveToX, moveToY, startTime, endTime);
 
       return this;
     }
@@ -386,8 +380,16 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      * @param endTime   the time tick at which this color change should end
      */
     @Override
-    public TweenModelBuilder<T> addColorChange(String name, float oldR, float oldG, float oldB, float newR, float newG, float newB, int startTime, int endTime) {
-      model.addChangeColor(name,oldR,oldG,oldB,newR,newG,newB,startTime,endTime);
+    public TweenModelBuilder<T> addColorChange(String name,
+                                               float oldR,
+                                               float oldG,
+                                               float oldB,
+                                               float newR,
+                                               float newG,
+                                               float newB,
+                                               int startTime,
+                                               int endTime) {
+      model.addChangeColor(name, oldR, oldG, oldB, newR, newG, newB, startTime, endTime);
       return this;
     }
 
@@ -397,8 +399,14 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      * extents of the box enclosing the shape
      */
     @Override
-    public TweenModelBuilder<T> addScaleToChange(String name, float fromSx, float fromSy, float toSx, float toSy, int startTime, int endTime) {
-      model.addScaleAnimation(name,fromSx,fromSy,toSx,toSy,startTime,endTime);
+    public TweenModelBuilder<T> addScaleToChange(String name,
+                                                 float fromSx,
+                                                 float fromSy,
+                                                 float toSx,
+                                                 float toSy,
+                                                 int startTime,
+                                                 int endTime) {
+      model.addScaleAnimation(name, fromSx, fromSy, toSx, toSy, startTime, endTime);
       return this;
     }
 
@@ -409,10 +417,9 @@ public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
      */
     @Override
     public T build() {
-      return (T)model;
+      return (T) model;
     }
   }
-
 
 
 }

@@ -2,7 +2,6 @@ package shape;
 
 import java.awt.Color;
 import java.awt.geom.Point2D;
-
 import javafx.util.Pair;
 
 
@@ -13,7 +12,6 @@ import javafx.util.Pair;
  * shape along y-axis.
  */
 public class Oval extends AShape {
-
   /**
    * Constructor for an Oval object.
    *
@@ -25,22 +23,15 @@ public class Oval extends AShape {
    */
   public Oval(Point2D.Double center, Color color, double xRadius, double yRadius)
           throws IllegalArgumentException {
-    super(new Pair("Center", center), color, ShapeType.Oval);
+    super(new Pair<>("Center", center), color, ShapeType.Oval);
     if (xRadius < 0 || yRadius < 0) {
       throw new IllegalArgumentException("Width and height cannot be negative!");
     }
-    this.getScale().add(new Pair("X radius", xRadius));
-    this.getScale().add(new Pair("Y radius", yRadius));
+    this.getScale().add(new Pair<>("X radius", xRadius));
+    this.getScale().add(new Pair<>("Y radius", yRadius));
 
   }
-  //below are just some thoughts on the potential usage of the class
-  /*
-  @Override
-  public Point2D.Double getCorner() {
-    return new Point2D.Double(this.getPosition().getX() - this.getWidth(),
-            this.getPosition().getY() - this.getHeight());
-  }
-  */
+
 
 
 }

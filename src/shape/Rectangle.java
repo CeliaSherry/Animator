@@ -35,14 +35,4 @@ public class Rectangle extends AShape {
   }
 
 
-
-  //below are just some thoughts on the potential usage of the class
-
-
-  /*
-  @Override
-  public Point2D.Double getCorner() {
-    return this.corner;
-  }
-  */
 }

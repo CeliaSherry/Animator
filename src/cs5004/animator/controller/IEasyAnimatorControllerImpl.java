@@ -46,16 +46,16 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     String modelInfo;
 
     if(viewMode == "text") {
-     modelInfo = model.toStringText(speed);
+     //modelInfo = model.toStringText(speed);
 
     } else if(viewMode == "svg") {
-      modelInfo = model.toStringSvg(speed);
+     // modelInfo = model.toStringSvg(speed);
     } else {
       throw new IllegalArgumentException("Invalid view mode selected!");
     }
 
     IEasyAnimatorView view = new EasyAnimatorViewImpl(output);
-    view.render(modelInfo);
+    //view.render(modelInfo);
 
 
 

@@ -1,11 +1,6 @@
 package cs5004.animator.model;
 
 
-import java.util.List;
-import animation.IAnimation;
-import shape.IShape;
-import transhape.ITransitionalShape;
-
 /**
  * This interface represents an easy animator tool that creates and stores information of a series
  * of animations on different shapes by implementing the IEasyAnimatorModel interface. It supports
@@ -23,13 +18,27 @@ public interface IEasyAnimatorModel {
   String toString();
 
   /**
-   * Add an IShape to the hashMap that stores all shape and IDs, and store it with the given ID. If
-   * the shapeID already existed in the hashMap, an exception will be thrown.
+   * Add a rectangle to model. If the shapeID already existed in the hashMap, an exception will be
+   * thrown. Other illegal inputs such as negative entry of width or height, negative color
+   * component, star of lift earlier or equal to end of life or either of the time is negative will
+   * trigger the throwing of an exception.
    *
-   * @param aShape  given shape
-   * @param shapeID given ID
-   * @throws IllegalArgumentException if shape is null
+   * @param name        given shape ID
+   * @param lx          given x-coordinate of the rectangle
+   * @param ly          given y-coordinate of the rectangle
+   * @param width       given width
+   * @param height      given height
+   * @param red         given red component of the color
+   * @param green       given green component of the color
+   * @param blue        given blue component of the color
+   * @param startOfLife given appearing time of the rectangle
+   * @param endOfLife   given disappearing time of the rectangle
+   * @throws IllegalArgumentException if width or height is negative
+   * @throws IllegalArgumentException if the name has already been assigned
+   * @throws IllegalArgumentException if any color component is negative of greater than 1
    * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
+   * @throws IllegalArgumentException if appearing time >= disappearing time
+   * @throws IllegalArgumentException if appearing time < 0 or disappearing time < 0
    */
   void addRectangle(String name,
                     float lx, float ly,
@@ -39,13 +48,27 @@ public interface IEasyAnimatorModel {
 
 
   /**
-   * Add an IShape to the hashMap that stores all shape and IDs, and store it with the given ID. If
-   * the shapeID already existed in the hashMap, an exception will be thrown.
+   * Add an Oval to model. If the shapeID already existed in the hashMap, an exception will be
+   * thrown. Other illegal inputs such as negative entry of xRadius or yRadius, negative color
+   * component, star of lift earlier or equal to end of life or either of the time is negative will
+   * trigger the throwing of an exception.
    *
-   * @param aShape  given shape
-   * @param shapeID given ID
-   * @throws IllegalArgumentException if shape is null
+   * @param name        given shape ID
+   * @param cx          given x-coordinate of the oval
+   * @param cy          given y-coordinate of the oval
+   * @param xRadius     given x Radius
+   * @param yRadius     given y Radius
+   * @param red         given red component of the color
+   * @param green       given green component of the color
+   * @param blue        given blue component of the color
+   * @param startOfLife given appearing time of the rectangle
+   * @param endOfLife   given disappearing time of the rectangle
+   * @throws IllegalArgumentException if x Radius or y Radius is negative
+   * @throws IllegalArgumentException if the name has been previously assigned to another shape
+   * @throws IllegalArgumentException if any color component is negative of greater than 1
    * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
+   * @throws IllegalArgumentException if appearing time >= disappearing time
+   * @throws IllegalArgumentException if appearing time < 0 or disappearing time < 0
    */
   void addOval(String name,
                float cx, float cy,
@@ -53,48 +76,79 @@ public interface IEasyAnimatorModel {
                float red, float green, float blue,
                int startOfLife, int endOfLife) throws IllegalArgumentException;
 
+
   /**
-   * Add the given ITransitionalShape to ArrayList transShapes according to the appear time of the
-   * given ITransitionalShape. Insertion occurs at the position where all ITransitionalShapes in the
-   * list appearing at the same time or before the given ITransitionalShape are also before it in
-   * the list, and all ITransitionalShapes in the ist appearing after the given ITransitionalShape
-   * are behind it in the list.
+   * Add an animation of type move to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
    *
-   * @param shapeID       given ID of the shape to be assigned appear and disappear time
-   * @param appearTIme    appearing time to be assigned
-   * @param disappearTime disappearing time to be assigned
-   * @throws IllegalArgumentException if the given shapeID doesn't exist
-   * @throws IllegalArgumentException if shapeID has been assigned already
-   * @throws IllegalArgumentException if appear time is not before disappear time
-   * @throws IllegalArgumentException if appear time or disappear time is negative
+   * @param name      given shape ID
+   * @param moveFromX given original x-coordinate of the the shape
+   * @param moveFromY given original y-coordinate of the the shape
+   * @param moveToX   given new x-coordinate of the the shape
+   * @param moveToY   given new y-coordinate of the the shape
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
    */
-  //void addTransShape(String shapeID, int appearTIme, int disappearTime);
 
   void addMove(String name,
                float moveFromX, float moveFromY, float moveToX, float moveToY,
                int startTime, int endTime);
 
+
+  /**
+   * Add an animation of type color change to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
+   *
+   * @param name      given shape ID
+   * @param oldR      given original red component of the shape color
+   * @param oldG      given original green component of the shape color
+   * @param oldB      given original blue component of the shape color
+   * @param newR      given new red component of the shape color
+   * @param newG      given new green component of the shape color
+   * @param newB      given new green component of the shape color
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
+   */
   void addChangeColor(String name,
                       float oldR, float oldG, float oldB, float newR, float newG,
                       float newB, int startTime, int endTime);
 
+
+  /**
+   * Add an animation of type scale to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
+   *
+   * @param name      given shape ID
+   * @param fromSx    given original width of the shape
+   * @param fromSy    given original height of the shape
+   * @param toSx      given new width of the shape
+   * @param toSy      given new height of the shape
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
+   */
   void addScaleAnimation(String name, float fromSx, float fromSy, float toSx,
                          float toSy, int startTime, int endTime);
 
-  /**
-   * Add the given IAnimation to ArrayList animations according to the appear time of the given
-   * IAnimation. Insertion occurs at the position where all IAnimations in the list appearing at the
-   * same time or before the given IAnimation are also before it in the list, and all IAnimations in
-   * the ist appearing after the given ITransitionalShape are behind it in the list. If there is a
-   * time conflict between the given animation and the animations in the current list, an exception
-   * will be thrown.
-   *
-   * @param animation given IAnimation
-   * @throws IllegalArgumentException if given animation is null
-   * @throws IllegalArgumentException if time conflict with other animations of the same type
-   * @throws IllegalArgumentException if the shapeID of the animation doesn't exist
-   * @throws IllegalArgumentException if start and end time are not within shape existing time
-   */
-  void addAnimation(IAnimation animation) throws IllegalArgumentException;
 
 }

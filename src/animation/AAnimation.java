@@ -160,8 +160,4 @@ public abstract class AAnimation implements IAnimation {
   }
 
 
-  /*
-  @Override
-  public abstract ITransitionalShape shapeAtT(int t) throws IllegalArgumentException;
-  */
 }

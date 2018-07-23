@@ -1,11 +1,5 @@
 package animation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import javafx.util.Pair;
-
 /**
  * This class represents a scaling animation form the original size to a bigger or smaller one at
  * certain rate by extending the AAnimation class. Besides the general information stored in
@@ -13,55 +7,43 @@ import javafx.util.Pair;
  */
 public class ScaleAnimation extends AAnimation {
 
-  //to store the color before and after the animation
-  double fromSx;
-  double fromSy;
-  double toSx;
-  double toSy;
-
-
-  //private final HashMap<String, Double> scaleRatio;
-  //private final List<Pair<String, Double>> startScale;
-
+  //to store the scale before and after the animation
+  private final double fromSx;
+  private final double fromSy;
+  private final double toSx;
+  private final double toSy;
 
   /**
-   * Construct a animation.ScaleAnimation object that scales the shape from the start time to the
-   * end time. The duration of scaling cannot be 0.
+   * Construct a ScaleAnimation object that scales the shape from the start time to the end time,
+   * from the given start width and height to the given end width and height . Any of the scale
+   * parameters cannot be negative. The duration of scaling cannot be 0.
    *
-   * @param startTime  given start time
-   * @param endTime    given end time
-   * @param shapeID    given shape ID
-   * @param scaleRatio given scale ratio to be effectuate to each field in scale
-   * @param startScale size information of the shape before the animation
+   * @param startTime given start time
+   * @param endTime   given end time
+   * @param shapeID   given shape ID
+   * @param fromSx    given start width
+   * @param fromSy    given start height
+   * @param toSx      given end width
+   * @param toSy      given end height
    * @throws IllegalArgumentException if startTime >= endTime
+   * @throws IllegalArgumentException if and of the scale parameter is negative
    */
   public ScaleAnimation(int startTime, int endTime, String shapeID, double fromSx, double fromSy,
                         double toSx, double toSy)
           throws IllegalArgumentException {
-
     //throws exception if startTime >= endTime
     super(startTime, endTime, shapeID, AnimType.SCALE);
+    if (fromSx < 0 || fromSy < 0 || toSx < 0 || toSy < 0) {
+      throw new IllegalArgumentException("scale parameter cannot be negative!");
+    }
+
     this.fromSx = fromSx;
     this.fromSy = fromSy;
     this.toSx = toSx;
     this.toSy = toSy;
   }
 
-  /**
-   * Return the endScale due to the scaling animation. Each scale parameter is calculated based on:
-   * startScale * scaleRatio.
-   *
-   * @return the endScale due to the scaling animation.
-   */
-  /*private List<Pair<String, Double>> calculateEndScale() {
-    List<Pair<String, Double>> endScale;
-    endScale = new ArrayList<>();
 
-    for (Pair<String, Double> scale : startScale) {
-      endScale.add(new Pair<>(scale.getKey(), scale.getValue() * scaleRatio.get(scale.getKey())));
-    }
-    return endScale;
-  }*/
   @Override
   public AnimType getType() {
     return this.type;

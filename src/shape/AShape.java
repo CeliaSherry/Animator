@@ -112,7 +112,7 @@ public abstract class AShape implements IShape {
 
 
   @Override
-  public List getScale() {
+  public List<Pair<String, Double>> getScale() {
     return this.scale;
   }
 
@@ -127,53 +127,4 @@ public abstract class AShape implements IShape {
   }
 
 
-  //below are just some thoughts on the potential usage of the class
-  /*
-  @Override
-  public Color getColor() {
-    return this.color;
-  }
-  */
-
-  /*
-  @Override
-  public abstract Point2D.Double getCorner();*/
-
-  /*
-  @Override
-  public double getWidth() {
-    return this.width;
-  }
-
-  @Override
-  public double getHeight() {
-    return this.height;
-  }
-  */
-
-  /*
-  @Override
-  public void setPosition(double x, double y) {
-    this.position.setLocation(x, y);
-  }
-
-
-  @Override
-  public void setColor(float red, float green, float blue) throws IllegalArgumentException {
-    if(red<0 || green < 0 || blue <0 || red >0 || green > 0 || blue >0){
-      throw new IllegalArgumentException("Components need to be non-negative!");
-    }
-    this.color = new Color(red, green, blue);
-  }
-
-  @Override
-  public void setWidth(double width) {
-    this.width = width;
-  }
-
-  @Override
-  public void setHeight(double height) {
-    this.height = height;
-  }
-  */
 }

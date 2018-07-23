@@ -23,8 +23,8 @@ public class ColorChangeAnimation extends AAnimation {
    * @param endColor  given endColor
    * @throws IllegalArgumentException if starTime >= endTime
    */
-  public ColorChangeAnimation(int startTime, int endTime, String shapeID, Color endColor,
-                              Color startColor) throws IllegalArgumentException {
+  public ColorChangeAnimation(int startTime, int endTime, String shapeID, Color startColor,
+                              Color endColor) throws IllegalArgumentException {
 
     //throws exception if startTime >= endTime
     super(startTime, endTime, shapeID, AnimType.COLORCHANGE);
@@ -84,61 +84,6 @@ public class ColorChangeAnimation extends AAnimation {
 
   }
 
-  //below are just some thoughts on the potential usage of the class
-  /**
-   * Return the rate of color (scale 0-255) change a shape per time unit.
-   *
-   * @return rate of red color change
-   */
-  /* private double rRate() {
-    return (endColor.getRed() - startColor.getRed()) / this.timeInterval;
-  }
-  */
-
-  /**
-   * Return the rate of color (scale 0-255) change in green per time unit.
-   *
-   * @return rate of green color change
-   */
-  /*
-  private double gRate() {
-    return (endColor.getGreen() - startColor.getGreen()) / this.timeInterval;
-  }
-  */
-
-  /**
-   * Return the rate of color (scale 0-255) change in blue per time unit.
-   *
-   * @return rate of blue color change
-   */
-  /*
-  private double bRate() {
-    return (endColor.getGreen() - startColor.getGreen()) / this.timeInterval;
-  }
-  */
-
-
-  /**
-   * Return the the transitional shape at given time t, reflecting result of a color change.
-   * animation.
-   *
-   * @param time given time
-   * @return the transitional shape
-   * @throws IllegalArgumentException if time < 0
-   */
-  /* @Override
-    public ITransitionalShape shapeAtT(int time) throws IllegalArgumentException {
-    if (time < 0) {
-      throw new IllegalArgumentException("Time must be a non-negative integer number!");
-    }
-
-    this.transhape.getShape().setColor
-            (new Color((int) (this.startColor.getRed() + time * this.rRate()),
-                    (int) (this.startColor.getGreen() + time * this.gRate()),
-                    (int) (this.startColor.getBlue() + time * this.bRate())));
-    return this.transhape;
-  }
-  */
 
 
 }
