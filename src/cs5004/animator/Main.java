@@ -1,3 +1,5 @@
+package cs5004.animator;
+
 import java.io.StringWriter;
 import java.io.Writer;
 
@@ -16,17 +18,17 @@ public class Main {
     IEasyAnimatorModel model;
 
     IParser p = new Parser();
-    String []newArray = p.changeOrder(Args);
+    String []argsInOrder = p.changeOrder(Args);
 
     try {
-      model
-              = new AnimationFileReader().readFile(newArray[0],
+      model = new AnimationFileReader().readFile(argsInOrder[0],
               new EasyAnimatorModelImpl.TweenModelBuilderImpl<>());
     } catch (Exception e) {
       throw new IllegalArgumentException("File Not Found");
     }
     IEasyAnimatorController controller = new IEasyAnimatorControllerImpl();
+
     //view,output file, speed
-    controller.start(model,newArray[1],newArray[2],newArray[3]);
+    controller.start(model,argsInOrder[1],argsInOrder[2],argsInOrder[3]);
   }
 }

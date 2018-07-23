@@ -1,3 +1,5 @@
+package parser;
+
 public class Parser implements IParser {
 
   private String newArray[];

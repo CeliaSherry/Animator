@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
  * appearing and disappearing time setup and creation of animation.
  */
 
-public class IEasyAnimatorTest {
+public class IEasyAnimatorModelTest {
   private IEasyAnimatorModel model;
   private String strFront;
   private String strRShape;

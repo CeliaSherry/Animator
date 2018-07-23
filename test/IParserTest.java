@@ -1,7 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
+import parser.IParser;
+import parser.Parser;
 
 import static org.junit.Assert.*;
 

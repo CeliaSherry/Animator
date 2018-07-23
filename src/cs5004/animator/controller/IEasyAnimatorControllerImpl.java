@@ -39,26 +39,23 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   @Override
   public void start(IEasyAnimatorModel model, String viewMode,
                     String output, String speed) throws IllegalArgumentException {
-    if(model == null || viewMode == null || speed==null || speed==null) {
+    if(model == null || viewMode == null || speed==null || output==null) {
       throw new IllegalArgumentException("Inputs cannot be null!");
     }
 
     String modelInfo;
 
     if(viewMode == "text") {
-     //modelInfo = model.toStringText(speed);
+     modelInfo = model.toStringText(String.valueOf(speed));
 
     } else if(viewMode == "svg") {
-     // modelInfo = model.toStringSvg(speed);
+     modelInfo = model.toStringSvg(String.valueOf(speed));
     } else {
-      throw new IllegalArgumentException("Invalid view mode selected!");
+      throw new IllegalArgumentException("Invalid view mode!");
     }
 
     IEasyAnimatorView view = new EasyAnimatorViewImpl(output);
-    //view.render(modelInfo);
-
-
-
+    view.render(modelInfo);
   }
 
 
