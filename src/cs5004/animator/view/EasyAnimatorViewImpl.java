@@ -6,22 +6,24 @@ import java.io.PrintWriter;
 public class EasyAnimatorViewImpl implements IEasyAnimatorView {
 
   private String outputFile;
+  private String input;
 
   /**
    * Constructor
    * @param outputFile name of the outputFile with extension.
    */
-  public EasyAnimatorViewImpl(String outputFile) throws IllegalArgumentException {
+  public EasyAnimatorViewImpl(String outputFile, String input) throws IllegalArgumentException {
     if(outputFile == null) {
       throw new IllegalArgumentException("output cannot be null!");
     }
     this.outputFile = outputFile;
+    this.input = input;
   }
 
   @Override
-  public void render(String input) {
+  public void render() {
     if(this.outputFile == "System.out"){
-      System.out.println(input);
+      System.out.println(this.input);
       return;
     }
     PrintWriter writer;
@@ -30,6 +32,6 @@ public class EasyAnimatorViewImpl implements IEasyAnimatorView {
       } catch (FileNotFoundException e) {
         throw new IllegalArgumentException("Output file name is not valid.");
       }
-      writer.println(input);
+      writer.println(this.input);
     }
   }

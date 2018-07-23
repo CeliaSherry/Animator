@@ -9,6 +9,8 @@ import cs5004.animator.controller.IEasyAnimatorController;
 import cs5004.animator.controller.IEasyAnimatorControllerImpl;
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
+import parser.IParser;
+import parser.Parser;
 
 public class Main {
 

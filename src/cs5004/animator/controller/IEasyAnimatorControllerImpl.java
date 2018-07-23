@@ -54,8 +54,8 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       throw new IllegalArgumentException("Invalid view mode!");
     }
 
-    IEasyAnimatorView view = new EasyAnimatorViewImpl(output);
-    view.render(modelInfo);
+    IEasyAnimatorView view = new EasyAnimatorViewImpl(output, modelInfo);
+    view.render();
   }
 
 
