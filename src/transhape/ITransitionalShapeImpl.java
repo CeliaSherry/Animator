@@ -8,10 +8,10 @@ package transhape;
  */
 public class ITransitionalShapeImpl implements ITransitionalShape {
   // stores shapeID.
-  private final String shapeID;
+  protected String shapeID;
   // stores appearing and disappearing time of the shape
-  private final int appearTime;
-  private final int disappearTime;
+  protected int appearTime;
+  protected int disappearTime;
 
   /**
    * Constructor of an ITransitionalShapeImpl object based one given shape and given appearing or
@@ -49,7 +49,6 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
             + "Disappears at t=" + this.disappearTime + "\n\n";
     return result;
   }
-
 
   @Override
   public String getShapeID() {

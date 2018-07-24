@@ -23,22 +23,22 @@ import transhape.ITransitionalShapeImpl;
  * animations on different shapes by implementing the IEasyAnimatorModel interface. It supports
  * returning the description of the animations and the shapes in string form.
  */
-public final class EasyAnimatorModelImpl implements IEasyAnimatorModel {
+public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   //store shapes and corresponding IDs in a HashMap. Given an ID, returning the shape will only take
   // constant time.
-  private final HashMap<String, IShape> shapes;
+  protected HashMap<String, IShape> shapes;
 
   //store transShapes in a list structure. Even though searching an ID takes linear time, this
   // structure can keep the order of the transShapes according to their appearing time.
-  private final List<ITransitionalShape> transShapes;
+  protected List<ITransitionalShape> transShapes;
 
   //store animations in a list structure. Even though searching an ID takes linear time, this
   //structure can keep the order of the animations organized according to their start time.
-  private final List<IAnimation> animations;
+  protected List<IAnimation> animations;
 
   //keep records of the time that the last shape disappears
-  private int lastDisappearTime = 0;
+  protected int lastDisappearTime = 0;
 
   /**
    * Constructor for the EasyAnimatorModelImpl class. It initializes a new HashMap to store the

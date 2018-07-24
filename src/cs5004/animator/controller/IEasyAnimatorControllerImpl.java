@@ -1,6 +1,7 @@
 package cs5004.animator.controller;
 
 import cs5004.animator.model.IEasyAnimatorModel;
+import cs5004.animator.model.IEasyAnimatorModel2;
 import cs5004.animator.view.EasyAnimatorViewImpl;
 import cs5004.animator.view.IEasyAnimatorView;
 
@@ -37,7 +38,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
    * @throws IllegalArgumentException
    */
   @Override
-  public void start(IEasyAnimatorModel model, String viewMode,
+  public void start(IEasyAnimatorModel2 model, String viewMode,
                     String output, String speed) throws IllegalArgumentException {
     if(model == null || viewMode == null || speed==null || output==null) {
       throw new IllegalArgumentException("Inputs cannot be null!");
@@ -45,11 +46,22 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
 
     String modelInfo;
 
+    int speedInt;
+    try {
+      speedInt = Integer.valueOf(speed);
+    } catch (Exception e) {
+      throw new IllegalArgumentException("Cannot Convert Speed to Integer");
+    }
+    if(speedInt <= 0) {
+      throw new IllegalArgumentException("Cannot Have Negative Time");
+    }
+
+
     if(viewMode == "text") {
-     modelInfo = model.toStringText(String.valueOf(speed));
+        modelInfo = model.toStringText(speedInt);
 
     } else if(viewMode == "svg") {
-     modelInfo = model.toStringSvg(String.valueOf(speed));
+        modelInfo = model.toStringSvg(speedInt);
     } else {
       throw new IllegalArgumentException("Invalid view mode!");
     }

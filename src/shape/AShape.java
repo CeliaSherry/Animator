@@ -13,23 +13,23 @@ import javafx.util.Pair;
  * certain position and of a certain scale, which are the common features shared by all shapes.
  */
 public abstract class AShape implements IShape {
-  private Color color;
+  protected Color color;
 
   // this field is used in the toString method, which requires adding the type information according
   // to the specific type of animation.
-  private ShapeType type;
+  protected ShapeType type;
 
   /* As different shapes may use different definition of positions, this pair structure stores the
    name defining the position and the corresponding coordinates. For example, a rectangular use
    its minimum corner as its position, whereas an oval use its center as its position.*/
-  private Pair<String, Point2D.Double> position;
+  protected Pair<String, Point2D.Double> position;
 
 
   /* As different shapes may use different definition of scales, this list of  pair structure stores
    a list of the name defining a scale parameter and the corresponding coordinates. For example, a
    rectangular use width and height as its scale, whereas an oval use its X radius and Y radius as
    its scale. It is flexible and practical if we decide to introduce more shapes later */
-  private final List<Pair<String, Double>> scale;
+  protected List<Pair<String, Double>> scale;
 
 
   /**
