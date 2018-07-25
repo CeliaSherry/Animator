@@ -137,7 +137,9 @@ public abstract class AAnimation implements IAnimation {
 
 
   @Override
-  public abstract AnimType getType();
+  public AnimType getType() {
+    return this.type;
+  }
 
   @Override
   public int getStartTime() {

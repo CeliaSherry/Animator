@@ -29,6 +29,10 @@ public AShape2(Pair<String, Point2D.Double> position, Color color, ShapeType typ
     return this.color.getBlue();
 
   }
+  @Override
+  public ShapeType getShapeType() {
+  return this.type;
+  }
 
 
 }

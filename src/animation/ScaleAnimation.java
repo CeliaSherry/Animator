@@ -1,11 +1,13 @@
 package animation;
 
+import shape.IShape2;
+
 /**
  * This class represents a scaling animation form the original size to a bigger or smaller one at
  * certain rate by extending the AAnimation class. Besides the general information stored in
  * AAnimation class, it also stores the scale information before and after the animation.
  */
-public class ScaleAnimation extends AAnimation {
+public class ScaleAnimation extends AAnimation2 {
 
   //to store the scale before and after the animation
   private final double fromSx;
@@ -43,12 +45,12 @@ public class ScaleAnimation extends AAnimation {
     this.toSy = toSy;
   }
 
-
+/*
   @Override
   public AnimType getType() {
     return this.type;
   }
-
+*/
 
   /**
    * Return the change of the shape due to this scaling animation in string form. For example:
@@ -64,6 +66,30 @@ public class ScaleAnimation extends AAnimation {
             + ", Height: " + String.format("%.1f", this.toSy);
     return result;
   }
+
+
+
+  @Override
+  public String toStringSvg(int speed, IShape2 shape) {
+    String result = "";
+    result += "<animateTransform attributeName=\"transform\" type = \"scale\" from=\""
+            + "("
+            + this.fromSx
+            + this.fromSy
+            + ")\""
+            + "to=\""
+            + "("
+            + this.toSx
+            + this.toSy
+            + ")\""
+            + " dur=\""
+            + this.timeInterval * 1.0 / speed + "s\""
+            + "repeatCount=\"0\"/>";
+
+    return result;
+  }
+
+
 
 
 }

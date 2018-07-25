@@ -45,6 +45,8 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     }
 
     String modelInfo;
+    IEasyAnimatorView view;
+
 
     int speedInt;
     try {
@@ -66,9 +68,16 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       throw new IllegalArgumentException("Invalid view mode!");
     }
 
-    IEasyAnimatorView view = new EasyAnimatorViewImpl(output, modelInfo);
+    if(output == "System.out") {
+      view = new EasyAnimatorViewImplOut(modelInfo);
+    }
+    else {
+      view = new EasyAnimatorViewImplFile(output,modelInfo);
+    }
     view.render();
   }
+
+
 
 
 

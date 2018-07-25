@@ -2,12 +2,15 @@ package animation;
 
 import java.awt.Color;
 
+import shape.IShape2;
+import shape.ShapeType;
+
 /**
  * This class represents the color changing animation of a shape within a given period of time at a
  * certain rate by extending the AAnimation class. Besides the general information stored in
  * AAnimation class, it also stores the color information before and after the animation.
  */
-public class ColorChangeAnimation extends AAnimation {
+public class ColorChangeAnimation extends AAnimation2 {
 
   //to store the color before and after the animation
   private final Color startColor;
@@ -34,10 +37,10 @@ public class ColorChangeAnimation extends AAnimation {
 
   }
 
-  @Override
+  /*@Override
   public AnimType getType() {
     return this.type;
-  }
+  }*/
 
 
   /**
@@ -83,6 +86,32 @@ public class ColorChangeAnimation extends AAnimation {
     return result;
 
   }
+
+
+  @Override
+  public String toStringSvg(int speed, IShape2 shape) {
+    String result = "";
+    result += "<animateColor attributeName=\"fill\" attributeType = \"XML\" from=\""
+            + "rgb("
+    + this.startColor.getRed()
+    + this.startColor.getGreen()
+    + this.startColor.getBlue() + ")\""
+            + "to=\""
+            + "rgb("
+            + this.endColor.getRed()
+            + this.endColor.getGreen()
+            + this.endColor.getBlue() + ")\""
+            + " dur=\""
+            + this.timeInterval * 1.0 / speed + "s\"/>";
+
+    return result;
+  }
+
+
+
+
+
+
 
 
 

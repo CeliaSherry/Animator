@@ -27,18 +27,18 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   //store shapes and corresponding IDs in a HashMap. Given an ID, returning the shape will only take
   // constant time.
-  protected HashMap<String, IShape> shapes;
+  private HashMap<String, IShape> shapes;
 
   //store transShapes in a list structure. Even though searching an ID takes linear time, this
   // structure can keep the order of the transShapes according to their appearing time.
-  protected List<ITransitionalShape> transShapes;
+  private List<ITransitionalShape> transShapes;
 
   //store animations in a list structure. Even though searching an ID takes linear time, this
   //structure can keep the order of the animations organized according to their start time.
-  protected List<IAnimation> animations;
+  private List<IAnimation> animations;
 
   //keep records of the time that the last shape disappears
-  protected int lastDisappearTime = 0;
+  private int lastDisappearTime = 0;
 
   /**
    * Constructor for the EasyAnimatorModelImpl class. It initializes a new HashMap to store the
@@ -112,15 +112,15 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   @Override
   public String toString() {
     String result = "";
-    int lenShapes = transShapes.size();
-    int lenAnimations = animations.size();
+    int lenShapes = this.transShapes.size();
+    int lenAnimations = this.animations.size();
     if (lenShapes == 0) {
       return result;
     }
     result += "Shapes:\n";
-    for (ITransitionalShape transShape : transShapes) {
+    for (ITransitionalShape transShape : this.transShapes) {
       result += "Name: " + transShape.getShapeID() + "\n"
-              + shapes.get(transShape.getShapeID()).toString()
+              + this.shapes.get(transShape.getShapeID()).toString()
               + transShape.toString();
     }
 
@@ -129,7 +129,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     }
 
     String temp = "";
-    for (IAnimation animation : animations) {
+    for (IAnimation animation : this.animations) {
       temp += animation.toString();
     }
     return result + temp.substring(1);
@@ -150,7 +150,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     if (aShape == null) {
       throw new IllegalArgumentException("shape is null!");
     }
-    if (shapes.containsKey(shapeID) || (shapes.containsValue(aShape))) {
+    if (this.shapes.containsKey(shapeID) || (this.shapes.containsValue(aShape))) {
       throw new IllegalArgumentException("ID or this shape exists!");
     }
     this.shapes.put(shapeID, aShape);
@@ -175,7 +175,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   private void addTransShape(String shapeID, int appearTIme, int disappearTime)
           throws IllegalArgumentException {
-    if (!shapes.containsKey(shapeID)) {
+    if (!this.shapes.containsKey(shapeID)) {
       throw new IllegalArgumentException("There is no shape under the given ID! "
               + "Can't add transShape\n");
     }
@@ -189,7 +189,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
     int len = this.transShapes.size();
     int i = 0;
-    while (i < len && (!transShape.appearBefore(transShapes.get(i)))) {
+    while (i < len && (!transShape.appearBefore(this.transShapes.get(i)))) {
       i++;
     }
     transShapes.add(i, transShape);
@@ -211,7 +211,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     if (this.transShapes.size() == 0) {
       return false;
     }
-    for (ITransitionalShape transShape : transShapes) {
+    for (ITransitionalShape transShape : this.transShapes) {
       if (shapeID.equals(transShape.getShapeID())) {
         return true;
       }
@@ -252,22 +252,22 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
               + "appear and disappear time of the shape!");
     }
 
-    int len = animations.size();
+    int len = this.animations.size();
     //length 0, the animation can be added directly.
     if (len == 0) {
-      animations.add(animation);
+      this.animations.add(animation);
       return;
     }
-    if (animation.isTimeConflictWithList(animations)) {
+    if (animation.isTimeConflictWithList(this.animations)) {
       // check if there is time conflict with other animations first
       throw new IllegalArgumentException("There is a time conflict with other animations!"
               + " Cannot add animation!");
     } else {
       int i = 0;
-      while (i < len && (!animation.startBefore(animations.get(i)))) {
+      while (i < len && (!animation.startBefore(this.animations.get(i)))) {
         i++;
       }
-      animations.add(i, animation);
+      this.animations.add(i, animation);
     }
   }
 

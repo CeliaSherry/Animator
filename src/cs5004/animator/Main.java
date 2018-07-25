@@ -9,6 +9,7 @@ import cs5004.animator.controller.IEasyAnimatorController;
 import cs5004.animator.controller.IEasyAnimatorControllerImpl;
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
+import cs5004.animator.model.IEasyAnimatorModel2;
 import parser.IParser;
 import parser.Parser;
 
@@ -17,7 +18,7 @@ public class Main {
   public static void main(String []Args) {
 
     //Writer ap = new StringWriter();
-    IEasyAnimatorModel model;
+    IEasyAnimatorModel2 model;
 
     IParser p = new Parser();
     String []argsInOrder = p.changeOrder(Args);
