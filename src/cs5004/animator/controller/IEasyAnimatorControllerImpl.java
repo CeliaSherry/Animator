@@ -1,8 +1,8 @@
 package cs5004.animator.controller;
 
-import cs5004.animator.model.IEasyAnimatorModel;
 import cs5004.animator.model.IEasyAnimatorModel2;
-import cs5004.animator.view.EasyAnimatorViewImpl;
+import cs5004.animator.view.EasyAnimatorViewImplFile;
+import cs5004.animator.view.EasyAnimatorViewImplOut;
 import cs5004.animator.view.IEasyAnimatorView;
 
 /**

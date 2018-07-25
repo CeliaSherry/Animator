@@ -3,7 +3,7 @@ package cs5004.animator.view;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
-public class EasyAnimatorViewImpl implements IEasyAnimatorView {
+public class EasyAnimatorViewImplFile implements IEasyAnimatorView {
 
   private String outputFile;
   private String input;
@@ -12,7 +12,7 @@ public class EasyAnimatorViewImpl implements IEasyAnimatorView {
    * Constructor
    * @param outputFile name of the outputFile with extension.
    */
-  public EasyAnimatorViewImpl(String outputFile, String input) throws IllegalArgumentException {
+  public EasyAnimatorViewImplFile(String outputFile, String input) throws IllegalArgumentException {
     if(outputFile == null) {
       throw new IllegalArgumentException("output cannot be null!");
     }
@@ -22,10 +22,6 @@ public class EasyAnimatorViewImpl implements IEasyAnimatorView {
 
   @Override
   public void render() {
-    if(this.outputFile == "System.out"){
-      System.out.println(this.input);
-      return;
-    }
     PrintWriter writer;
     try {
       writer = new PrintWriter(this.outputFile);
