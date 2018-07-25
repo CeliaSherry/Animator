@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
+
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
@@ -340,5 +341,97 @@ public class IEasyAnimatorModelTest {
       //exception is expected
     }
   }
+
+
+  @Test
+  public void testToStringText() {
+    int speed = 2;
+    strFront = "Shapes:\n";
+    strRShape = "Name: R\n"
+            + "Type: Rectangle\n"
+            + "Min Corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+            + "Appears at t=0.5s\n"
+            + "Disappears at t=50.0s\n"
+            + "\n";
+    strCShape = "Name: C\n"
+            + "Type: Oval\n"
+            + "Center: (500.0,100.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,0.0,1.0)\n"
+            + "Appears at t=3.0s\n"
+            + "Disappears at t=50.0s\n"
+            + "\n";
+
+    strAnim = "shape R moves from (200.0, 200.0) to (300.0, 300.0) from t=5.0s to t=25.0s\n"
+            + "shape C moves from (500.0, 100.0) to (500.0, 400.0) from t=10.0s to t=35.0s\n"
+            + "shape C changes color from (0.0,0.0,1.0) to (0.0,1.0,0.0) from t=25.0s to t=40.0s\n"
+            + "shape R scales from Width: 40.0, Height: 100.0 to Width: 20.0, Height: 100.0 "
+            + "from t=25.5s to t=35.0s\n"
+            + "shape R moves from (300.0, 300.0) to (200.0, 200.0) from t=35.0s to t=50.0s";
+
+    //adding shapes
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    //adding animations
+    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
+    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
+    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+
+    assertEquals(strFront + strRShape + strCShape + strAnim,
+            model.toStringText(speed));
+  }
+
+
+  @Test
+  public void testToStringTextShapesOnly() {
+    int speed = 2;
+    strFront = "Shapes:\n";
+    strRShape = "Name: R\n"
+            + "Type: Rectangle\n"
+            + "Min Corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+            + "Appears at t=0.5s\n"
+            + "Disappears at t=50.0s\n"
+            + "\n";
+    strCShape = "Name: C\n"
+            + "Type: Oval\n"
+            + "Center: (500.0,100.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,0.0,1.0)\n"
+            + "Appears at t=3.0s\n"
+            + "Disappears at t=50.0s\n"
+            + "\n";
+
+    //adding shapes
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+
+    assertEquals(strFront + strRShape + strCShape,
+            model.toStringText(speed));
+  }
+
+
+  @Test
+  public void testToStringTextEmptyModel() {
+    int speed = 2;
+    assertEquals("", model.toStringText(speed));
+
+  }
+
+  @Test
+  public void testToStringSvg() {
+  int  speed =2;
+    //adding shapes
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    //adding animations
+    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
+    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
+    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+
+    //String svgStart = "<svg width=\"700\" height=\"500\" version=\"1.1\"
+    assertEquals("", model.toStringSvg(speed));
+
+  }
+
 
 }

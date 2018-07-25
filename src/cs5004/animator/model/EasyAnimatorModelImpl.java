@@ -15,6 +15,7 @@ import builder.TweenModelBuilder;
 import shape.IShape;
 import shape.Oval;
 import shape.Rectangle;
+import shape.ShapeType;
 import transhape.ITransitionalShape;
 import transhape.ITransitionalShapeImpl;
 
@@ -133,6 +134,90 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       temp += animation.toString();
     }
     return result + temp.substring(1);
+  }
+
+
+  @Override
+  public String toStringText(int speed) {
+
+    String result = "";
+    int lenShapes = this.transShapes.size();
+    int lenAnimations = animations.size();
+    if (lenShapes == 0) {
+      return result;
+    }
+    result += "Shapes:\n";
+    for (ITransitionalShape transShape : this.transShapes) {
+      result += "Name: " + transShape.getShapeID() + "\n"
+              + this.shapes.get(transShape.getShapeID()).toString()
+              + transShape.toStringText(speed);
+    }
+
+    if (lenAnimations == 0) {
+      return result;
+    }
+
+    String temp = "";
+    for (IAnimation animation : this.animations) {
+      temp += animation.toStringText(speed);
+    }
+    return result + temp.substring(1);
+  }
+
+  @Override
+  public String toStringSvg(int speed) {
+    String result = "<svg width=\"700\" height=\"500\" version=\"1.1\"" +
+            " xmlns=\"http://www.w3.org/2000/svg\">\n";
+    for (ITransitionalShape transitionalShape : this.transShapes) {
+      result += toStringSvgShapes(transitionalShape.getShapeID());
+      for (IAnimation animation : this.animations) {
+        if (animation.getShapeID() == transitionalShape.getShapeID()) {
+          result += animation.toStringSvg(speed,shapes.get(transitionalShape.getShapeID()))
+          + "\n";
+        }
+      }
+      result += toStringSvgShapesClose(transitionalShape.getShapeID());
+    }
+    result += "</svg>";
+    return result;
+  }
+
+  private String toStringSvgShapes(String shapeID) {
+
+    IShape shape = this.shapes.get(shapeID);
+    String result = "";
+
+    if (shape.getShapeType() ==  ShapeType.Rectangle) {
+      result += "<rect id=\"" + shapeID + "\"";
+      result += " x=\"" + shape.getPosition().getX()
+              + "\" y=\"" + shape.getPosition().getY() + "\" "
+              + "width=\"" + shape.getScale().get(0).getValue()
+              + "\" height=\"" + shape.getScale().get(1).getValue() + "\"";
+
+    } else if (shape.getShapeType() == ShapeType.Oval) {
+      result += "<ellipse id=\"" + shapeID + "\"";
+      result += " cx=\"" + shape.getPosition().getX()
+              + "\" cy=\"" + shape.getPosition().getY() + "\" "
+              + "rx=\"" + shape.getScale().get(0).getValue()
+              + "\" ry=\"" + shape.getScale().get(1).getValue() + "\"";
+    }
+    result += " fill=\"rgb(" + shape.getRed() + "," + shape.getGreen() + ","
+            + shape.getBlue() + ")\" visibility=\"visible\">\n";
+    return result;
+  }
+
+
+  private String toStringSvgShapesClose(String shapeID) {
+    IShape shape = this.shapes.get(shapeID);
+    String result = "";
+
+    if (shape.getShapeType() ==  ShapeType.Rectangle) {
+      result += "</rect>\n";
+
+    } else if (shape.getShapeType() == ShapeType.Oval) {
+      result += "</ellipse>\n";
+    }
+    return result;
   }
 
 

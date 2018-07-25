@@ -40,6 +40,9 @@ public interface ITransitionalShape {
   boolean appearBefore(ITransitionalShape other);
 
 
+  String toStringText(int speed);
+
+
 
 
 

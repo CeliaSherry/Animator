@@ -35,6 +35,8 @@ public class IParserTest {
     assertEquals(temp,tempString);
   }
 
+
+
   //need to test if file doesn't exist
   //need to test if incorrect information given after -if,-iv,-o,-speed
   //need to test different orders

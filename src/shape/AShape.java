@@ -127,4 +127,25 @@ public abstract class AShape implements IShape {
   }
 
 
+  @Override
+  public int getRed() {
+    return this.color.getRed();
+  }
+
+  @Override
+  public int getGreen() {
+    return this.color.getGreen();
+
+  }
+  @Override
+  public int getBlue() {
+    return this.color.getBlue();
+
+  }
+  @Override
+  public ShapeType getShapeType() {
+    return this.type;
+  }
+
+
 }

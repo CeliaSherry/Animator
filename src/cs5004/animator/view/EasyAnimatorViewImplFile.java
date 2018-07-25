@@ -1,7 +1,8 @@
 package cs5004.animator.view;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.PrintStream;
+
 
 public class EasyAnimatorViewImplFile implements IEasyAnimatorView {
 
@@ -22,12 +23,12 @@ public class EasyAnimatorViewImplFile implements IEasyAnimatorView {
 
   @Override
   public void render() {
-    PrintWriter writer;
+    PrintStream writer;
     try {
-      writer = new PrintWriter(this.outputFile);
+      writer = new PrintStream(this.outputFile);
       } catch (FileNotFoundException e) {
         throw new IllegalArgumentException("Output file name is not valid.");
       }
-      writer.println(this.input);
+      writer.append(this.input);
     }
   }

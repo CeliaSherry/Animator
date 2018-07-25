@@ -44,6 +44,12 @@ public interface IShape {
    */
   List<Pair<String, Double>> getScale();
 
+  int getRed();
+  int getGreen();
+  int getBlue();
+  ShapeType getShapeType();
+
+
 
 
 

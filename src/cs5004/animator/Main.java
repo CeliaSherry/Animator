@@ -1,15 +1,12 @@
 package cs5004.animator;
 
-import java.io.StringWriter;
-import java.io.Writer;
+import javax.swing.*;
 
 import builder.AnimationFileReader;
-import builder.TweenModelBuilder;
 import cs5004.animator.controller.IEasyAnimatorController;
 import cs5004.animator.controller.IEasyAnimatorControllerImpl;
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
-import cs5004.animator.model.IEasyAnimatorModel2;
 import parser.IParser;
 import parser.Parser;
 
@@ -18,10 +15,16 @@ public class Main {
   public static void main(String []Args) {
 
     //Writer ap = new StringWriter();
-    IEasyAnimatorModel2 model;
+    IEasyAnimatorModel model;
+    String[] argsInOrder = null;
 
     IParser p = new Parser();
-    String []argsInOrder = p.changeOrder(Args);
+    try {
+      argsInOrder = p.changeOrder(Args);
+    } catch (IllegalArgumentException e) {
+
+      JOptionPane.showMessageDialog(new JFrame(), "Invalid command line input!");
+    }
 
     try {
       model = new AnimationFileReader().readFile(argsInOrder[0],

@@ -2,7 +2,7 @@ package animation;
 
 import java.awt.geom.Point2D;
 
-import shape.IShape2;
+import shape.IShape;
 import shape.ShapeType;
 
 
@@ -11,7 +11,7 @@ import shape.ShapeType;
  * the AAnimation class. Besides the general information stored in AAnimation class, it also stores
  * the position information before and after the animation.
  */
-public class MoveAnimation extends AAnimation2 {
+public class MoveAnimation extends AAnimation {
 
   //to store the color before and after the animation
   private final Point2D.Double startPosition;
@@ -59,12 +59,18 @@ public class MoveAnimation extends AAnimation2 {
 
 
   @Override
-  public String toStringSvg(int speed, IShape2 shape) {
+  public String toStringSvg(int speed, IShape shape) {
     String result = "";
     result += "<animate attributeType = \"xml\" begin=\""
             + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
             + this.timeInterval * 1000.0 / speed + "ms\" "
-            + this.toStringSvgMoveChange(shape)
+            + this.toStringSvgMoveXChange(shape)
+            + " fill=\"remove\" />\n";
+
+    result += "<animate attributeType = \"xml\" begin=\""
+            + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
+            + this.timeInterval * 1000.0 / speed + "ms\" "
+            + this.toStringSvgMoveYChange(shape)
             + " fill=\"remove\" />";
 
     return result;
@@ -73,30 +79,42 @@ public class MoveAnimation extends AAnimation2 {
 
 
 
-  private String toStringSvgMoveChange(IShape2 shape){
+  private String toStringSvgMoveXChange(IShape shape){
     String result = "";
     if(shape.getShapeType() == ShapeType.Rectangle) {
       result += "attributeName=\"x\" from=\""
               + this.startPosition.getX()
               + "\" to=\""
-              + this.endPosition.getX() + "\""
-              + "attributeName=\"y\" from=\""
-              + this.startPosition.getY()
-              + "\" to=\""
-              + this.endPosition.getY() + "\"";
+              + this.endPosition.getX() + "\"";
+
     } else if(shape.getShapeType() == ShapeType.Oval) {
       result += "attributeName=\"cx\" from=\""
               + this.startPosition.getX()
               + "\" to=\""
-              + this.endPosition.getX() + "\""
-              + "attributeName=\"cy\" from=\""
+              + this.endPosition.getX() + "\"";
+
+    }
+    return result;
+  }
+
+
+
+
+  private String toStringSvgMoveYChange(IShape shape){
+    String result = "";
+    if(shape.getShapeType() == ShapeType.Rectangle) {
+      result += "attributeName=\"y\" from=\""
+              + this.startPosition.getY()
+              + "\" to=\""
+              + this.endPosition.getY() + "\"";
+    } else if(shape.getShapeType() == ShapeType.Oval) {
+      result += "attributeName=\"cy\" from=\""
               + this.startPosition.getY()
               + "\" to=\""
               + this.endPosition.getY() + "\"";
     }
     return result;
   }
-
 
 
 

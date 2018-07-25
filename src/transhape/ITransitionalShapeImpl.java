@@ -71,5 +71,13 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
     return this.getAppearTime() < other.getAppearTime();
   }
 
+  @Override
+  public String toStringText(int speed) {
+    String result = "";
+    result += "Appears at t=" + String.format("%.1f", this.appearTime*1.0/speed) + "s\n"
+            + "Disappears at t=" + String.format("%.1f", this.disappearTime*1.0/speed) + "s\n\n";
+    return result;
+  }
+
 
 }

@@ -1,6 +1,6 @@
 package cs5004.animator.controller;
 
-import cs5004.animator.model.IEasyAnimatorModel2;
+import cs5004.animator.model.IEasyAnimatorModel;
 import cs5004.animator.view.EasyAnimatorViewImplFile;
 import cs5004.animator.view.EasyAnimatorViewImplOut;
 import cs5004.animator.view.IEasyAnimatorView;
@@ -38,7 +38,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
    * @throws IllegalArgumentException
    */
   @Override
-  public void start(IEasyAnimatorModel2 model, String viewMode,
+  public void start(IEasyAnimatorModel model, String viewMode,
                     String output, String speed) throws IllegalArgumentException {
     if(model == null || viewMode == null || speed==null || output==null) {
       throw new IllegalArgumentException("Inputs cannot be null!");

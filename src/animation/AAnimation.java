@@ -3,6 +3,7 @@ package animation;
 
 import java.util.List;
 
+import shape.IShape;
 import transhape.ITransitionalShape;
 
 /**
@@ -135,6 +136,21 @@ public abstract class AAnimation implements IAnimation {
     return false;
   }
 
+
+
+  @Override
+  public String toStringText(int speed) {
+    String result = "\n";
+    result += "shape " + this.getShapeID() + " " + this.toStringAnimationChange()
+            + " from t="
+            + String.format("%.1f", (this.getStartTime() * 1.0) / speed)
+            + "s to t="
+            + String.format("%.1f", (this.getEndTime() * 1.0) / speed) + "s";
+    return result;
+  }
+
+  @Override
+  public abstract String toStringSvg(int speed, IShape shape);
 
   @Override
   public AnimType getType() {

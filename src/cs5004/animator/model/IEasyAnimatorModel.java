@@ -152,4 +152,9 @@ public interface IEasyAnimatorModel {
 
 
 
+
+  String toStringText(int speed);
+
+  String toStringSvg(int speed);
+
 }

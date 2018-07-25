@@ -3,6 +3,7 @@ package animation;
 
 import java.util.List;
 
+import shape.IShape;
 import transhape.ITransitionalShape;
 
 /**
@@ -97,5 +98,10 @@ public interface IAnimation {
    * @return the change of the shape due to a certain animation in string form
    */
   String toStringAnimationChange();
+
+  String toStringText(int speed);
+
+  String toStringSvg(int speed, IShape shape);
+
 
 }
