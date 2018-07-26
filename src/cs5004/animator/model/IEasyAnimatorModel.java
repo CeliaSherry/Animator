@@ -151,10 +151,21 @@ public interface IEasyAnimatorModel {
                          float toSy, int startTime, int endTime);
 
 
-
-
+  /**
+   * Takes a speed and returns the text representation of the model in String form with
+   * the start and end times in seconds.
+   *
+   * @param speed given speed.
+   * @return text representation of the model.
+   */
   String toStringText(int speed);
 
+  /**
+   * Takes a speed and IShape and returns the svg representation of the model in String form.
+   *
+   * @param speed given speed.
+   * @return String with svg representation of model.
+   */
   String toStringSvg(int speed);
 
 }

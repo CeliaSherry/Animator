@@ -7,6 +7,7 @@ package transhape;
  * disappearing time of the shape.
  */
 public class ITransitionalShapeImpl implements ITransitionalShape {
+
   // stores shapeID.
   protected String shapeID;
   // stores appearing and disappearing time of the shape
@@ -50,32 +51,60 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
     return result;
   }
 
+  /**
+   * Getter for the shapeID field.
+   *
+   * @return the shapeID of this ITransitionalShape
+   */
   @Override
   public String getShapeID() {
     return this.shapeID;
   }
 
-
+  /**
+   * Getter for the appearing time of a shape.
+   *
+   * @return the appearing time of this ITransitionalShape
+   */
   @Override
   public int getAppearTime() {
     return appearTime;
   }
 
+  /**
+   * Getter for the appearing time of a shape.
+   *
+   * @return the appearing time of this ITransitionalShape
+   */
   @Override
   public int getDisappearTime() {
     return disappearTime;
   }
 
+  /**
+   * Compare which shape appears first. Return true if this shape appears before the other shape,
+   * otherwise false.
+   *
+   * @param other other ITransitionalShape
+   * @return true if this shape appears before the other shape, otherwise false
+   */
   @Override
   public boolean appearBefore(ITransitionalShape other) {
     return this.getAppearTime() < other.getAppearTime();
   }
 
+  /**
+   * Takes a speed and returns the text representation of the TransitionalShape in String form with
+   * the appear and disappear times in seconds.
+   *
+   * @param speed given speed.
+   * @return text representation of the TransitionalShape.
+   */
   @Override
   public String toStringText(int speed) {
     String result = "";
-    result += "Appears at t=" + String.format("%.1f", this.appearTime*1.0/speed) + "s\n"
-            + "Disappears at t=" + String.format("%.1f", this.disappearTime*1.0/speed) + "s\n\n";
+    result += "Appears at t=" + String.format("%.1f", this.appearTime * 1.0 / speed) + "s\n"
+            + "Disappears at t=" + String.format("%.1f", this.disappearTime * 1.0 / speed) + "s\n\n";
     return result;
   }
 

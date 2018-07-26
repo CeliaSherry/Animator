@@ -93,7 +93,6 @@ public abstract class AShape implements IShape {
 
   }
 
-
   /**
    * Return the scale of this shape in string form. For example: "Width: 50.0, Height: 100.0, ".
    *
@@ -110,38 +109,72 @@ public abstract class AShape implements IShape {
     return result;
   }
 
-
+  /**
+   * Return the scale of this shape which represents sized of the shape.
+   *
+   * @return the scale of this shape
+   */
   @Override
   public List<Pair<String, Double>> getScale() {
     return this.scale;
   }
 
+  /**
+   * Return the x-y coordinates that describes the position of this shape.
+   *
+   * @return the x-y coordinates that describes the position of this shape.
+   */
   @Override
   public Point2D.Double getPosition() {
     return this.position.getValue();
   }
 
+  /**
+   * Return the name of the parameter that represents the position of this shape. For example: "Min
+   * Corner" or "Center".
+   *
+   * @return the x-y coordinates that describes the position of this shape.
+   */
   @Override
   public String getPositionName() {
     return this.position.getKey();
   }
 
-
+  /**
+   * Getter for the red component of the shape's color.
+   *
+   * @return int that represents the red component of the shape's color.
+   */
   @Override
   public int getRed() {
     return this.color.getRed();
   }
 
+  /**
+   * Getter for the green component of the shape's color.
+   *
+   * @return int that represents the green component of the shape's color.
+   */
   @Override
   public int getGreen() {
     return this.color.getGreen();
-
   }
+
+  /**
+   * Getter for the blue component of the shape's color.
+   *
+   * @return int that represents the blue component of the shape's color.
+   */
   @Override
   public int getBlue() {
     return this.color.getBlue();
-
   }
+
+  /**
+   * Getter for the ShapeType of this shape.
+   *
+   * @return ShapeType of this shape.
+   */
   @Override
   public ShapeType getShapeType() {
     return this.type;

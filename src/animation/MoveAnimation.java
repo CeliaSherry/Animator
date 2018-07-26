@@ -58,6 +58,14 @@ public class MoveAnimation extends AAnimation {
   }
 
 
+  /**
+   * Takes a speed and IShape and returns the svg representation of the animation in String form.
+   * This class includes the move information and calculates the proper beginning and end times.
+   *
+   * @param speed given speed.
+   * @param shape given IShape.
+   * @return String with svg representation of animation.
+   */
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
@@ -77,17 +85,24 @@ public class MoveAnimation extends AAnimation {
   }
 
 
-
-
-  private String toStringSvgMoveXChange(IShape shape){
+  /**
+   * Returns a string that represents the portion of an Svg file that contains information
+   * about the change in X during the move.  If the shape is a rectangle, the attribute
+   * and start and end positions are filled out accordingly.  If the shape is an oval, the
+   * attribute name and start and end positions are filled out accordingly.
+   *
+   * @param shape given IShape.
+   * @return String that represents the change in X during a move according to an Svg file.
+   */
+  private String toStringSvgMoveXChange(IShape shape) {
     String result = "";
-    if(shape.getShapeType() == ShapeType.Rectangle) {
+    if (shape.getShapeType() == ShapeType.Rectangle) {
       result += "attributeName=\"x\" from=\""
               + this.startPosition.getX()
               + "\" to=\""
               + this.endPosition.getX() + "\"";
 
-    } else if(shape.getShapeType() == ShapeType.Oval) {
+    } else if (shape.getShapeType() == ShapeType.Oval) {
       result += "attributeName=\"cx\" from=\""
               + this.startPosition.getX()
               + "\" to=\""
@@ -98,16 +113,23 @@ public class MoveAnimation extends AAnimation {
   }
 
 
-
-
-  private String toStringSvgMoveYChange(IShape shape){
+  /**
+   * Returns a string that represents the portion of an Svg file that contains information
+   * about the change in Y during the move.  If the shape is a rectangle, the attribute
+   * and start and end positions are filled out accordingly.  If the shape is an oval, the
+   * attribute name and start and end positions are filled out accordingly.
+   *
+   * @param shape given IShape.
+   * @return String that represents the change in Y during a move according to an Svg file.
+   */
+  private String toStringSvgMoveYChange(IShape shape) {
     String result = "";
-    if(shape.getShapeType() == ShapeType.Rectangle) {
+    if (shape.getShapeType() == ShapeType.Rectangle) {
       result += "attributeName=\"y\" from=\""
               + this.startPosition.getY()
               + "\" to=\""
               + this.endPosition.getY() + "\"";
-    } else if(shape.getShapeType() == ShapeType.Oval) {
+    } else if (shape.getShapeType() == ShapeType.Oval) {
       result += "attributeName=\"cy\" from=\""
               + this.startPosition.getY()
               + "\" to=\""
@@ -115,7 +137,6 @@ public class MoveAnimation extends AAnimation {
     }
     return result;
   }
-
 
 
 }

@@ -81,14 +81,21 @@ public class IEasyAnimatorModelTest {
   @Test
   public void testAllAnimationToStringShapesAndAnimation() {
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f,
+            0.0f, 0.0f, 1.0f, 6, 100);
     //adding animations
-    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
-    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
-    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
-    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+    model.addMove("R", 200f, 200f, 300f,
+            300f, 10, 50);
+    model.addMove("C", 500f, 100f, 500f,
+            400f, 20, 70);
+    model.addMove("R", 300f, 300f, 200f,
+            200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f,
+            1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100, 20, 100,
+            51, 70);
 
     assertEquals(strFront + strRShape + strCShape + strAnim, model.toString());
   }
@@ -104,8 +111,10 @@ public class IEasyAnimatorModelTest {
   public void testAllAnimationToStringShapesOnly() {
 
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f,
+            0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+            0.0f, 1.0f, 6, 100);
 
     assertEquals(strFront + strRShape + strCShape, model.toString());
   }
@@ -131,9 +140,12 @@ public class IEasyAnimatorModelTest {
   @Test
   public void testValidAddShapes() {
     try {
-      model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
-      model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-      model.addRectangle("R2", 200f, 200f, 80f, 100f, 1.0f, 0.0f, 0.0f, 1, 150);
+      model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+              0.0f, 1.0f, 6, 100);
+      model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f,
+              0.0f, 0.0f, 1, 100);
+      model.addRectangle("R2", 200f, 200f, 80f, 100f, 1.0f,
+              0.0f, 0.0f, 1, 150);
 
       assertEquals(strFront + strRShape + strR2Shape + strCShape,
               model.toString());
@@ -152,12 +164,15 @@ public class IEasyAnimatorModelTest {
 
   @Test
   public void testIllegalAddShapes() {
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f,
+            0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+            0.0f, 1.0f, 6, 100);
 
     //the same shapeID cannot be added to the HashMap twice
     try {
-      model.addRectangle("R", 300f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
+      model.addRectangle("R", 300f, 200f, 50f, 100f, 1.0f,
+              0.0f, 0.0f, 1, 100);
       fail("ID already exists. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected. The same ID cannot be added twice to the HashMap
@@ -166,7 +181,8 @@ public class IEasyAnimatorModelTest {
 
     //the same shapeID cannot be added to the HashMap twice
     try {
-      model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+      model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+              0.0f, 1.0f, 6, 100);
       fail("ID already exists. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected. The same ID cannot be added twice to the HashMap
@@ -175,7 +191,8 @@ public class IEasyAnimatorModelTest {
 
     // appearTime > disappearTime
     try {
-      model.addRectangle("D", 300f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 101, 100);
+      model.addRectangle("D", 300f, 200f, 50f, 100f,
+              1.0f, 0.0f, 0.0f, 101, 100);
       fail("appearTime > disappearTime. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -184,7 +201,8 @@ public class IEasyAnimatorModelTest {
 
     // appearTime = disappearTime
     try {
-      model.addRectangle("D", 300f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 100, 100);
+      model.addRectangle("D", 300f, 200f, 50f, 100f,
+              1.0f, 0.0f, 0.0f, 100, 100);
       fail("appearTime = disappearTime. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -193,7 +211,8 @@ public class IEasyAnimatorModelTest {
 
     // appearTime < 0
     try {
-      model.addRectangle("D", 300f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, -100, 100);
+      model.addRectangle("D", 300f, 200f, 50f, 100f,
+              1.0f, 0.0f, 0.0f, -100, 100);
       fail("appearTime < 0. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -202,7 +221,8 @@ public class IEasyAnimatorModelTest {
 
     // color component < 0
     try {
-      model.addRectangle("M", 300f, 200f, 50f, 100f, -1.0f, 0.0f, 0.0f, 6, 100);
+      model.addRectangle("M", 300f, 200f, 50f, 100f,
+              -1.0f, 0.0f, 0.0f, 6, 100);
       fail("color component < 0. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -211,7 +231,8 @@ public class IEasyAnimatorModelTest {
 
     // width < 0
     try {
-      model.addRectangle("M", 300f, 200f, -50f, 100f, 1.0f, 0.0f, 0.0f, 6, 100);
+      model.addRectangle("M", 300f, 200f, -50f, 100f,
+              1.0f, 0.0f, 0.0f, 6, 100);
       fail("width < 0. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -220,7 +241,8 @@ public class IEasyAnimatorModelTest {
 
     // height < 0
     try {
-      model.addRectangle("M", 300f, 200f, 50f, -100f, 1.0f, 0.0f, 0.0f, 6, 100);
+      model.addRectangle("M", 300f, 200f, 50f, -100f,
+              1.0f, 0.0f, 0.0f, 6, 100);
       fail("height < 0. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected.
@@ -229,7 +251,8 @@ public class IEasyAnimatorModelTest {
 
     // xRadius < 0
     try {
-      model.addOval("E", 500f, 100f, -60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+      model.addOval("E", 500f, 100f, -60f, 30f,
+              0.0f, 0.0f, 1.0f, 6, 100);
       fail("xRadius < 0 An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected. The same ID cannot be added twice to the HashMap
@@ -237,7 +260,8 @@ public class IEasyAnimatorModelTest {
 
     // yRadius < 0
     try {
-      model.addOval("E", 500f, 100f, 60f, -30f, 0.0f, 0.0f, 1.0f, 6, 100);
+      model.addOval("E", 500f, 100f, 60f, -30f,
+              0.0f, 0.0f, 1.0f, 6, 100);
       fail("yRadius < 0. An exception should have been thrown!");
     } catch (IllegalArgumentException e) {
       //Exception is expected. The same ID cannot be added twice to the HashMap
@@ -257,17 +281,26 @@ public class IEasyAnimatorModelTest {
 
   @Test
   public void testValidAddAnimations() {
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addRectangle("R2", 200f, 200f, 80f, 100f, 1.0f, 0.0f, 0.0f, 1, 150);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+            0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 100);
+    model.addRectangle("R2", 200f, 200f, 80f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 150);
 
     try {
-      model.addScaleAnimation("R", 40.0f, 100.0f, 20.0f, 100.0f, 51, 70);
-      model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-      model.addMove("R", 300.0f, 300.0f, 200.0f, 200.0f, 70, 100);
-      model.addMove("C", 500.0f, 100.0f, 500.0f, 400.0f, 20, 70);
-      model.addMove("R", 200.0f, 200.0f, 300.0f, 300.0f, 10, 50);
-      model.addMove("R2", 200f, 200f, 300f, 300f, 10, 50);
+      model.addScaleAnimation("R", 40.0f, 100.0f, 20.0f,
+              100.0f, 51, 70);
+      model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f,
+              1.0f, 0.0f, 50, 80);
+      model.addMove("R", 300.0f, 300.0f, 200.0f,
+              200.0f, 70, 100);
+      model.addMove("C", 500.0f, 100.0f, 500.0f,
+              400.0f, 20, 70);
+      model.addMove("R", 200.0f, 200.0f, 300.0f,
+              300.0f, 10, 50);
+      model.addMove("R2", 200f, 200f, 300f,
+              300f, 10, 50);
 
     } catch (IllegalArgumentException e) {
       fail("Inputs for addAnimation are legal. No exception is excepted!");
@@ -296,19 +329,27 @@ public class IEasyAnimatorModelTest {
   @Test
   public void testIllegalAddAnimations() {
 
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f,
+            0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 100);
 
-    model.addScaleAnimation("R", 40.0f, 100.0f, 20.0f, 100.0f, 51, 70);
-    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-    model.addMove("R", 300.0f, 300.0f, 200.0f, 200.0f, 70, 100);
-    model.addMove("C", 500.0f, 100.0f, 500.0f, 400.0f, 20, 70);
-    model.addMove("R", 200.0f, 200.0f, 300.0f, 300.0f, 10, 50);
+    model.addScaleAnimation("R", 40.0f, 100.0f, 20.0f,
+            100.0f, 51, 70);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f,
+            1.0f, 0.0f, 50, 80);
+    model.addMove("R", 300.0f, 300.0f, 200.0f,
+            200.0f, 70, 100);
+    model.addMove("C", 500.0f, 100.0f, 500.0f,
+            400.0f, 20, 70);
+    model.addMove("R", 200.0f, 200.0f, 300.0f,
+            300.0f, 10, 50);
 
 
     //shapeID doesn't exist
     try {
-      model.addMove("R3", 300.0f, 300.0f, 200.0f, 200.0f, 70, 100);
+      model.addMove("R3", 300.0f, 300.0f,
+              200.0f, 200.0f, 70, 100);
       fail("shapeID doesn't exist! An exception should have been thrown");
     } catch (IllegalArgumentException e) {
       //exception is expected
@@ -318,7 +359,8 @@ public class IEasyAnimatorModelTest {
     //startTime and endTime is not within the time range
     // of the appearTime and disappearTime of the corresponding shape
     try {
-      model.addMove("R", 300.0f, 300.0f, 200.0f, 200.0f, 70, 150);
+      model.addMove("R", 300.0f, 300.0f, 200.0f,
+              200.0f, 70, 150);
       fail("StartTime is earlier than the appear time. An exception should have been thrown");
     } catch (IllegalArgumentException e) {
       //exception is expected
@@ -327,7 +369,8 @@ public class IEasyAnimatorModelTest {
     // animation has time conflict with another animation
     // of the same type and of the same shape in the list
     try {
-      model.addMove("R", 300.0f, 300.0f, 200.0f, 200.0f, 20, 80);
+      model.addMove("R", 300.0f, 300.0f, 200.0f,
+              200.0f, 20, 80);
       fail("Time conflict with another animation. An exception should have been thrown");
     } catch (IllegalArgumentException e) {
       //exception is expected
@@ -335,14 +378,17 @@ public class IEasyAnimatorModelTest {
 
     //negative scale parameter
     try {
-      model.addScaleAnimation("R", -200f, 200f, 300f, 400f, 20, 60);
+      model.addScaleAnimation("R", -200f, 200f, 300f,
+              400f, 20, 60);
       fail("negative scale parameter! An exception is expected");
     } catch (IllegalArgumentException e) {
       //exception is expected
     }
   }
 
-
+  /**
+   * Test that the toStringText method works correctly for a given speed of 2.
+   */
   @Test
   public void testToStringText() {
     int speed = 2;
@@ -368,20 +414,29 @@ public class IEasyAnimatorModelTest {
             + "shape R moves from (300.0, 300.0) to (200.0, 200.0) from t=35.0s to t=50.0s";
 
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f,
+            0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f,
+            0.0f, 1.0f, 6, 100);
     //adding animations
-    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
-    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
-    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
-    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+    model.addMove("R", 200f, 200f, 300f,
+            300f, 10, 50);
+    model.addMove("C", 500f, 100f, 500f,
+            400f, 20, 70);
+    model.addMove("R", 300f, 300f, 200f,
+            200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f,
+            1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100, 20, 100,
+            51, 70);
 
     assertEquals(strFront + strRShape + strCShape + strAnim,
             model.toStringText(speed));
   }
 
-
+  /**
+   * Test that the toStringText method works correctly when only shapes are given, no animations.
+   */
   @Test
   public void testToStringTextShapesOnly() {
     int speed = 2;
@@ -400,14 +455,18 @@ public class IEasyAnimatorModelTest {
             + "\n";
 
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f,
+            0.0f, 0.0f, 1.0f, 6, 100);
 
     assertEquals(strFront + strRShape + strCShape,
             model.toStringText(speed));
   }
 
-
+  /**
+   * Test that toStringText works correctly when the model is empty.
+   */
   @Test
   public void testToStringTextEmptyModel() {
     int speed = 2;
@@ -415,18 +474,29 @@ public class IEasyAnimatorModelTest {
 
   }
 
+  /**
+   * Test that the toStringSvg method works correctly with a given speed of two and both
+   * shapes and animations are present.
+   */
   @Test
   public void testToStringSvg() {
-  int  speed =2;
+    int speed = 2;
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f,
+            100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f,
+            30f, 0.0f, 0.0f, 1.0f, 6, 100);
     //adding animations
-    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
-    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
-    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
-    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+    model.addMove("R", 200f, 200f,
+            300f, 300f, 10, 50);
+    model.addMove("C", 500f, 100f,
+            500f, 400f, 20, 70);
+    model.addMove("R", 300f, 300f,
+            200f, 200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f,
+            1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100,
+            20, 100, 51, 70);
 
     //String svgStart = "<svg width=\"700\" height=\"500\" version=\"1.1\"
     assertEquals("", model.toStringSvg(speed));

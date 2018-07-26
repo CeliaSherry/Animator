@@ -10,11 +10,20 @@ import cs5004.animator.model.IEasyAnimatorModel;
 import parser.IParser;
 import parser.Parser;
 
+/**
+ * This class represents the Main.
+ */
 public class Main {
 
+  /**
+   * This method parses the command line input and creates the model and controller.
+   * It then passes control to the controller along with the output file, input file,
+   * view type, and speed.
+   *
+   * @param Args
+   */
   public static void main(String []Args) {
 
-    //Writer ap = new StringWriter();
     IEasyAnimatorModel model;
     String[] argsInOrder = null;
 

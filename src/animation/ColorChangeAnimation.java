@@ -36,11 +36,6 @@ public class ColorChangeAnimation extends AAnimation {
 
   }
 
-  /*@Override
-  public AnimType getType() {
-    return this.type;
-  }*/
-
 
   /**
    * Return a new Color object which is a copy of the input Color object in RGB 0.0 to 1.0 scale.
@@ -73,7 +68,8 @@ public class ColorChangeAnimation extends AAnimation {
   /**
    * Return the given color in string form.
    *
-   * @return the color in string form
+   * @param color given color.
+   * @return the color in string form.
    */
   private String colorToString(Color color) {
     String result = "(";
@@ -86,32 +82,32 @@ public class ColorChangeAnimation extends AAnimation {
 
   }
 
-
+  /**
+   * Takes a speed and IShape and returns the svg representation of the animation in String form.
+   * This class includes the color information, including starting color and ending color in
+   * the proper format.
+   *
+   * @param speed given speed.
+   * @param shape given IShape.
+   * @return String with svg representation of animation.
+   */
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
     result += "<animateColor attributeName=\"fill\" attributeType=\"XML\" from=\""
             + "rgb("
-    + this.startColor.getRed()+","
-    + this.startColor.getGreen()+","
-    + this.startColor.getBlue() + ")\""
+            + this.startColor.getRed() + ","
+            + this.startColor.getGreen() + ","
+            + this.startColor.getBlue() + ")\""
             + " to=\""
             + "rgb("
-            + this.endColor.getRed()+","
-            + this.endColor.getGreen()+","
+            + this.endColor.getRed() + ","
+            + this.endColor.getGreen() + ","
             + this.endColor.getBlue() + ")\""
             + " dur=\""
             + this.timeInterval * 1.0 / speed + "s\"/>";
 
     return result;
   }
-
-
-
-
-
-
-
-
 
 }

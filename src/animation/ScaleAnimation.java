@@ -45,12 +45,6 @@ public class ScaleAnimation extends AAnimation {
     this.toSy = toSy;
   }
 
-/*
-  @Override
-  public AnimType getType() {
-    return this.type;
-  }
-*/
 
   /**
    * Return the change of the shape due to this scaling animation in string form. For example:
@@ -68,20 +62,28 @@ public class ScaleAnimation extends AAnimation {
   }
 
 
-
+  /**
+   * Takes a speed and IShape and returns the svg representation of the animation in String form.
+   * This class includes the scale information, including starting and ending width and height
+   * using the from (x,y) and the to (x,y).
+   *
+   * @param speed given speed.
+   * @param shape given IShape.
+   * @return String with svg representation of animation.
+   */
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
     result += "<animateTransform attributeName=\"transform\" type=\"scale\" from=\""
             + "("
             + this.fromSx
-            +" "
+            + " "
             + this.fromSy
             + ")\""
             + " to=\""
             + "("
             + this.toSx
-            +" "
+            + " "
             + this.toSy
             + ")\""
             + " dur=\""
@@ -90,8 +92,6 @@ public class ScaleAnimation extends AAnimation {
 
     return result;
   }
-
-
 
 
 }

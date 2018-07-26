@@ -3,14 +3,20 @@ import org.junit.Test;
 
 import parser.IParser;
 import parser.Parser;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
-
+/**
+ * A Junit test for the IParser interface.  It tests whether the Parser class correctly
+ * parses given String arrays.
+ */
 public class IParserTest {
 
   private IParser cmdArray;
   String []newArray;
 
+  /**
+   * Set up Before scenario.
+   */
   @Before
   public void setUp() {
     String []temp = new String[8];
@@ -26,20 +32,22 @@ public class IParserTest {
     newArray = cmdArray.changeOrder(temp);
   }
 
+  /**
+   * Tests if input given in wrong order is outputted as array in the correct order.
+   */
   @Test
   public void testParse() {
     //-if, -iv, -o, -speed
     String temp = "smalldemo.txt text System.out 2";
     String tempString = "";
-    tempString = tempString + newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3];
+    tempString = tempString + newArray[0] + " " + newArray[1] + " " + newArray[2] + " " +
+            newArray[3];
     assertEquals(temp,tempString);
   }
 
 
 
-  //need to test if file doesn't exist
-  //need to test if incorrect information given after -if,-iv,-o,-speed
-  //need to test different orders
+
 
 
 

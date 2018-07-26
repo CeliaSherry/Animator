@@ -1,6 +1,5 @@
 package cs5004.animator.model;
 
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -53,7 +52,29 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     this.animations = new ArrayList<>();
   }
 
-
+  /**
+   * Add a rectangle to model. If the shapeID already existed in the hashMap, an exception will be
+   * thrown. Other illegal inputs such as negative entry of width or height, negative color
+   * component, star of lift earlier or equal to end of life or either of the time is negative will
+   * trigger the throwing of an exception.
+   *
+   * @param name        given shape ID
+   * @param lx          given x-coordinate of the rectangle
+   * @param ly          given y-coordinate of the rectangle
+   * @param width       given width
+   * @param height      given height
+   * @param red         given red component of the color
+   * @param green       given green component of the color
+   * @param blue        given blue component of the color
+   * @param startOfLife given appearing time of the rectangle
+   * @param endOfLife   given disappearing time of the rectangle
+   * @throws IllegalArgumentException if width or height is negative
+   * @throws IllegalArgumentException if the name has already been assigned
+   * @throws IllegalArgumentException if any color component is negative of greater than 1
+   * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
+   * @throws IllegalArgumentException if appearing time >= disappearing time
+   * @throws IllegalArgumentException if appearing time < 0 or disappearing time < 0
+   */
   @Override
   public void addRectangle(String name,
                            float lx, float ly,
@@ -70,7 +91,29 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     this.addTransShape(name, startOfLife, endOfLife);
   }
 
-
+  /**
+   * Add an Oval to model. If the shapeID already existed in the hashMap, an exception will be
+   * thrown. Other illegal inputs such as negative entry of xRadius or yRadius, negative color
+   * component, star of lift earlier or equal to end of life or either of the time is negative will
+   * trigger the throwing of an exception.
+   *
+   * @param name        given shape ID
+   * @param cx          given x-coordinate of the oval
+   * @param cy          given y-coordinate of the oval
+   * @param xRadius     given x Radius
+   * @param yRadius     given y Radius
+   * @param red         given red component of the color
+   * @param green       given green component of the color
+   * @param blue        given blue component of the color
+   * @param startOfLife given appearing time of the rectangle
+   * @param endOfLife   given disappearing time of the rectangle
+   * @throws IllegalArgumentException if x Radius or y Radius is negative
+   * @throws IllegalArgumentException if the name has been previously assigned to another shape
+   * @throws IllegalArgumentException if any color component is negative of greater than 1
+   * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
+   * @throws IllegalArgumentException if appearing time >= disappearing time
+   * @throws IllegalArgumentException if appearing time < 0 or disappearing time < 0
+   */
   @Override
   public void addOval(String name,
                       float cx, float cy,
@@ -84,6 +127,25 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     this.addTransShape(name, startOfLife, endOfLife);
   }
 
+  /**
+   * Add an animation of type move to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
+   *
+   * @param name      given shape ID
+   * @param moveFromX given original x-coordinate of the the shape
+   * @param moveFromY given original y-coordinate of the the shape
+   * @param moveToX   given new x-coordinate of the the shape
+   * @param moveToY   given new y-coordinate of the the shape
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
+   */
   @Override
   public void addMove(String name,
                       float moveFromX, float moveFromY, float moveToX, float moveToY,
@@ -94,6 +156,27 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     addAnimation(move);
   }
 
+  /**
+   * Add an animation of type color change to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
+   *
+   * @param name      given shape ID
+   * @param oldR      given original red component of the shape color
+   * @param oldG      given original green component of the shape color
+   * @param oldB      given original blue component of the shape color
+   * @param newR      given new red component of the shape color
+   * @param newG      given new green component of the shape color
+   * @param newB      given new green component of the shape color
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
+   */
   @Override
   public void addChangeColor(String name,
                              float oldR, float oldG, float oldB, float newR, float newG,
@@ -103,6 +186,25 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     addAnimation(changeColor);
   }
 
+  /**
+   * Add an animation of type scale to the animation ArrayList according to the appear time .
+   * Insertion occurs at the position where all IAnimations in the list appearing at the same time
+   * or before the given IAnimation are also before it in the list, and all IAnimations in the ist
+   * appearing after the given ITransitionalShape are behind it in the list. If there is a time
+   * conflict between the given animation and the animations in the current list, an exception will
+   * be thrown. Animation cannot happen beyond the life of a shape.
+   *
+   * @param name      given shape ID
+   * @param fromSx    given original width of the shape
+   * @param fromSy    given original height of the shape
+   * @param toSx      given new width of the shape
+   * @param toSy      given new height of the shape
+   * @param startTime given start time of the move animation
+   * @param endTime   given end time of the move animation
+   * @throws IllegalArgumentException if time conflict with other move animations
+   * @throws IllegalArgumentException if the there is no shape with given name
+   * @throws IllegalArgumentException if start and end time are not within shape existing time
+   */
   @Override
   public void addScaleAnimation(String name, float fromSx, float fromSy, float toSx,
                                 float toSy, int startTime, int endTime) {
@@ -111,6 +213,13 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     addAnimation(scale);
   }
 
+  /**
+   * Return all information stored in this model, including all shapes with appearing and
+   * disappearing times, and all animations taking place. Shapes are shown in the order of their
+   * appearing time, and animations are shown in the order of their staring time. If two shapes
+   * appear at the same time or two animations start at the same time, they will shown according to
+   * the time they were added to the list.
+   */
   @Override
   public String toString() {
     String result = "";
@@ -137,7 +246,15 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return result + temp.substring(1);
   }
 
-
+  /**
+   * Takes a speed and returns the text representation of the model in String form with
+   * the start and end times in seconds.  Returns a text representation of the shapes with the
+   * appear time and disappear time in seconds and a text representation of the animations with
+   * the start and end times of the animations in seconds.
+   *
+   * @param speed given speed.
+   * @return text representation of the animation.
+   */
   @Override
   public String toStringText(int speed) {
 
@@ -153,7 +270,6 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
               + this.shapes.get(transShape.getShapeID()).toString()
               + transShape.toStringText(speed);
     }
-
     if (lenAnimations == 0) {
       return result;
     }
@@ -165,6 +281,14 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return result + temp.substring(1);
   }
 
+  /**
+   * Takes a speed and IShape and returns the svg representation of the model in String form.
+   * Returns a String with the svg representation of each shape and its animations with the
+   * proper formatting.
+   *
+   * @param speed given speed.
+   * @return String with svg representation of model.
+   */
   @Override
   public String toStringSvg(int speed) {
     String result = "<svg width=\"700\" height=\"500\" version=\"1.1\"" +
@@ -173,8 +297,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       result += toStringSvgShapes(transitionalShape.getShapeID());
       for (IAnimation animation : this.animations) {
         if (animation.getShapeID() == transitionalShape.getShapeID()) {
-          result += animation.toStringSvg(speed,shapes.get(transitionalShape.getShapeID()))
-          + "\n";
+          result += animation.toStringSvg(speed, shapes.get(transitionalShape.getShapeID()))
+                  + "\n";
         }
       }
       result += toStringSvgShapesClose(transitionalShape.getShapeID());
@@ -183,12 +307,19 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return result;
   }
 
+  /**
+   * Takes a shapeId and adds the shape specific information for the shape to the beginning of the
+   * svg string representation of a shape.
+   *
+   * @param shapeID given shapeId.
+   * @return String representation of beginning shape portion of svg output.
+   */
   private String toStringSvgShapes(String shapeID) {
 
     IShape shape = this.shapes.get(shapeID);
     String result = "";
 
-    if (shape.getShapeType() ==  ShapeType.Rectangle) {
+    if (shape.getShapeType() == ShapeType.Rectangle) {
       result += "<rect id=\"" + shapeID + "\"";
       result += " x=\"" + shape.getPosition().getX()
               + "\" y=\"" + shape.getPosition().getY() + "\" "
@@ -207,12 +338,18 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return result;
   }
 
-
+  /**
+   * Takes a shapeId and adds the shape specific information for the shape to the end of the svg
+   * string representation of a shape.
+   *
+   * @param shapeID given shapeId.
+   * @return String representation of end shape portion of svg output.
+   */
   private String toStringSvgShapesClose(String shapeID) {
     IShape shape = this.shapes.get(shapeID);
     String result = "";
 
-    if (shape.getShapeType() ==  ShapeType.Rectangle) {
+    if (shape.getShapeType() == ShapeType.Rectangle) {
       result += "</rect>\n";
 
     } else if (shape.getShapeType() == ShapeType.Oval) {
@@ -231,7 +368,6 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * @throws IllegalArgumentException if shape is null
    * @throws IllegalArgumentException if shapeID or shape already exists in the hashMap
    */
-
   private void addShape(IShape aShape, String shapeID) throws IllegalArgumentException {
     if (aShape == null) {
       throw new IllegalArgumentException("shape is null!");
@@ -258,7 +394,6 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * @throws IllegalArgumentException if appear time is not before disappear time
    * @throws IllegalArgumentException if appear time or disappear time is negative
    */
-
   private void addTransShape(String shapeID, int appearTIme, int disappearTime)
           throws IllegalArgumentException {
     if (!this.shapes.containsKey(shapeID)) {
@@ -358,6 +493,12 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   }
 
 
+  /**
+   * This class represents a Builder that constructs the IEasyAnimatorModelImpl using the
+   * AnimationFileReader class.
+   *
+   * @param <T> given model.
+   */
   public static final class TweenModelBuilderImpl<T> implements TweenModelBuilder<T> {
 
     IEasyAnimatorModel model;

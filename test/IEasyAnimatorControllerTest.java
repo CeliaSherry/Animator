@@ -22,14 +22,21 @@ public class IEasyAnimatorControllerTest {
 
     model = new EasyAnimatorModelImpl();
     //adding shapes
-    model.addRectangle("R", 200f, 200f, 50f, 100f, 1.0f, 0.0f, 0.0f, 1, 100);
-    model.addOval("C", 500f, 100f, 60f, 30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    model.addRectangle("R", 200f, 200f, 50f, 100f,
+            1.0f, 0.0f, 0.0f, 1, 100);
+    model.addOval("C", 500f, 100f, 60f, 30f,
+            0.0f, 0.0f, 1.0f, 6, 100);
     //adding animations
-    model.addMove("R", 200f, 200f, 300f, 300f, 10, 50);
-    model.addMove("C", 500f, 100f, 500f, 400f, 20, 70);
-    model.addMove("R", 300f, 300f, 200f, 200f, 70, 100);
-    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
-    model.addScaleAnimation("R", 40, 100, 20, 100, 51, 70);
+    model.addMove("R", 200f, 200f, 300f,
+            300f, 10, 50);
+    model.addMove("C", 500f, 100f, 500f,
+            400f, 20, 70);
+    model.addMove("R", 300f, 300f, 200f,
+            200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f, 1.0f, 0.0f,
+            1.0f, 0.0f, 50, 80);
+    model.addScaleAnimation("R", 40, 100, 20, 100,
+            51, 70);
     controller = new IEasyAnimatorControllerImpl();
   }
 

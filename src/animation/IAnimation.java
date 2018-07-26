@@ -68,10 +68,11 @@ public interface IAnimation {
 
 
   /**
-   * Return the ITransitionalShape in the list with the same shapeID. If not found, null will be
-   * return.
+   * Return the ITransitionalShape in the list with the shapeId of this shape.  If not found,
+   * null will be returned.
    *
-   * @return ITransitionalShape in the list with the same shapeID. Return null if not found
+   * @param transShapes given list of ITransitionalShapes.
+   * @return ITransitionalShape in the list with the same shapeID. Return null if not found.
    */
   ITransitionalShape findCorrespondingShape(List<ITransitionalShape> transShapes);
 
@@ -99,8 +100,22 @@ public interface IAnimation {
    */
   String toStringAnimationChange();
 
+  /**
+   * Takes a speed and returns the text representation of the animation in String form with
+   * the start and end times in seconds.
+   *
+   * @param speed given speed.
+   * @return text representation of the animation.
+   */
   String toStringText(int speed);
 
+  /**
+   * Takes a speed and IShape and returns the svg representation of the animation in String form.
+   *
+   * @param speed given speed.
+   * @param shape given IShape.
+   * @return String with svg representation of animation.
+   */
   String toStringSvg(int speed, IShape shape);
 
 

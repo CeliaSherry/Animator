@@ -98,6 +98,14 @@ public class AnimationFileReader {
     return builder.build();
   }
 
+  /**
+   * Reads rectangle info and returns RectangleInfo.
+   *
+   * @param sc given scanner.
+   * @return RectangleInfo
+   * @throws IllegalStateException If invalid attribute.
+   * @throws InputMismatchException if there is an input mismatch.
+   */
   private RectangleInfo readRectangleInfo(Scanner sc) throws
           IllegalStateException, InputMismatchException {
     RectangleInfo info = new RectangleInfo();
@@ -140,6 +148,14 @@ public class AnimationFileReader {
     return info;
   }
 
+  /**
+   * Reads oval info and returns OvalInfo.
+   *
+   * @param sc given scanner.
+   * @return OvalInfo.
+   * @throws IllegalStateException If invalid attribute.
+   * @throws InputMismatchException if there is an input mismatch.
+   */
   private OvalInfo readOvalInfo(Scanner sc) throws
           IllegalStateException, InputMismatchException {
     OvalInfo info = new OvalInfo();
@@ -182,6 +198,13 @@ public class AnimationFileReader {
     return info;
   }
 
+  /**
+   * Returns MoveInfo read from scanner.
+   * @param sc given scanner.
+   * @return MoveInfo.
+   * @throws IllegalStateException if invalid attribute.
+   * @throws InputMismatchException if there is an input mismatch.
+   */
   private MoveInfo readMoveInfo(Scanner sc) throws
           IllegalStateException, InputMismatchException {
     MoveInfo info = new MoveInfo();

@@ -1,7 +1,7 @@
 package shape;
 
 /**
- * Describe the type of a shape.
+ * The Enum represents the type that a shape can be.
  */
 public enum ShapeType {
   Rectangle, Oval

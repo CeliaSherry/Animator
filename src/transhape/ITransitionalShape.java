@@ -22,7 +22,6 @@ public interface ITransitionalShape {
    */
   int getAppearTime();
 
-
   /**
    * Getter for the appearing time of a shape.
    *
@@ -39,7 +38,13 @@ public interface ITransitionalShape {
    */
   boolean appearBefore(ITransitionalShape other);
 
-
+  /**
+   * Takes a speed and returns the text representation of the TransitionalShape in String form with
+   * the appear and disappear times in seconds.
+   *
+   * @param speed given speed.
+   * @return text representation of the TransitionalShape.
+   */
   String toStringText(int speed);
 
 

@@ -44,9 +44,30 @@ public interface IShape {
    */
   List<Pair<String, Double>> getScale();
 
+  /**
+   * Getter for the red component of the shape's color.
+   *
+   * @return int that represents the red component of the shape's color.
+   */
   int getRed();
+
+  /**
+   * Getter for the green component of the shape's color.
+   * @return int that represents the green component of the shape's color.
+   */
   int getGreen();
+
+  /**
+   * Getter for the blue component of the shape's color.
+   * @return int that represents the blue component of the shape's color.
+   */
   int getBlue();
+
+  /**
+   * Getter for the ShapeType of this shape.
+   *
+   * @return ShapeType of this shape.
+   */
   ShapeType getShapeType();
 
 
