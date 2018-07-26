@@ -6,6 +6,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import animation.ColorChangeAnimation;
 import animation.IAnimation;
@@ -28,7 +29,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   //store shapes and corresponding IDs in a HashMap. Given an ID, returning the shape will only take
   // constant time.
-  private HashMap<String, IShape> shapes;
+  private Map<String, IShape> shapes;
 
   //store transShapes in a list structure. Even though searching an ID takes linear time, this
   // structure can keep the order of the transShapes according to their appearing time.
