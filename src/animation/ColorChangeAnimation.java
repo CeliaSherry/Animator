@@ -94,7 +94,7 @@ public class ColorChangeAnimation extends AAnimation {
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
-    result += "<animateColor attributeName=\"fill\" attributeType=\"XML\" from=\""
+    result += "<animate attributeName=\"fill\" attributeType=\"XML\" from=\""
             + "rgb("
             + this.startColor.getRed() + ","
             + this.startColor.getGreen() + ","
@@ -104,8 +104,12 @@ public class ColorChangeAnimation extends AAnimation {
             + this.endColor.getRed() + ","
             + this.endColor.getGreen() + ","
             + this.endColor.getBlue() + ")\""
+            + " begin =\""
+            + this.startTime * 1000.0 / speed + "ms\""
             + " dur=\""
-            + this.timeInterval * 1.0 / speed + "s\"/>";
+            + this.timeInterval * 1000.0 / speed + "ms\""
+            + " fill=\"freeze\""
+            + "/>";
 
     return result;
   }

@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd5d0b1-865c-4f04-a5c4-ec9d82288dd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/AAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/IAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/IAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/MoveAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/MoveAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/ScaleAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/ScaleAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/builder/AnimationFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/builder/AnimationFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/IParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/IParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shape/AShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shape/AShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shape/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shape/IShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shape/ShapeType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shape/ShapeType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/IEasyAnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/IEasyAnimatorModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/IParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial.svg" beforeDir="false" afterPath="$PROJECT_DIR$/trial.svg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,62 +24,8 @@
       <file leaf-file-name="EasyAnimatorModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEasyAnimatorModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EasyAnimatorViewImplFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EasyAnimatorViewImplOut.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEasyAnimatorView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1169">
+              <caret line="358" column="17" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -104,12 +33,24 @@
       <file leaf-file-name="IEasyAnimatorModelTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorModelTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="9072">
+              <caret line="504" lean-forward="true" selection-start-line="504" selection-end-line="504" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4615#4616#0" expanded="true" />
-                <element signature="e#4659#4660#0" expanded="true" />
+                <element signature="e#4605#4606#0" expanded="true" />
+                <element signature="e#4649#4650#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAnimation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,8 +59,46 @@
       <file leaf-file-name="IEasyAnimatorControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="260">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ITransitionalShapeImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-138">
+              <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+              <folding>
+                <element signature="e#3100#3101#0" expanded="true" />
+                <element signature="e#3129#3130#0" expanded="true" />
+                <element signature="e#3296#3297#0" expanded="true" />
+                <element signature="e#3323#3324#0" expanded="true" />
+                <element signature="e#3493#3494#0" expanded="true" />
+                <element signature="e#3523#3524#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ITransitionalShape.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-263">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorChangeAnimation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +109,8 @@
       <file leaf-file-name="IParserTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/IParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="108">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,11 +118,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IEasyAnimatorControllerImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
+      <file leaf-file-name="ScaleAnimation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="274">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveAnimation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="128" column="13" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,15 +189,11 @@
         <option value="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModelImpl2.java" />
         <option value="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl2.java" />
         <option value="$PROJECT_DIR$/src/animation/AAnimation.java" />
-        <option value="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" />
         <option value="$PROJECT_DIR$/src/animation/IAnimation.java" />
-        <option value="$PROJECT_DIR$/src/animation/MoveAnimation.java" />
-        <option value="$PROJECT_DIR$/src/animation/ScaleAnimation.java" />
         <option value="$PROJECT_DIR$/src/builder/AnimationFileReader.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorController.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java" />
-        <option value="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java" />
@@ -215,11 +202,15 @@
         <option value="$PROJECT_DIR$/src/shape/IShape.java" />
         <option value="$PROJECT_DIR$/src/shape/AShape.java" />
         <option value="$PROJECT_DIR$/src/shape/ShapeType.java" />
-        <option value="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" />
-        <option value="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/Main.java" />
         <option value="$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java" />
         <option value="$PROJECT_DIR$/test/IParserTest.java" />
+        <option value="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" />
+        <option value="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" />
+        <option value="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" />
+        <option value="$PROJECT_DIR$/src/animation/MoveAnimation.java" />
+        <option value="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" />
+        <option value="$PROJECT_DIR$/src/animation/ScaleAnimation.java" />
         <option value="$PROJECT_DIR$/test/IEasyAnimatorModelTest.java" />
       </list>
     </option>
@@ -234,9 +225,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
-    <option name="y" value="23" />
-    <option name="width" value="1364" />
+    <option name="x" value="127" />
+    <option name="y" value="49" />
+    <option name="width" value="1784" />
     <option name="height" value="794" />
   </component>
   <component name="ProjectView">
@@ -244,6 +235,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,8 +316,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,9 +355,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IParserTest.testParse">
+  <component name="RunManager" selected="JUnit.IEasyAnimatorModelTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="IEasyAnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IEasyAnimatorModelTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="IEasyAnimatorModelTest.testToStringSvg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animator" />
@@ -392,23 +400,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="IEasyAnimatorModelTest" />
       <option name="METHOD_NAME" value="testToStringSvgEmptyModel" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="IEasyAnimatorModelTest.testToStringText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IEasyAnimatorModelTest" />
-      <option name="METHOD_NAME" value="testToStringText" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -492,19 +483,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringText" />
       <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringTextShapesOnly" />
       <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringSvgEmptyModel" />
       <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringSvg" />
       <item itemvalue="JUnit.IParserTest.testParse" />
+      <item itemvalue="JUnit.IEasyAnimatorModelTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IParserTest.testParse" />
-        <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringSvg" />
+        <item itemvalue="JUnit.IEasyAnimatorModelTest" />
         <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringSvgEmptyModel" />
+        <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringSvg" />
+        <item itemvalue="JUnit.IParserTest.testParse" />
         <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringTextShapesOnly" />
-        <item itemvalue="JUnit.IEasyAnimatorModelTest.testToStringText" />
       </list>
     </recent_temporary>
   </component>
@@ -528,46 +519,47 @@
       <workItem from="1532470976326" duration="11817000" />
       <workItem from="1532546300818" duration="12043000" />
       <workItem from="1532616743139" duration="1179000" />
+      <workItem from="1532658950061" duration="6739000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 35m 02s.xml">
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.27 at 00h 27m 41s.xml">
       <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 36m 27s.xml">
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.27 at 00h 28m 30s.xml">
       <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 38m 03s.xml">
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.27 at 00h 29m 35s.xml">
       <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 38m 47s.xml">
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.27 at 00h 30m 27s.xml">
       <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 43m 17s.xml">
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.27 at 00h 32m 14s.xml">
       <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 44m 29s.xml">
-      <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvgEmptyModel - 2018.07.27 at 00h 33m 47s.xml">
+      <configuration name="IEasyAnimatorModelTest.testToStringSvgEmptyModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 51m 08s.xml">
-      <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvgEmptyModel - 2018.07.27 at 00h 34m 48s.xml">
+      <configuration name="IEasyAnimatorModelTest.testToStringSvgEmptyModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.25 at 18h 57m 33s.xml">
-      <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvgEmptyModel - 2018.07.27 at 00h 35m 08s.xml">
+      <configuration name="IEasyAnimatorModelTest.testToStringSvgEmptyModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IEasyAnimatorModelTest_testToStringSvg - 2018.07.26 at 10h 54m 28s.xml">
-      <configuration name="IEasyAnimatorModelTest.testToStringSvg" configurationId="JUnit" />
+    <history-entry file="IEasyAnimatorModelTest_testToStringSvgEmptyModel - 2018.07.27 at 00h 35m 41s.xml">
+      <configuration name="IEasyAnimatorModelTest.testToStringSvgEmptyModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IParserTest_testParse - 2018.07.26 at 16h 29m 00s.xml">
-      <configuration name="IParserTest.testParse" configurationId="JUnit" />
+    <history-entry file="IEasyAnimatorModelTest - 2018.07.27 at 00h 35m 50s.xml">
+      <configuration name="IEasyAnimatorModelTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44393000" />
+    <option name="totallyTimeSpent" value="51132000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="23" width="1364" height="794" extended-state="0" />
+    <frame x="127" y="49" width="1784" height="794" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -578,24 +570,24 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32916668" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22580644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17264573" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -625,6 +617,8 @@
           <caret line="148" column="18" lean-forward="true" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -640,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -785,20 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="31" selection-start-line="31" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/AAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -813,43 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -879,35 +819,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="450">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="738">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -916,32 +839,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="378">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="108">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="306">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="-1091">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -950,22 +880,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/IParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="108">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorModelTest.java">
+    <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="-263">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4615#4616#0" expanded="true" />
-            <element signature="e#4659#4660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="128" column="13" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+          <folding>
+            <element signature="e#3100#3101#0" expanded="true" />
+            <element signature="e#3129#3130#0" expanded="true" />
+            <element signature="e#3296#3297#0" expanded="true" />
+            <element signature="e#3323#3324#0" expanded="true" />
+            <element signature="e#3493#3494#0" expanded="true" />
+            <element signature="e#3523#3524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1169">
+          <caret line="358" column="17" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/IEasyAnimatorModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9072">
+          <caret line="504" lean-forward="true" selection-start-line="504" selection-end-line="504" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
           </folding>
         </state>
       </provider>

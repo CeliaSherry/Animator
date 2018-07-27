@@ -475,8 +475,8 @@ public class IEasyAnimatorModelTest {
   }
 
   /**
-   * Test that the toStringSvg method works correctly with a given speed of two and both
-   * shapes and animations are present.
+   * Test that the toStringSvg method works correctly with a given speed of two and both shapes and
+   * animations are present.
    */
   @Test
   public void testToStringSvg() {
@@ -484,24 +484,127 @@ public class IEasyAnimatorModelTest {
     //adding shapes
     model.addRectangle("R", 200f, 200f, 50f,
             100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addRectangle("R2", 200f, 200f, 20f,
+            20f, 0.1f, 0.2f, 0.0f, 1, 50);
     model.addOval("C", 500f, 100f, 60f,
             30f, 0.0f, 0.0f, 1.0f, 6, 100);
     //adding animations
     model.addMove("R", 200f, 200f,
+            300f, 300f, 10, 50);
+    model.addMove("R2", 200f, 200f,
             300f, 300f, 10, 50);
     model.addMove("C", 500f, 100f,
             500f, 400f, 20, 70);
     model.addMove("R", 300f, 300f,
             200f, 200f, 70, 100);
     model.addChangeColor("C", 0.0f, 0.0f,
-            1.0f, 0.0f, 1.0f, 0.0f, 50, 80);
+            1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
     model.addScaleAnimation("R", 40, 100,
             20, 100, 51, 70);
 
-    //String svgStart = "<svg width=\"700\" height=\"500\" version=\"1.1\"
-    assertEquals("", model.toStringSvg(speed));
 
+    String str1 = "<svg width=\"700\" height=\"500\" version=\"1.1\" "
+            + "xmlns=\"http://www.w3.org/2000/svg\">\n"
+            + "<rect id=\"R\" x=\"200.0\" y=\"200.0\" width=\"50.0\" height=\"100.0\" "
+            + "fill=\"rgb(255,0,0)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"500.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"5000.0ms\" dur=\"20000.0ms\" "
+            + "attributeName=\"x\" from=\"200.0\" to=\"300.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"5000.0ms\" dur=\"20000.0ms\" "
+            + "attributeName=\"y\" from=\"200.0\" to=\"300.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"25500.0ms\" dur=\"9500.0ms\" "
+            + "attributeName=\"width\" from=\"40.0\" to=\"20.0\" repeatCount=\"0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"25500.0ms\" dur=\"9500.0ms\" "
+            + "attributeName=\"height\" from=\"100.0\" to=\"100.0\" repeatCount=\"0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"35000.0ms\" dur=\"15000.0ms\" "
+            + "attributeName=\"x\" from=\"300.0\" to=\"200.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"35000.0ms\" dur=\"15000.0ms\" "
+            + "attributeName=\"y\" from=\"300.0\" to=\"200.0\" fill=\"freeze\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"50000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</rect>\n"
+            + "<rect id=\"R2\" x=\"200.0\" y=\"200.0\" width=\"20.0\" height=\"20.0\" "
+            + "fill=\"rgb(26,51,0)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"500.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"5000.0ms\" dur=\"20000.0ms\" "
+            + "attributeName=\"x\" from=\"200.0\" to=\"300.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"5000.0ms\" dur=\"20000.0ms\" "
+            + "attributeName=\"y\" from=\"200.0\" to=\"300.0\" fill=\"freeze\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"25000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</rect>\n"
+            + "<ellipse id=\"C\" cx=\"500.0\" cy=\"100.0\" rx=\"60.0\" ry=\"30.0\" "
+            + "fill=\"rgb(0,0,255)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"3000.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"10000.0ms\" dur=\"25000.0ms\" "
+            + "attributeName=\"cx\" from=\"500.0\" to=\"500.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeType=\"xml\" begin=\"10000.0ms\" dur=\"25000.0ms\" "
+            + "attributeName=\"cy\" from=\"100.0\" to=\"400.0\" fill=\"freeze\"/>\n"
+            + "<animate attributeName=\"fill\" attributeType=\"XML\" from=\"rgb(0,0,255)\" "
+            + "to=\"rgb(0,255,0)\" begin =\"10000.0ms\" dur=\"30000.0ms\" fill=\"freeze\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"50000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</ellipse>\n"
+            + "</svg>";
+    assertEquals(str1, model.toStringSvg(speed));
   }
 
 
+
+  /**
+   * Test that the toStringSvg method works correctly with a given speed of two and only shapes
+   * are present.
+   */
+  @Test
+  public void testToStringSvgShapesOnly() {
+    int speed = 2;
+    //adding shapes
+    model.addRectangle("R", 200f, 200f, 50f,
+            100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addRectangle("R2", 200f, 200f, 20f,
+            20f, 0.1f, 0.2f, 0.0f, 1, 50);
+    model.addOval("C", 500f, 100f, 60f,
+            30f, 0.0f, 0.0f, 1.0f, 6, 100);
+
+    String str1 = "<svg width=\"700\" height=\"500\" version=\"1.1\" "
+            + "xmlns=\"http://www.w3.org/2000/svg\">\n"
+            + "<rect id=\"R\" x=\"200.0\" y=\"200.0\" width=\"50.0\" height=\"100.0\" "
+            + "fill=\"rgb(255,0,0)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"500.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"50000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</rect>\n"
+            + "<rect id=\"R2\" x=\"200.0\" y=\"200.0\" width=\"20.0\" height=\"20.0\" "
+            + "fill=\"rgb(26,51,0)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"500.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"25000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</rect>\n"
+            + "<ellipse id=\"C\" cx=\"500.0\" cy=\"100.0\" rx=\"60.0\" ry=\"30.0\" "
+            + "fill=\"rgb(0,0,255)\" visibility=\"hidden\">\n"
+            + "<set attributeType=\"xml\" begin=\"3000.0ms\" "
+            + "attributeName=\"visibility\" to=\"visible\"/>\n"
+            + "<set attributeType=\"xml\" begin=\"50000.0ms\" "
+            + "attributeName=\"visibility\" to=\"hidden\"/>\n"
+            + "</ellipse>\n"
+            + "</svg>";
+    assertEquals(str1, model.toStringSvg(speed));
+  }
+
+  /**
+   * Test that toStringSvg works correctly when the model is empty.
+   */
+  @Test
+  public void testToStringSvgEmptyModel() {
+    int speed = 2;
+    String str1 = "<svg width=\"700\" height=\"500\" version=\"1.1\" "
+            + "xmlns=\"http://www.w3.org/2000/svg\">\n"
+            + "</svg>";
+    assertEquals(str1, model.toStringSvg(speed));
+  }
 }

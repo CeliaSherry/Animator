@@ -219,6 +219,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * appearing time, and animations are shown in the order of their staring time. If two shapes
    * appear at the same time or two animations start at the same time, they will shown according to
    * the time they were added to the list.
+   * @return all information stored in this model in string format
    */
   @Override
   public String toString() {
@@ -252,8 +253,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * appear time and disappear time in seconds and a text representation of the animations with
    * the start and end times of the animations in seconds.
    *
-   * @param speed given speed.
-   * @return text representation of the animation.
+   * @param speed given speed
+   * @return text representation of the animation
    */
   @Override
   public String toStringText(int speed) {
@@ -295,12 +296,14 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
             " xmlns=\"http://www.w3.org/2000/svg\">\n";
     for (ITransitionalShape transitionalShape : this.transShapes) {
       result += toStringSvgShapes(transitionalShape.getShapeID());
+      result += transitionalShape.toStringSvgAppear(speed) + "\n";
       for (IAnimation animation : this.animations) {
         if (animation.getShapeID() == transitionalShape.getShapeID()) {
           result += animation.toStringSvg(speed, shapes.get(transitionalShape.getShapeID()))
                   + "\n";
         }
       }
+      result += transitionalShape.toStringSvgDisappear(speed) +"\n";
       result += toStringSvgShapesClose(transitionalShape.getShapeID());
     }
     result += "</svg>";
@@ -334,7 +337,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
               + "\" ry=\"" + shape.getScale().get(1).getValue() + "\"";
     }
     result += " fill=\"rgb(" + shape.getRed() + "," + shape.getGreen() + ","
-            + shape.getBlue() + ")\" visibility=\"visible\">\n";
+            + shape.getBlue() + ")\" visibility=\"hidden\">\n";
     return result;
   }
 

@@ -1,6 +1,7 @@
 package animation;
 
 import shape.IShape;
+import shape.ShapeType;
 
 /**
  * This class represents a scaling animation form the original size to a bigger or smaller one at
@@ -74,24 +75,87 @@ public class ScaleAnimation extends AAnimation {
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
-    result += "<animateTransform attributeName=\"transform\" type=\"scale\" from=\""
-            + "("
-            + this.fromSx
-            + " "
-            + this.fromSy
-            + ")\""
-            + " to=\""
-            + "("
-            + this.toSx
-            + " "
-            + this.toSy
-            + ")\""
-            + " dur=\""
-            + this.timeInterval * 1.0 / speed + "s\""
-            + " repeatCount=\"0\"/>";
+
+    result += "<animate attributeType=\"xml\" begin=\""
+            + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
+            + this.timeInterval * 1000.0 / speed + "ms\" "
+            + this.toStringSvgScaleXChange(shape)
+            + " fill=\"freeze\"/>\n";
+    result += "<animate attributeType=\"xml\" begin=\""
+            + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
+            + this.timeInterval * 1000.0 / speed + "ms\" "
+            + this.toStringSvgScaleYChange(shape)
+            + " fill=\"freeze\"/>";
 
     return result;
   }
 
+
+
+  /**
+   * Returns a string that represents the portion of an Svg file that contains information
+   * about the change in X during the scale change.  If the shape is a rectangle, the attribute
+   * and start and end positions are filled out accordingly.  If the shape is an oval, the
+   * attribute name and start and end positions are filled out accordingly.
+   *
+   * @param shape given IShape.
+   * @return String that represents the change in X during a move according to an Svg file.
+   */
+  private String toStringSvgScaleXChange(IShape shape) {
+    String result = "";
+    if (shape.getShapeType() == ShapeType.Rectangle) {
+      result += "attributeName=\"width\" from=\""
+              + this.fromSx
+              + "\""
+              + " to=\""
+              + this.toSx
+              + "\""
+              + " repeatCount=\"0\"";
+
+    } else if (shape.getShapeType() == ShapeType.Oval) {
+      result += "attributeName=\"rx\" from=\""
+              + this.fromSx
+              + "\""
+              + " to=\""
+              + this.toSx
+              + "\""
+              + " repeatCount=\"0\"";
+
+    }
+    return result;
+  }
+
+
+  /**
+   * Returns a string that represents the portion of an Svg file that contains information
+   * about the change in Y during the scale change.  If the shape is a rectangle, the attribute
+   * and start and end positions are filled out accordingly.  If the shape is an oval, the
+   * attribute name and start and end positions are filled out accordingly.
+   *
+   * @param shape given IShape.
+   * @return String that represents the change in Y during a move according to an Svg file.
+   */
+  private String toStringSvgScaleYChange(IShape shape) {
+    String result = "";
+    if (shape.getShapeType() == ShapeType.Rectangle) {
+      result += "attributeName=\"height\" from=\""
+              + this.fromSy
+              + "\""
+              + " to=\""
+              + this.toSy
+              + "\""
+              + " repeatCount=\"0\"";
+    } else if (shape.getShapeType() == ShapeType.Oval) {
+      result += "attributeName=\"cy\" from=\""
+              + this.fromSy
+              + "\""
+              + " to=\""
+              + this.toSy
+              + "\""
+              + " dur=\""
+              + " repeatCount=\"0\"";
+    }
+    return result;
+  }
 
 }

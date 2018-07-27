@@ -6,7 +6,17 @@ package transhape;
  * disappearing.
  */
 public interface ITransitionalShape {
+  /**
+   * Return the appearing time of the shape following Svg format.
+   * @return the appearing time of the shape following Svg format
+   */
+  String toStringSvgAppear(int speed);
 
+  /**
+   * Return the disappearing time of the shape following Svg format.
+   * @return the disappearing time of the shape following Svg format
+   */
+  String toStringSvgDisappear(int speed);
 
   /**
    * Getter for the shapeID field.

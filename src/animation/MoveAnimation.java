@@ -69,17 +69,17 @@ public class MoveAnimation extends AAnimation {
   @Override
   public String toStringSvg(int speed, IShape shape) {
     String result = "";
-    result += "<animate attributeType = \"xml\" begin=\""
+    result += "<animate attributeType=\"xml\" begin=\""
             + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
             + this.timeInterval * 1000.0 / speed + "ms\" "
             + this.toStringSvgMoveXChange(shape)
-            + " fill=\"remove\" />\n";
+            + " fill=\"freeze\"/>\n";
 
-    result += "<animate attributeType = \"xml\" begin=\""
+    result += "<animate attributeType=\"xml\" begin=\""
             + this.getStartTime() * 1000.0 / speed + "ms\" dur=\""
             + this.timeInterval * 1000.0 / speed + "ms\" "
             + this.toStringSvgMoveYChange(shape)
-            + " fill=\"remove\" />";
+            + " fill=\"freeze\"/>";
 
     return result;
   }

@@ -52,6 +52,54 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
   }
 
   /**
+   * Return the appearing time of the shape following Svg format.
+   *
+   * @return the appearing time of the shape following Svg format
+   * @throws IllegalArgumentException if speed <= 0
+   */
+  @Override
+  public String toStringSvgAppear(int speed) throws IllegalArgumentException {
+    validSpeed(speed);
+    String result = "";
+    result += "<set attributeType=\"xml\" begin=\""
+            + this.appearTime * 1000.0 / speed
+            + "ms\" attributeName=\"visibility\""
+            + " to=\"visible\"/>";
+    return result;
+  }
+
+  /**
+   * Return the disappearing time of the shape following Svg format.
+   *
+   * @return the disappearing time of the shape following Svg format
+   * @throws IllegalArgumentException if speed <= 0
+   */
+  @Override
+  public String toStringSvgDisappear(int speed) throws IllegalArgumentException {
+    validSpeed(speed);
+    String result = "";
+    result += "<set attributeType=\"xml\" begin=\""
+            + this.disappearTime * 1000.0 / speed
+            + "ms\" attributeName=\"visibility\""
+            + " to=\"hidden\"/>";
+    return result;
+  }
+
+  /**
+   * Throw an exception if a given speed is not valid (<= 0).
+   *
+   * @param speed given speed
+   * @throws IllegalArgumentException if the give speed is <= 0
+   */
+  private void validSpeed(int speed) throws IllegalArgumentException {
+    if (speed <= 0) {
+      throw new IllegalArgumentException("speed must be a positive number!");
+    }
+
+  }
+
+
+  /**
    * Getter for the shapeID field.
    *
    * @return the shapeID of this ITransitionalShape
