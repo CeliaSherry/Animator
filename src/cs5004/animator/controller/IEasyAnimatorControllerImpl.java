@@ -40,18 +40,18 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       throw new IllegalArgumentException("Cannot Convert Speed to Integer");
     }
     if(speedInt <= 0) {
-      throw new IllegalArgumentException("Cannot Have Negative Time");
+      throw new IllegalArgumentException("Cannot Have Negative Speed");
     }
 
-    if(viewMode == "text") {
+    if(viewMode.equals("text")) {
         modelInfo = model.toStringText(speedInt);
-    } else if(viewMode == "svg") {
+    } else if(viewMode.equals("svg")) {
         modelInfo = model.toStringSvg(speedInt);
     } else {
       throw new IllegalArgumentException("Invalid view mode!");
     }
 
-    if(output == "System.out") {
+    if(output.equals("System.out")) {
       view = new EasyAnimatorViewImplOut(modelInfo);
     }
     else {

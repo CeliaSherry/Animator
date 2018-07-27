@@ -1,17 +1,17 @@
 package parser;
 
 /**
- * This class represents a Parser class.  This takes a given array with commands in any order
- * and returns an array with the commands in a specific order: -if, -iv, -i, -speed.
+ * This class represents a Parser class.  This takes a given array with commands in any order and
+ * returns an array with the commands in a specific order: -if, -iv, -i, -speed.
  */
 public class Parser implements IParser {
 
   private String newArray[];
 
   /**
-   * Constructs a Parser object by creating a String array.  Sets the positions that represent
-   * the input file and the view to null.  Sets index 2 to System.out, the default output, and
-   * index 3 to 1, the default speed.
+   * Constructs a Parser object by creating a String array.  Sets the positions that represent the
+   * input file and the view to null.  Sets index 2 to System.out, the default output, and index 3
+   * to 1, the default speed.
    */
   public Parser() {
     //-if, -iv, -o, -speed
@@ -35,8 +35,8 @@ public class Parser implements IParser {
   }
 
   /**
-   * Takes in command line inputs of -iv, -if, -o, and -speed and puts them in the correct
-   * order in a returned array.
+   * Takes in command line inputs of -iv, -if, -o, and -speed and puts them in the correct order in
+   * a returned array.
    *
    * @param cmdArray given array that represents the command line input.
    * @return String array with the input in the correct order.
@@ -82,13 +82,15 @@ public class Parser implements IParser {
           break;
         default:
           throw new IllegalArgumentException("Command Not Recognized");
-
       }
     }
+
+
     if (this.newArray[0] == null || this.newArray[1] == null) {
       throw new IllegalArgumentException("Animation Name or View Not Provided");
     }
     if (!(this.newArray[1].equals("text") || this.newArray[1].equals("svg"))) {
+
       throw new IllegalArgumentException("Invalid View");
     }
     if (this.newArray[2].equals("out")) {
