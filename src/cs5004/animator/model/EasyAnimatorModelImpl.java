@@ -282,6 +282,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return result + temp.substring(1);
   }
 
+
   /**
    * Takes a speed and IShape and returns the svg representation of the model in String form.
    * Returns a String with the svg representation of each shape and its animations with the
@@ -298,7 +299,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       result += toStringSvgShapes(transitionalShape.getShapeID());
       result += transitionalShape.toStringSvgAppear(speed) + "\n";
       for (IAnimation animation : this.animations) {
-        if (animation.getShapeID() == transitionalShape.getShapeID()) {
+        if (animation.getShapeID().equals(transitionalShape.getShapeID())) {
           result += animation.toStringSvg(speed, shapes.get(transitionalShape.getShapeID()))
                   + "\n";
         }

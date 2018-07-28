@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
 
@@ -551,7 +552,6 @@ public class IEasyAnimatorModelTest {
             + "</svg>";
     assertEquals(str1, model.toStringSvg(speed));
   }
-
 
 
   /**

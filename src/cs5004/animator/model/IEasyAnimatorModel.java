@@ -1,13 +1,16 @@
 package cs5004.animator.model;
 
 
+import java.util.List;
+
+import animation.IAnimation;
+
 /**
  * This interface represents an easy animator tool that creates and stores information of a series
  * of animations on different shapes by implementing the IEasyAnimatorModel interface. It supports
  * methods such as returning the description of the animations and the shapes in string form.
  */
 public interface IEasyAnimatorModel {
-
   /**
    * Return all information stored in this model, including all shapes with appearing and
    * disappearing times, and all animations taking place. Shapes are shown in the order of their

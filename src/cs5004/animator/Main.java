@@ -41,6 +41,7 @@ public class Main {
     } catch (Exception e) {
       throw new IllegalArgumentException("File Not Found");
     }
+
     IEasyAnimatorController controller = new IEasyAnimatorControllerImpl();
 
     //view,output file, speed
