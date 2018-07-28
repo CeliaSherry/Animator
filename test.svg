@@ -1,8 +1,0 @@
-<svg width="700" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
-<rect id="disk1" x="190.0" y="161.0" width="20.0" height="11.0" fill="rgb(112,87,150)" visibility="hidden">
-<set attributeType="xml" begin="500.0ms" attributeName="visibility" to="visible"/>
-<animate attributeType="xml" begin="12500.0ms" dur="5000.0ms" attributeName="x" from="190.0" to="190.0" fill="freeze"/>
-<animate attributeType="xml" begin="12500.0ms" dur="5000.0ms" attributeName="y" from="161.0" to="50.0" fill="freeze"/>
-<set attributeType="xml" begin="4615000.0ms" attributeName="visibility" to="hidden"/>
-</rect>
-</svg>
