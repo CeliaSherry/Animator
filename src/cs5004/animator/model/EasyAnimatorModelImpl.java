@@ -1,6 +1,6 @@
 package cs5004.animator.model;
 
-import java.awt.*;
+import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -219,6 +219,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    * appearing time, and animations are shown in the order of their staring time. If two shapes
    * appear at the same time or two animations start at the same time, they will shown according to
    * the time they were added to the list.
+   *
    * @return all information stored in this model in string format
    */
   @Override
@@ -304,7 +305,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
                   + "\n";
         }
       }
-      result += transitionalShape.toStringSvgDisappear(speed) +"\n";
+      result += transitionalShape.toStringSvgDisappear(speed) + "\n";
       result += toStringSvgShapesClose(transitionalShape.getShapeID());
     }
     result += "</svg>";

@@ -1,6 +1,9 @@
 package cs5004.animator;
 
-import javax.swing.*;
+
+
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 import builder.AnimationFileReader;
 import cs5004.animator.controller.IEasyAnimatorController;
@@ -20,16 +23,16 @@ public class Main {
    * It then passes control to the controller along with the output file, input file,
    * view type, and speed.
    *
-   * @param Args
+   * @param args given input array.
    */
-  public static void main(String []Args) {
+  public static void main(String []args) {
 
     IEasyAnimatorModel model;
     String[] argsInOrder = null;
 
     IParser p = new Parser();
     try {
-      argsInOrder = p.changeOrder(Args);
+      argsInOrder = p.changeOrder(args);
     } catch (IllegalArgumentException e) {
 
       JOptionPane.showMessageDialog(new JFrame(), "Invalid command line input!");

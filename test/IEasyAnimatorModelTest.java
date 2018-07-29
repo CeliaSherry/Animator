@@ -515,9 +515,11 @@ public class IEasyAnimatorModelTest {
             + "<animate attributeType=\"xml\" begin=\"5000.0ms\" dur=\"20000.0ms\" "
             + "attributeName=\"y\" from=\"200.0\" to=\"300.0\" fill=\"freeze\"/>\n"
             + "<animate attributeType=\"xml\" begin=\"25500.0ms\" dur=\"9500.0ms\" "
-            + "attributeName=\"width\" from=\"40.0\" to=\"20.0\" repeatCount=\"0\" fill=\"freeze\"/>\n"
+            + "attributeName=\"width\" from=\"40.0\" to=\"20.0\" repeatCount=\"0\" " +
+            "fill=\"freeze\"/>\n"
             + "<animate attributeType=\"xml\" begin=\"25500.0ms\" dur=\"9500.0ms\" "
-            + "attributeName=\"height\" from=\"100.0\" to=\"100.0\" repeatCount=\"0\" fill=\"freeze\"/>\n"
+            + "attributeName=\"height\" from=\"100.0\" to=\"100.0\" repeatCount=\"0\" " +
+            "fill=\"freeze\"/>\n"
             + "<animate attributeType=\"xml\" begin=\"35000.0ms\" dur=\"15000.0ms\" "
             + "attributeName=\"x\" from=\"300.0\" to=\"200.0\" fill=\"freeze\"/>\n"
             + "<animate attributeType=\"xml\" begin=\"35000.0ms\" dur=\"15000.0ms\" "

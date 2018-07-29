@@ -3,7 +3,6 @@ import cs5004.animator.controller.IEasyAnimatorControllerImpl;
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
 
-import static org.junit.Assert.assertEquals;
 
 /**
  * JUnit test for IEasyAnimatorController interface. It tests the start method of the controller
@@ -43,8 +42,8 @@ public class IEasyAnimatorControllerTest {
   /**
    * Test the start method with valid inputs: "text" view, "System.out", and speed of 2.
    */
-  public void testValidStartText(){
-    controller.start(model,"text","System.out", "2");
+  public void testValidStartText() {
+    controller.start(model, "text", "System.out", "2");
 
   }
 
@@ -52,11 +51,10 @@ public class IEasyAnimatorControllerTest {
   /**
    * Test the start method with valid inputs: "text" view, "System.out", and speed of 2.
    */
-  public void testValidStartSvg(){
-    controller.start(model,"svg","System.out", "2");
+  public void testValidStartSvg() {
+    controller.start(model,
+            "svg", "System.out", "2");
   }
-
-
 
 
 }
