@@ -59,9 +59,9 @@ public interface ITransitionalShape {
    */
   String toStringText(int speed);
 
-
+/*
   ITransitionalShape getClone();
-
+*/
   boolean isPresent(int time);
 
 

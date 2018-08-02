@@ -89,7 +89,8 @@ public class Parser implements IParser {
     if (this.newArray[0] == null || this.newArray[1] == null) {
       throw new IllegalArgumentException("Animation Name or View Not Provided");
     }
-    if (!(this.newArray[1].equals("text") || this.newArray[1].equals("svg"))) {
+    if (!(this.newArray[1].equals("text") || this.newArray[1].equals("svg")
+            || this.newArray[1].equals("visual"))) {
 
       throw new IllegalArgumentException("Invalid View");
     }

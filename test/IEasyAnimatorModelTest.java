@@ -609,4 +609,28 @@ public class IEasyAnimatorModelTest {
             + "</svg>";
     assertEquals(str1, model.toStringSvg(speed));
   }
+
+  @Test
+  public void testShapesAtFrame() {
+    model.addRectangle("R", 200f, 200f, 50f,
+          100f, 1.0f, 0.0f, 0.0f, 1, 100);
+    model.addRectangle("R2", 200f, 200f, 20f,
+            20f, 0.1f, 0.2f, 0.0f, 1, 50);
+    model.addOval("C", 500f, 100f, 60f,
+            30f, 0.0f, 0.0f, 1.0f, 6, 100);
+    //adding animations
+    model.addMove("R", 200f, 200f,
+           300f, 300f, 10, 50);
+    model.addMove("R2", 200f, 200f,
+           300f, 300f, 10, 50);
+    model.addMove("C", 500f, 100f,
+            500f, 400f, 20, 70);
+    model.addMove("R", 300f, 300f,
+           200f, 200f, 70, 100);
+    model.addChangeColor("C", 0.0f, 0.0f,
+           1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
+    model.addScaleAnimation("R", 40, 100,
+            20, 100, 51, 70);
+    model.shapesAtFrame(2);
+  }
 }

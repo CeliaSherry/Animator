@@ -158,7 +158,6 @@ public class MoveAnimation extends AAnimation {
     double currentY = formula(time,this.startTime,this.endTime,startY,endY);
 
 
-
     shape.setPosition(new Pair<>(shape.getPositionName(),
             new Point2D.Double(currentX,currentY)));
   }

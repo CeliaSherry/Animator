@@ -156,11 +156,12 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
             this.disappearTime * 1.0 / speed) + "s\n\n";
     return result;
   }
-
+/*
   @Override
   public ITransitionalShape getClone(){
     return new ITransitionalShapeImpl(this.shapeID,this.appearTime, this.disappearTime);
   }
+  */
 
 
   @Override

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -322,7 +323,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
  private Map<String, IShape> shapesPresentAtFrame(int time) {
     //list of clones of shapes present at time
-    Map<String, IShape> actualShapes = new HashMap<>();
+    Map<String, IShape> actualShapes = new LinkedHashMap<>();
     for(ITransitionalShape transShape : transShapes) {
       if(transShape.isPresent(time)) {
         actualShapes.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
@@ -339,7 +340,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       String id = animation.getShapeID();
       animation.updateAtTime(this.shapesPresentAtFrame(time).get(id),time);
     }
-
+    
     for (Map.Entry<String, IShape> shape: this.shapesPresentAtFrame(time).entrySet()) {
       shapesAtTime.add(shape.getValue());
     }
