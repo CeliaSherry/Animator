@@ -2,23 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83cc8b80-b1c2-48f9-84cc-03bd9d95e233" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Animator_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Animator_jar2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Animator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Animator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/AAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/IAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/IAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/MoveAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/MoveAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/ScaleAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/ScaleAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shape/AShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shape/AShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shape/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shape/IShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transhape/ITransitionalShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transhape/ITransitionalShapeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/AAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/AnimType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/ColorChangeAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/IAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/MoveAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/animation/ScaleAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$ChangeColorInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$Inputable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$MoveInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$OvalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$RectangleInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$ScaleByInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader$ShapeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/AnimationFileReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/builder/TweenModelBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/controller/IEasyAnimatorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/controller/IEasyAnimatorControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/model/EasyAnimatorModelImpl$TweenModelBuilderImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/model/EasyAnimatorModelImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/model/IEasyAnimatorModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/view/EasyAnimatorViewImplFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/view/EasyAnimatorViewImplOut.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/view/IEasyAnimatorView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/parser/IParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/parser/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/shape/AShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/shape/IShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/shape/Oval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/shape/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/shape/ShapeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/transhape/ITransitionalShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animator/transhape/ITransitionalShapeImpl.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,69 +49,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="IAnimation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="123" column="2" selection-start-line="123" selection-start-column="2" selection-end-line="123" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AAnimation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/animation/AAnimation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IShape.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shape/IShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AShape.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shape/AShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1337">
-              <caret line="221" column="3" lean-forward="true" selection-start-line="221" selection-start-column="3" selection-end-line="221" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEasyAnimatorModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="173" selection-start-line="173" selection-end-line="173" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EasyAnimatorModelImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="333" column="4" selection-start-line="333" selection-start-column="4" selection-end-line="333" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoveAnimation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="149" selection-start-line="149" selection-end-line="163" selection-end-column="3" />
+            <state relative-caret-position="2475">
+              <caret line="232" selection-start-line="232" selection-end-line="232" />
             </state>
           </provider>
         </entry>
@@ -99,31 +62,103 @@
       <file leaf-file-name="ScaleAnimation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="188" selection-end-column="3" />
+            <state relative-caret-position="2400">
+              <caret line="191" selection-start-line="191" selection-end-line="191" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorChangeAnimation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ColorChangeAnimation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="147" column="3" lean-forward="true" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
+            <state relative-caret-position="120">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnimType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/animation/AnimType.java">
+      <file leaf-file-name="IEasyAnimatorView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasyAnimatorViewImplOut.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasyAnimatorViewGui.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDrawingPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
+                <element signature="e#323#324#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShapeType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shape/ShapeType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IEasyAnimatorControllerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasyAnimatorViewImplFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,6 +177,9 @@
         <option value="$PROJECT_DIR$/src/animation/MoveAnimation.java" />
         <option value="$PROJECT_DIR$/src/animation/ScaleAnimation.java" />
         <option value="$PROJECT_DIR$/src/animation/ColorChangeAnimation.java" />
+        <option value="$PROJECT_DIR$/src/cs5004/animator/view/AnimatorViewImpl.java" />
+        <option value="$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java" />
+        <option value="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java" />
       </list>
     </option>
   </component>
@@ -155,8 +193,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="113" />
-    <option name="y" value="100" />
+    <option name="x" value="93" />
+    <option name="y" value="75" />
     <option name="width" value="1368" />
     <option name="height" value="794" />
   </component>
@@ -165,6 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,6 +227,12 @@
               <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
               <item name="Animator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Animator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="animator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -194,7 +240,27 @@
               <item name="Animator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="animator" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Animator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="animator" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Animator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="animator" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Animator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
@@ -208,18 +274,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="transhape" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Animator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Animator" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
@@ -297,35 +367,36 @@
     <option name="totallyTimeSpent" value="8622000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="100" width="1368" height="794" extended-state="0" />
+    <frame x="33" y="340" width="1368" height="794" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +406,82 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/AAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3495">
+          <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shape/IShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shape/AShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2475">
+          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="173" selection-start-line="173" selection-end-line="173" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4740">
+          <caret line="333" column="4" selection-start-line="333" selection-start-column="4" selection-end-line="333" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/AnimType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/shape/Oval.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -365,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/IEasyAnimatorModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
+        <state relative-caret-position="2565">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -375,64 +522,124 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/model/EasyAnimatorModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="333" column="4" selection-start-line="333" selection-start-column="4" selection-end-line="333" selection-end-column="4" />
+        <state relative-caret-position="5595">
+          <caret line="373" column="4" selection-start-line="373" selection-start-column="4" selection-end-line="373" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/IAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="123" column="2" selection-start-line="123" selection-start-column="2" selection-end-line="123" selection-end-column="2" />
+        <state relative-caret-position="1785">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shape/IShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        <state relative-caret-position="1125">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/AnimType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="120">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/AAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="3495">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/MoveAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="149" selection-start-line="149" selection-end-line="163" selection-end-column="3" />
+        <state relative-caret-position="2085">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/ScaleAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="188" selection-end-column="3" />
+        <state relative-caret-position="2400">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shape/AShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1337">
-          <caret line="221" column="3" lean-forward="true" selection-start-line="221" selection-start-column="3" selection-end-line="221" selection-end-column="3" />
+        <state relative-caret-position="2475">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/animation/ColorChangeAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="147" column="3" lean-forward="true" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplOut.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewImplFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shape/ShapeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/IEasyAnimatorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
