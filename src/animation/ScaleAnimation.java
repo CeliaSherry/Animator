@@ -1,5 +1,10 @@
 package animation;
 
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.util.Pair;
 import shape.IShape;
 import shape.ShapeType;
 
@@ -156,6 +161,31 @@ public class ScaleAnimation extends AAnimation {
               + " repeatCount=\"0\"";
     }
     return result;
+  }
+
+
+  @Override
+  public IAnimation getClone(){
+    return new ScaleAnimation(startTime,endTime,shapeID,
+            this.fromSx, fromSy, toSx, toSy);
+  }
+
+
+
+  @Override
+  public void updateAtTime(IShape shape, int time) {
+    double startWidth = this.fromSx;
+    double startHeight = this.fromSy;
+    double endWidth = this.toSx;
+    double endHeight = this.toSy;
+
+    double currentSx = formula(time,this.startTime,this.endTime,startWidth,endWidth);
+    double currentSy = formula(time,this.startTime,this.endTime,startHeight,endHeight);
+
+    List<Pair<String, Double>> newScale = new ArrayList<>();
+    newScale.add(new Pair<>(shape.getScale().get(0).getKey(), currentSx));
+    newScale.add(new Pair<>(shape.getScale().get(1).getKey(), currentSy));
+    shape.setScale(newScale);
   }
 
 }

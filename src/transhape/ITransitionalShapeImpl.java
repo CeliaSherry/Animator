@@ -157,5 +157,15 @@ public class ITransitionalShapeImpl implements ITransitionalShape {
     return result;
   }
 
+  @Override
+  public ITransitionalShape getClone(){
+    return new ITransitionalShapeImpl(this.shapeID,this.appearTime, this.disappearTime);
+  }
+
+
+  @Override
+  public boolean isPresent(int time){
+    return time >= this.appearTime && time <= this.disappearTime;
+  }
 
 }

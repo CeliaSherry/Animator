@@ -114,4 +114,37 @@ public class ColorChangeAnimation extends AAnimation {
     return result;
   }
 
+
+
+  @Override
+  public IAnimation getClone(){
+
+    float[] tempColorStart = new float[3];
+    float[] tempColorEnd = new float[3];
+
+    startColor.getColorComponents(tempColorStart);
+    endColor.getColorComponents(tempColorEnd);
+    return new ColorChangeAnimation(startTime,endTime,shapeID,
+            new Color(tempColorStart[0], tempColorStart[1], tempColorStart[2]),
+            new Color(tempColorEnd[0], tempColorEnd[1], tempColorEnd[2]));
+  }
+
+
+
+  @Override
+  public void updateAtTime(IShape shape, int time) {
+    double startRed = this.startColor.getRed();
+    double startGreen = this.startColor.getGreen();
+    double startBlue = this.startColor.getBlue();
+    double endRed = this.endColor.getRed();
+    double endGreen = this.endColor.getGreen();
+    double endBlue = this.endColor.getBlue();
+
+    double currentRed = formula(time,this.startTime,this.endTime,startRed,endRed);
+    double currentGreen = formula(time,this.startTime,this.endTime,startGreen,endGreen);
+    double currentBlue = formula(time,this.startTime,this.endTime,startBlue,endBlue);
+
+    shape.setColor(new Color((int)currentRed, (int)currentGreen, (int)currentBlue));
+  }
+
 }

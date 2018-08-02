@@ -2,6 +2,7 @@ package animation;
 
 import java.awt.geom.Point2D;
 
+import javafx.util.Pair;
 import shape.IShape;
 import shape.ShapeType;
 
@@ -137,6 +138,39 @@ public class MoveAnimation extends AAnimation {
     }
     return result;
   }
+
+
+  @Override
+  public IAnimation getClone(){
+    return new MoveAnimation(startTime,endTime,shapeID,
+            new Point2D.Double(this.startPosition.getX(), this.startPosition.getY()),
+            new Point2D.Double(this.endPosition.getX(), this.endPosition.getY()));
+  }
+
+  @Override
+  public void updateAtTime(IShape shape, int time) {
+    double startX = startPosition.getX();
+    double startY = startPosition.getY();
+    double endX = endPosition.getX();
+    double endY = endPosition.getY();
+
+    double currentX = formula(time,this.startTime,this.endTime,startX,endX);
+    double currentY = formula(time,this.startTime,this.endTime,startY,endY);
+
+
+
+    shape.setPosition(new Pair<>(shape.getPositionName(),
+            new Point2D.Double(currentX,currentY)));
+  }
+
+
+
+
+
+
+
+
+
 
 
 }

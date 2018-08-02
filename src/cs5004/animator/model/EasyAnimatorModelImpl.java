@@ -41,6 +41,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   //keep records of the time that the last shape disappears
   private int lastDisappearTime = 0;
 
+
   /**
    * Constructor for the EasyAnimatorModelImpl class. It initializes a new HashMap to store the
    * shape and ID combination, an ArrayList to store the appear and disappear time of the shapes,
@@ -311,6 +312,44 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     result += "</svg>";
     return result;
   }
+
+
+  /**
+   * Return the shapes that are present at instance t.
+   * @param time
+   * @return
+   */
+
+ private Map<String, IShape> shapesPresentAtFrame(int time) {
+    //list of clones of shapes present at time
+    Map<String, IShape> actualShapes = new HashMap<>();
+    for(ITransitionalShape transShape : transShapes) {
+      if(transShape.isPresent(time)) {
+        actualShapes.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
+      }
+    }
+    return actualShapes;
+  }
+
+  @Override
+  public List<IShape> shapesAtFrame(int time) {
+    List<IShape> shapesAtTime = new ArrayList<>();
+
+    for(IAnimation animation: animations) {
+      String id = animation.getShapeID();
+      animation.updateAtTime(this.shapesPresentAtFrame(time).get(id),time);
+    }
+
+    for (Map.Entry<String, IShape> shape: this.shapesPresentAtFrame(time).entrySet()) {
+      shapesAtTime.add(shape.getValue());
+    }
+
+    return shapesAtTime;
+  }
+
+
+
+
 
   /**
    * Takes a shapeId and adds the shape specific information for the shape to the beginning of the
@@ -652,6 +691,9 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       return (T) model;
     }
   }
+
+
+
 
 
 }

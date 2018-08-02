@@ -119,4 +119,8 @@ public interface IAnimation {
   String toStringSvg(int speed, IShape shape);
 
 
+  IAnimation getClone();
+
+  void updateAtTime(IShape shape, int time);
+
 }

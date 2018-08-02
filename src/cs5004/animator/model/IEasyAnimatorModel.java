@@ -1,6 +1,10 @@
 package cs5004.animator.model;
 
 
+import java.util.List;
+import java.util.Map;
+
+import shape.IShape;
 
 /**
  * This interface represents an easy animator tool that creates and stores information of a series
@@ -168,4 +172,5 @@ public interface IEasyAnimatorModel {
    */
   String toStringSvg(int speed);
 
+  List<IShape> shapesAtFrame(int time);
 }

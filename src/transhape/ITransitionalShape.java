@@ -1,6 +1,8 @@
 package transhape;
 
 
+import shape.IShape;
+
 /**
  * This interface represents a shape of a certain ID in transition phases, such as appearing and
  * disappearing.
@@ -56,6 +58,11 @@ public interface ITransitionalShape {
    * @return text representation of the TransitionalShape.
    */
   String toStringText(int speed);
+
+
+  ITransitionalShape getClone();
+
+  boolean isPresent(int time);
 
 
 

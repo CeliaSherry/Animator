@@ -242,5 +242,17 @@ public abstract class AAnimation implements IAnimation {
     return !(this.endTime <= other.getStartTime() || this.startTime >= other.getEndTime());
   }
 
+  @Override
+  public abstract IAnimation getClone();
+
+  @Override
+  public abstract void updateAtTime(IShape shape, int time);
+
+  public static double formula(int currentTime, int startTime, int endTime,
+                        double startValue, double endValue) {
+    double leftValue = ((endTime - currentTime) / (endTime - startTime)) * startValue;
+    double rightValue = ((currentTime - startTime) / (endTime - startTime)) * endValue;
+    return leftValue + rightValue;
+  }
 
 }

@@ -1,5 +1,6 @@
 package shape;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.List;
 
@@ -70,6 +71,16 @@ public interface IShape {
    */
   ShapeType getShapeType();
 
+
+
+IShape getClone();
+
+
+  void setColor(Color color);
+
+  void setPosition(Pair<String, Point2D.Double> position);
+
+  void setScale(List<Pair<String, Double>> scale);
 
 
 
