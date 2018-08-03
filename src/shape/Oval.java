@@ -32,6 +32,17 @@ public class Oval extends AShape {
 
   }
 
+  @Override
+  public IShape getClone() {
+    float[] tempColor = new float[3];
+    color.getColorComponents(tempColor);
+      return new Oval(new Point2D.Double(this.position.getValue().getX(),
+              this.position.getValue().getY()),
+              new Color(tempColor[0], tempColor[1], tempColor[2]),
+              this.getScale().get(0).getValue(),
+              this.getScale().get(1).getValue());
+  }
+
 
 
 }

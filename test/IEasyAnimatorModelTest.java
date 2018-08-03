@@ -631,6 +631,6 @@ public class IEasyAnimatorModelTest {
            1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
     model.addScaleAnimation("R", 40, 100,
             20, 100, 51, 70);
-    model.shapesAtFrame(2);
+    model.shapesAtFrame(0);
   }
 }

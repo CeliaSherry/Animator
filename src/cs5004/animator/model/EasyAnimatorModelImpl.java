@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -323,27 +324,30 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
  private Map<String, IShape> shapesPresentAtFrame(int time) {
     //list of clones of shapes present at time
-    Map<String, IShape> actualShapes = new LinkedHashMap<>();
+    Map<String, IShape> shapesPresentCopy = new LinkedHashMap<>();
     for(ITransitionalShape transShape : transShapes) {
       if(transShape.isPresent(time)) {
-        actualShapes.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
+        shapesPresentCopy.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
       }
     }
-    return actualShapes;
+    return shapesPresentCopy;
   }
 
   @Override
   public List<IShape> shapesAtFrame(int time) {
-    List<IShape> shapesAtTime = new ArrayList<>();
 
-    for(IAnimation animation: animations) {
-      String id = animation.getShapeID();
-      animation.updateAtTime(this.shapesPresentAtFrame(time).get(id),time);
-    }
-    
-    for (Map.Entry<String, IShape> shape: this.shapesPresentAtFrame(time).entrySet()) {
+    List<IShape> shapesAtTime = new ArrayList<>();
+    Map<String, IShape> shapesPresentCopy = this.shapesPresentAtFrame(time);
+
+    for (Map.Entry<String, IShape> shape: shapesPresentCopy.entrySet()) {
       shapesAtTime.add(shape.getValue());
     }
+
+   for (IAnimation animation : animations) { //need to update exact the same current shape object
+    if (animation.isAnimationPresent(time)) {//check if animation is valid at this time
+      animation.updateAtTime(shapesPresentCopy.get(animation.getShapeID()), time);
+    }
+  }
 
     return shapesAtTime;
   }

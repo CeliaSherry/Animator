@@ -2,6 +2,7 @@ package cs5004.animator.view;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.*;
 
@@ -11,8 +12,14 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
   private static int width = 800;
   private static int height = 800;
 
-  MyDrawingPanel drawingPanel = new MyDrawingPanel();
+  private final MyDrawingPanel drawingPanel = new MyDrawingPanel();
+
   public EasyAnimatorViewGui() {
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    add(drawingPanel);
+    setSize(new Dimension(width,height));
+    setVisible(true);
+
     //setSize(new Dimension(width,height));
     //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     //setVisible(true);
@@ -25,11 +32,12 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
 
   @Override
   public void render() throws IllegalArgumentException {
-    JFrame frame = new JFrame();
+   /* JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.add(this.drawingPanel);
     frame.setSize(width,height);
     frame.setVisible(true);
+    */
 
   }
 

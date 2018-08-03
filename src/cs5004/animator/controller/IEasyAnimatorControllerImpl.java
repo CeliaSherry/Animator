@@ -64,16 +64,17 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       view.render();
     } else if(viewMode.equals("visual")) {
       view = new EasyAnimatorViewGui();
-      ((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(3));
-      view.render();
-/*
+     //((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(20));
+     //view.render();
+
+
       timer = new Timer(1000 / speedInt, new ActionListener() {
         int frameTick = 0;
         @Override
         public void actionPerformed(ActionEvent e) {
           ((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(frameTick));
           frameTick++;
-          view.render();
+          //view.render();
           }
           //need to start timer after it's created
           //timer.start();
@@ -81,17 +82,11 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
           //myWindow.render(new ShapeHolder(model.getShapes(frameTick)));
         });
       timer.start();
-      */
 
-
-
-
-    }else
-     {
+    }else {
       view = new EasyAnimatorViewImplFile(output, modelInfo);
        view.render();
     }
-
 
 
   }

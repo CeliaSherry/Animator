@@ -183,50 +183,27 @@ public abstract class AShape implements IShape {
   }
 
   @Override
-  public IShape getClone() {
-    float[] tempColor = new float[3];
-    color.getColorComponents(tempColor);
+  public abstract IShape getClone();
 
-    if(this.type == ShapeType.Rectangle) {
-      return new Rectangle(new Point2D.Double(this.position.getValue().getX(),
-              this.position.getValue().getY()),
-              new Color(tempColor[0], tempColor[1], tempColor[2]),
-              this.getScale().get(0).getValue(),
-              this.getScale().get(1).getValue());
-    }
-
-    if(this.type == ShapeType.Oval) {
-      return new Oval(new Point2D.Double(this.position.getValue().getX(),
-              this.position.getValue().getY()),
-              new Color(tempColor[0], tempColor[1], tempColor[2]),
-              this.getScale().get(0).getValue(),
-              this.getScale().get(1).getValue());
-    }
-    else return null;
+  @Override
+  public void setColor(int newRed, int newGreen, int newBlue) {
+    this.color = new Color(newRed, newGreen, newBlue);
   }
 
 
   @Override
-  public void setColor(Color color) {
-    float[] tempColor = new float[3];
-    color.getColorComponents(tempColor);
-    this.color = new Color(tempColor[0], tempColor[1], tempColor[2]);
-  }
-
-
-  @Override
-  public void setPosition(Pair<String, Point2D.Double> position) {
-    this.position = new Pair<>(position.getKey(),
-            new Point2D.Double(position.getValue().getX(), position.getValue().getY()));
+  public void setPosition(double newX, double newY) {
+    this.position = new Pair<>(this.position.getKey(),
+            new Point2D.Double(newX, newY));
 
   }
 
   @Override
-  public void setScale(List<Pair<String, Double>> scale) {
+  public void setScale(double newWidth, double newHeight) {
     List<Pair<String, Double>> newScale = new ArrayList<>();
-    newScale.add(new Pair<>(scale.get(0).getKey(), scale.get(0).getValue()));
-    newScale.add(new Pair<>(scale.get(1).getKey(), scale.get(1).getValue()));
-    this.scale = scale;
+    newScale.add(new Pair<>(this.scale.get(0).getKey(), newWidth));
+    newScale.add(new Pair<>(this.scale.get(1).getKey(), newHeight));
+    this.scale = newScale;
   }
 
 }

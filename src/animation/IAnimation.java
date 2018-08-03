@@ -118,9 +118,14 @@ public interface IAnimation {
    */
   String toStringSvg(int speed, IShape shape);
 
-
+/*
   IAnimation getClone();
+  */
 
   void updateAtTime(IShape shape, int time);
 
+  int formula(int currentTime, int startTime, int endTime,
+                        double startValue, double endValue);
+
+  boolean isAnimationPresent(int time);
 }
