@@ -47,6 +47,12 @@ public class ToolBar extends JPanel{
         case "restartButton":
           emitEvent("RESTART");
           break;
+        case "increaseSpeed":
+          emitEvent("INCREASESPEED");
+          break;
+        case "decreaseSpeed":
+          emitEvent("DECREASESPEED");
+          break;
       }
     }
   }
@@ -70,9 +76,19 @@ public class ToolBar extends JPanel{
     restart.setActionCommand("restartButton");
     restart.addActionListener(toolBarListener);
 
+    increaseSpeed = new JButton("Increase Speed");
+    increaseSpeed.setActionCommand("increaseSpeed");
+    increaseSpeed.addActionListener(toolBarListener);
+
+    decreaseSpeed = new JButton("Decrease Speed");
+    decreaseSpeed.setActionCommand("decreaseSpeed");
+    decreaseSpeed.addActionListener(toolBarListener);
+
     add(start);
     add(pause);
     add(restart);
+    add(increaseSpeed);
+    add(decreaseSpeed);
   }
 
 

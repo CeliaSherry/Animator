@@ -16,6 +16,8 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
   boolean isStart = false;
   boolean isPause = false;
   boolean isRestart = false;
+  boolean isIncrease = false;
+  boolean isDecrease = false;
 
 
   class ToolBarListener implements ISubscriber{
@@ -31,8 +33,30 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
         case "RESTART":
           setRestart(true);
           break;
+        case "INCREASESPEED":
+          setIncrease(true);
+          break;
+        case "DECREASESPEED":
+          setDecrease(true);
+          break;
       }
     }
+  }
+
+  public boolean Increase() {
+    return this.isIncrease;
+  }
+
+  public void setIncrease(boolean set) {
+    this.isIncrease = set;
+  }
+
+  public boolean Decrease() {
+    return this.isDecrease;
+  }
+
+  public void setDecrease(boolean set) {
+    this.isDecrease = set;
   }
 
   public boolean Restart() {

@@ -20,7 +20,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   Timer timer;
   Timer overallTimer;
   private int frameTick = 0;
-  int speed;
+  private int currentSpeed;
 
   /**
    * Takes a model, string that specifies a view, an output file, and the speed and runs an
@@ -69,9 +69,9 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       view = new EasyAnimatorViewGui();
       //((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(20));
       //view.render();
+      this.currentSpeed = speedInt;
 
-      setSpeed(speedInt);
-      overallTimer = new Timer(1000 / this.speed, new ActionListener() {
+      overallTimer = new Timer(1000/speedInt, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
           if (((EasyAnimatorViewGui) view).Start()) {
@@ -83,6 +83,12 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
           } else if (((EasyAnimatorViewGui) view).Restart()) {
             restartTimer(timer);
             ((EasyAnimatorViewGui) view).setRestart(false);
+          } else if (((EasyAnimatorViewGui) view).Increase()) {
+            increaseSpeed(timer);
+            ((EasyAnimatorViewGui) view).setIncrease(false);
+          }else if (((EasyAnimatorViewGui) view).Decrease()) {
+            decreaseSpeed(timer);
+            ((EasyAnimatorViewGui) view).setDecrease(false);
           }
 
         }
@@ -90,7 +96,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       this.startTimer(overallTimer);
 
 
-      timer = new Timer(1000 / this.speed, new ActionListener() {
+      timer = new Timer(1000 / speedInt, new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -100,7 +106,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
         }
 
       });
-      //this.startTimer(timer);
+
 
 
     } else {
@@ -114,6 +120,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
 
   public void startTimer(Timer timer) {
     timer.start();
+
   }
 
   public void restartTimer(Timer timer) {
@@ -126,8 +133,20 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     timer.stop();
   }
 
-  private void setSpeed(int speed) {
-    this.speed = speed;
+
+  private void increaseSpeed(Timer timer) {
+    int temp = this.currentSpeed;
+    this.currentSpeed = temp + 5;
+    timer.setDelay(1000/this.currentSpeed);
+
+  }
+
+  private void decreaseSpeed(Timer timer) {
+    if(this.currentSpeed >= 6) {
+      int temp = this.currentSpeed;
+      this.currentSpeed = temp - 5;
+      timer.setDelay(1000/this.currentSpeed);
+    }
   }
 
 }
