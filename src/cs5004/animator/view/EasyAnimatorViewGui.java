@@ -15,14 +15,12 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
   private final MyDrawingPanel drawingPanel = new MyDrawingPanel();
 
   public EasyAnimatorViewGui() {
+    setLayout(new BorderLayout());
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    add(drawingPanel);
     setSize(new Dimension(width,height));
+    JScrollPane jScrollPane = new JScrollPane(drawingPanel);
+    add(jScrollPane);
     setVisible(true);
-
-    //setSize(new Dimension(width,height));
-    //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //setVisible(true);
   }
 
   public void setData(List<IShape> shapeData) {

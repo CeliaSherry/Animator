@@ -39,10 +39,11 @@ public class Main {
     }
 
     try {
+      //System.out.println("Filename is: " + argsInOrder[0] + "\n");
       model = new AnimationFileReader().readFile(argsInOrder[0],
               new EasyAnimatorModelImpl.TweenModelBuilderImpl<>());
     } catch (Exception e) {
-      throw new IllegalArgumentException("File Not Found");
+      throw new IllegalArgumentException(e.getMessage());
     }
 
     IEasyAnimatorController controller = new IEasyAnimatorControllerImpl();

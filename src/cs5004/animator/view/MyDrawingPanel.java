@@ -11,10 +11,13 @@ import shape.IShape;
 import shape.ShapeType;
 
 public class MyDrawingPanel extends JPanel {
+  private static int width = 2000;
+  private static int height = 2000;
 
   private List<IShape> shapes = null;
 
   public MyDrawingPanel() {
+    setPreferredSize(new Dimension(width,height));
   }
 
   public void updateShapes(List<IShape> shapes) {
