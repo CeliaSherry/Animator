@@ -352,8 +352,12 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return shapesAtTime;
   }
 
-
-
+  //take shapes from tick before, check to see if any new shapes have been added
+  //in paint component in MyDrawingPanel- check if shape is null- if it is, skip
+  //make list of all shapes present, find position at time 0, use this list as input into next frame
+  //issue is only checking for animations for time- need to find previous animation and get last position
+  //may at each tick add all previous animations - if animation is passed, then should just be end position
+  // run them in order so all previous animations go first and put shapes in proper positions and then currently running animations go
 
 
   /**

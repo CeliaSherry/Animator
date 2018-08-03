@@ -253,13 +253,18 @@ public abstract class AAnimation implements IAnimation {
   @Override
   public int formula(int currentTime, int startTime, int endTime,
                         double startValue, double endValue) {
+    if(currentTime > endTime) {
+      return (int)endValue;
+    }
+
     double leftValue = (endTime - currentTime) * startValue  / (endTime - startTime);
     double rightValue = (currentTime - startTime) * endValue / (endTime - startTime);
     return (int)(leftValue + rightValue);
   }
   @Override
   public boolean isAnimationPresent(int time) {
-    return time >= this.startTime && time <= this.endTime;
+    //return time >= this.startTime && time <= this.endTime;
+    return time >= this.startTime;
   }
 
 }
