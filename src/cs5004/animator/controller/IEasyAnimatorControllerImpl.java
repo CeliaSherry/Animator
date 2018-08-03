@@ -81,7 +81,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
           //timer.stop();
           //myWindow.render(new ShapeHolder(model.getShapes(frameTick)));
         });
-      timer.start();
+      this.startTimer(timer);
 
 
     }else {
@@ -90,6 +90,18 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     }
 
 
+  }
+
+  public void startTimer(Timer timer) {
+    timer.start();
+  }
+
+  public void restartTimer(Timer timer) {
+    timer.restart();
+  }
+
+  public void stopTimer(Timer timer) {
+    timer.stop();
   }
 
 }

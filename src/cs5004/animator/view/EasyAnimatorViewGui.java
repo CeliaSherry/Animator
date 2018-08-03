@@ -13,14 +13,47 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
   private static int height = 800;
 
   private final MyDrawingPanel drawingPanel = new MyDrawingPanel();
+  private final JButton pause;
+  private final JButton resume;
+  private final JButton play;
+  private final JButton restart;
+
+  class ToolBarListener implements ISubscriber{
+    @Override
+    public void notify(String payload) {
+      switch(payload) {
+        case "START":
+          System.out.println("Start button pressed");
+          break;
+      }
+    }
+  }
 
   public EasyAnimatorViewGui() {
     setLayout(new BorderLayout());
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(new Dimension(width,height));
+
+    play = new JButton("PLAY");
+
+    pause = new JButton("PAUSE");
+    resume = new JButton("RESUME");
+    restart = new JButton("RESTART");
+    drawingPanel.add(play,BorderLayout.SOUTH);
+
     JScrollPane jScrollPane = new JScrollPane(drawingPanel);
+
+    ToolBar toolBar = new ToolBar(drawingPanel);
+    toolBar.addSubscriber(new ToolBarListener());
+
+    add(toolBar,BorderLayout.NORTH);
     add(jScrollPane);
     setVisible(true);
+
+
+
+
+
   }
 
   public void setData(List<IShape> shapeData) {
