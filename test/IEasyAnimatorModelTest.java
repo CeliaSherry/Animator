@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+import animation.IAnimation;
+import animation.MoveAnimation;
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
 
@@ -631,6 +633,8 @@ public class IEasyAnimatorModelTest {
            1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
     model.addScaleAnimation("R", 40, 100,
             20, 100, 51, 70);
-    model.shapesAtFrame(0);
+    model.shapesAtFrame(101);
+
+
   }
 }

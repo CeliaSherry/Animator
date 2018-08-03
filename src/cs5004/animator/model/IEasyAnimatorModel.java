@@ -173,4 +173,7 @@ public interface IEasyAnimatorModel {
   String toStringSvg(int speed);
 
   List<IShape> shapesAtFrame(int time);
+
+  int maxTime();
+
 }

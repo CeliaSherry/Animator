@@ -83,6 +83,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
         });
       timer.start();
 
+
     }else {
       view = new EasyAnimatorViewImplFile(output, modelInfo);
        view.render();

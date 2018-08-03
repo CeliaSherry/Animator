@@ -343,13 +343,31 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       shapesAtTime.add(shape.getValue());
     }
 
-   for (IAnimation animation : animations) { //need to update exact the same current shape object
-    if (animation.isAnimationPresent(time)) {//check if animation is valid at this time
-      animation.updateAtTime(shapesPresentCopy.get(animation.getShapeID()), time);
+    if(!(this.animations == null)) {
+
+      for (IAnimation animation : animations) { //need to update exact the same current shape object
+        if (animation.isAnimationPresent(time)) {//check if animation is valid at this time
+          IShape shapePresent = shapesPresentCopy.get(animation.getShapeID());
+          if(shapePresent != null) {
+            animation.updateAtTime(shapePresent, time);
+          }
+        }
+      }
     }
+    return shapesAtTime;
   }
 
-    return shapesAtTime;
+  @Override
+  public int maxTime() {
+   int maxTime = 0;
+   int temp;
+   for(IAnimation animation : animations) {
+    temp = animation.getEndTime();
+    if(temp > maxTime) {
+      maxTime = temp;
+    }
+   }
+   return maxTime;
   }
 
   //take shapes from tick before, check to see if any new shapes have been added
@@ -358,7 +376,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   //issue is only checking for animations for time- need to find previous animation and get last position
   //may at each tick add all previous animations - if animation is passed, then should just be end position
   // run them in order so all previous animations go first and put shapes in proper positions and then currently running animations go
-
+//ends with exception
+  //might want max time and then stop timer at max time --> MIGHT NOT NEED MAX TIME
 
   /**
    * Takes a shapeId and adds the shape specific information for the shape to the beginning of the
