@@ -13,6 +13,10 @@ public class ToolBar extends JPanel{
 
   private MyDrawingPanel panel;
   private JButton start;
+  private JButton pause;
+  private JButton restart;
+  private JButton increaseSpeed;
+  private JButton decreaseSpeed;
   private List<ISubscriber> subscribers;
 
   public void addSubscriber(ISubscriber subscriber) {
@@ -37,6 +41,12 @@ public class ToolBar extends JPanel{
         case "startButton":
           emitEvent("START");
           break;
+        case "pauseButton":
+          emitEvent("PAUSE");
+          break;
+        case "restartButton":
+          emitEvent("RESTART");
+          break;
       }
     }
   }
@@ -48,11 +58,21 @@ public class ToolBar extends JPanel{
 
     ToolBarListener toolBarListener = new ToolBarListener();
 
-    start = new JButton("Start");
+    start = new JButton("Play");
     start.setActionCommand("startButton");
     start.addActionListener(toolBarListener);
 
+    pause = new JButton("Pause");
+    pause.setActionCommand("pauseButton");
+    pause.addActionListener(toolBarListener);
+
+    restart = new JButton("Restart");
+    restart.setActionCommand("restartButton");
+    restart.addActionListener(toolBarListener);
+
     add(start);
+    add(pause);
+    add(restart);
   }
 
 

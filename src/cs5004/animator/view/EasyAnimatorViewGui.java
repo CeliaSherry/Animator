@@ -13,33 +13,56 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
   private static int height = 800;
 
   private final MyDrawingPanel drawingPanel = new MyDrawingPanel();
-  private final JButton pause;
-  private final JButton resume;
-  private final JButton play;
-  private final JButton restart;
+  boolean isStart = false;
+  boolean isPause = false;
+  boolean isRestart = false;
+
 
   class ToolBarListener implements ISubscriber{
     @Override
     public void notify(String payload) {
       switch(payload) {
         case "START":
-          System.out.println("Start button pressed");
+          setStart(true);
+          break;
+        case "PAUSE":
+          setPause(true);
+          break;
+        case "RESTART":
+          setRestart(true);
           break;
       }
     }
+  }
+
+  public boolean Restart() {
+    return this.isRestart;
+  }
+
+  public void setRestart(boolean set) {
+    this.isRestart = set;
+  }
+
+  public boolean Pause() {
+    return this.isPause;
+  }
+
+  public void setPause(boolean set) {
+    this.isPause = set;
+  }
+
+  public boolean Start() {
+    return this.isStart;
+  }
+
+  public void setStart(boolean set) {
+    this.isStart = set;
   }
 
   public EasyAnimatorViewGui() {
     setLayout(new BorderLayout());
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(new Dimension(width,height));
-
-    play = new JButton("PLAY");
-
-    pause = new JButton("PAUSE");
-    resume = new JButton("RESUME");
-    restart = new JButton("RESTART");
-    drawingPanel.add(play,BorderLayout.SOUTH);
 
     JScrollPane jScrollPane = new JScrollPane(drawingPanel);
 

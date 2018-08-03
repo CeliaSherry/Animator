@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83cc8b80-b1c2-48f9-84cc-03bd9d95e233" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/ISubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Animator_jar/Animator.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animator_jar/Animator.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/view/EasyAnimatorViewGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animator/cs5004/animator/view/EasyAnimatorViewGui.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,18 +57,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IEasyAnimatorControllerImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IEasyAnimatorControllerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+            <state relative-caret-position="-696">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#3249#3250#0" expanded="true" />
                 <element signature="e#3272#3273#0" expanded="true" />
-                <element signature="e#3326#3327#0" expanded="true" />
-                <element signature="e#3351#3352#0" expanded="true" />
                 <element signature="e#3393#3394#0" expanded="true" />
                 <element signature="e#3415#3416#0" expanded="true" />
+                <element signature="e#4006#4007#0" expanded="true" />
+                <element signature="e#4034#4035#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,7 +77,7 @@
       <file leaf-file-name="MyDrawingPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="342">
               <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -95,17 +91,31 @@
       <file leaf-file-name="EasyAnimatorViewGui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+            <state relative-caret-position="-378">
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+              <folding>
+                <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#892#893#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
+                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#911#912#0" expanded="true" />
+                <element signature="e#939#940#0" expanded="true" />
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#861#862#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToolBar.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ToolBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="37" column="20" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="20" />
+            <state relative-caret-position="315">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#340#341#0" expanded="true" />
@@ -148,6 +158,7 @@
     <findStrings>
       <find>time</find>
       <find>isPresent</find>
+      <find>speedint</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,9 +190,9 @@
         <option value="$PROJECT_DIR$/src/cs5004/animator/Main.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/ISubscriber.java" />
-        <option value="$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java" />
         <option value="$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java" />
+        <option value="$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java" />
       </list>
     </option>
   </component>
@@ -333,7 +344,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IEasyAnimatorModelTest.testShapesAtFrame">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.Main" />
+      <module name="Animator" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -405,23 +427,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="IShapeTest.testSetColorRec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IShapeTest" />
-      <option name="METHOD_NAME" value="testSetColorRec" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -461,7 +466,7 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.IShapeTest.testSetColorRec" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.IShapeTest.setPositionRec" />
       <item itemvalue="JUnit.IShapeTest.setScale" />
       <item itemvalue="JUnit.IAnimationTest.testFormula" />
@@ -469,11 +474,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.IEasyAnimatorModelTest.testShapesAtFrame" />
         <item itemvalue="JUnit.IAnimationTest.testFormula" />
         <item itemvalue="JUnit.IShapeTest.setScale" />
         <item itemvalue="JUnit.IShapeTest.setPositionRec" />
-        <item itemvalue="JUnit.IShapeTest.testSetColorRec" />
       </list>
     </recent_temporary>
   </component>
@@ -491,7 +496,7 @@
       <workItem from="1533236490768" duration="6694000" />
       <workItem from="1533248454300" duration="616000" />
       <workItem from="1533268897098" duration="16594000" />
-      <workItem from="1533327249515" duration="4839000" />
+      <workItem from="1533327249515" duration="8239000" />
     </task>
     <servers />
   </component>
@@ -528,7 +533,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37365000" />
+    <option name="totallyTimeSpent" value="40765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="43" width="1579" height="810" extended-state="0" />
@@ -543,7 +548,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32201087" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32201087" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -918,6 +923,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/ISubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -927,7 +939,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/MyDrawingPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="342">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -937,43 +949,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/ISubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/EasyAnimatorViewGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        <state relative-caret-position="-378">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs5004/animator/controller/IEasyAnimatorControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+        <state relative-caret-position="-696">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#3249#3250#0" expanded="true" />
             <element signature="e#3272#3273#0" expanded="true" />
-            <element signature="e#3326#3327#0" expanded="true" />
-            <element signature="e#3351#3352#0" expanded="true" />
             <element signature="e#3393#3394#0" expanded="true" />
             <element signature="e#3415#3416#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4034#4035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs5004/animator/view/ToolBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
           </folding>
         </state>
       </provider>

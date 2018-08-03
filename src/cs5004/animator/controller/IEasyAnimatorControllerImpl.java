@@ -18,18 +18,21 @@ import shape.IShape;
  */
 public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   Timer timer;
+  Timer overallTimer;
+  private int frameTick = 0;
+  int speed;
 
   /**
-   * Takes a model, string that specifies a view, an output file, and the speed and runs
-   * an animation.  Creates a view and an output file if needed and uses the speed to have the
-   * model produce the necessary input for the view and the view displays the correct output.
+   * Takes a model, string that specifies a view, an output file, and the speed and runs an
+   * animation.  Creates a view and an output file if needed and uses the speed to have the model
+   * produce the necessary input for the view and the view displays the correct output.
    *
    * @param model    given model.
    * @param viewMode String that represents the type of view to be created.
    * @param output   given output file name.
    * @param speed    given speed of animation.
-   * @throws IllegalArgumentException if model, viewMode, output, or speed is null,
-   *                                  or if a speed cannot be parsed or is negative.
+   * @throws IllegalArgumentException if model, viewMode, output, or speed is null, or if a speed
+   *                                  cannot be parsed or is negative.
    */
   @Override
   public void start(IEasyAnimatorModel model, String viewMode,
@@ -55,53 +58,78 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       modelInfo = model.toStringText(speedInt);
     } else if (viewMode.equals("svg")) {
       modelInfo = model.toStringSvg(speedInt);
-    } else if (!(viewMode.equals("visual"))){
+    } else if (!(viewMode.equals("visual"))) {
       throw new IllegalArgumentException("Invalid view mode!");
     }
 
     if (output.equals("System.out") && (!(viewMode.equals("visual")))) {
       view = new EasyAnimatorViewImplOut(modelInfo);
       view.render();
-    } else if(viewMode.equals("visual")) {
+    } else if (viewMode.equals("visual")) {
       view = new EasyAnimatorViewGui();
-     //((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(20));
-     //view.render();
+      //((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(20));
+      //view.render();
+
+      setSpeed(speedInt);
+      overallTimer = new Timer(1000 / this.speed, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          if (((EasyAnimatorViewGui) view).Start()) {
+            startTimer(timer);
+            ((EasyAnimatorViewGui) view).setStart(false);
+          } else if (((EasyAnimatorViewGui) view).Pause()) {
+            stopTimer(timer);
+            ((EasyAnimatorViewGui) view).setPause(false);
+          } else if (((EasyAnimatorViewGui) view).Restart()) {
+            restartTimer(timer);
+            ((EasyAnimatorViewGui) view).setRestart(false);
+          }
+
+        }
+      });
+      this.startTimer(overallTimer);
 
 
-      timer = new Timer(1000 / speedInt, new ActionListener() {
-        int frameTick = 0;
+      timer = new Timer(1000 / this.speed, new ActionListener() {
+
         @Override
         public void actionPerformed(ActionEvent e) {
           ((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(frameTick));
           frameTick++;
           //view.render();
-          }
-          //need to start timer after it's created
-          //timer.start();
-          //timer.stop();
-          //myWindow.render(new ShapeHolder(model.getShapes(frameTick)));
-        });
-      this.startTimer(timer);
+        }
+
+      });
+      //this.startTimer(timer);
 
 
-    }else {
+    } else {
       view = new EasyAnimatorViewImplFile(output, modelInfo);
-       view.render();
+      view.render();
     }
 
 
   }
+
 
   public void startTimer(Timer timer) {
     timer.start();
   }
 
   public void restartTimer(Timer timer) {
-    timer.restart();
+    this.frameTick = 0;
+    this.startTimer(timer);
   }
+
 
   public void stopTimer(Timer timer) {
     timer.stop();
   }
 
+  private void setSpeed(int speed) {
+    this.speed = speed;
+  }
+
 }
+
+//joptionpane.showinputdialog
