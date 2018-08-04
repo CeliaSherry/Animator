@@ -161,11 +161,14 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     String fileName = JOptionPane.showInputDialog(null,"Save Animation to SVG"
             ,"Input File Name Without Extension: ",JOptionPane.PLAIN_MESSAGE);
 
+    if(fileName == null) {
+      startTimer(timer);
+      return;
+
+    }
+
     fileName = fileName + ".svg";
 
-    if(fileName == null) {
-      throw new IllegalArgumentException("Inputted File Name Cannot Be Null.");
-    }
 
     try{
       writer = new PrintStream(fileName);
