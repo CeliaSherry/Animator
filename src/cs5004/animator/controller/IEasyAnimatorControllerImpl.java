@@ -2,6 +2,8 @@ package cs5004.animator.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 import javax.swing.*;
 
@@ -89,6 +91,9 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
           }else if (((EasyAnimatorViewGui) view).Decrease()) {
             decreaseSpeed(timer);
             ((EasyAnimatorViewGui) view).setDecrease(false);
+          }else if (((EasyAnimatorViewGui) view).save()) {
+            makeSave(model);
+            ((EasyAnimatorViewGui) view).setSave(false);
           }
 
         }
@@ -147,6 +152,29 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       this.currentSpeed = temp - 5;
       timer.setDelay(1000/this.currentSpeed);
     }
+  }
+
+  private void makeSave(IEasyAnimatorModel model) throws IllegalArgumentException{
+    stopTimer(timer);
+
+    PrintStream writer;
+    String fileName = JOptionPane.showInputDialog(null,"Save Animation to SVG"
+            ,"Input File Name Without Extension: ",JOptionPane.PLAIN_MESSAGE);
+
+    fileName = fileName + ".svg";
+
+    if(fileName == null) {
+      throw new IllegalArgumentException("Inputted File Name Cannot Be Null.");
+    }
+
+    try{
+      writer = new PrintStream(fileName);
+    } catch (FileNotFoundException e) {
+      throw new IllegalArgumentException("Output file name is not valid.");
+    }
+
+    writer.append(model.toStringSvg(this.currentSpeed));
+    startTimer(timer);
   }
 
 }

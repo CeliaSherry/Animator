@@ -17,6 +17,7 @@ public class ToolBar extends JPanel{
   private JButton restart;
   private JButton increaseSpeed;
   private JButton decreaseSpeed;
+  private JButton save;
   private List<ISubscriber> subscribers;
 
   public void addSubscriber(ISubscriber subscriber) {
@@ -53,6 +54,9 @@ public class ToolBar extends JPanel{
         case "decreaseSpeed":
           emitEvent("DECREASESPEED");
           break;
+        case "save":
+          emitEvent("SAVE");
+          break;
       }
     }
   }
@@ -84,11 +88,16 @@ public class ToolBar extends JPanel{
     decreaseSpeed.setActionCommand("decreaseSpeed");
     decreaseSpeed.addActionListener(toolBarListener);
 
+    save = new JButton("Save");
+    save.setActionCommand("save");
+    save.addActionListener(toolBarListener);
+
     add(start);
     add(pause);
     add(restart);
     add(increaseSpeed);
     add(decreaseSpeed);
+    add(save);
   }
 
 
