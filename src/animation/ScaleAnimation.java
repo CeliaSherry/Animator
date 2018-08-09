@@ -158,15 +158,12 @@ public class ScaleAnimation extends AAnimation {
     return result;
   }
 
-/*
-  @Override
-  public IAnimation getClone(){
-    return new ScaleAnimation(startTime,endTime,shapeID,
-            this.fromSx, fromSy, toSx, toSy);
-  }
-  */
 
-
+  /**
+   * Update the shape scale of the given shape corresponding to the given time.
+   * @param shape given shape
+   * @param time given time
+   */
   @Override
   public void updateAtTime(IShape shape, int time) {
     int currentSx = formula(time,this.startTime,this.endTime,this.fromSx,this.toSx);

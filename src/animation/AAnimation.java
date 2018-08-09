@@ -242,17 +242,24 @@ public abstract class AAnimation implements IAnimation {
     return !(this.endTime <= other.getStartTime() || this.startTime >= other.getEndTime());
   }
 
-  /*
-  @Override
-  public abstract IAnimation getClone();
-  */
 
   @Override
   public abstract void updateAtTime(IShape shape, int time);
 
+
+  /**
+   * Calculates the current value based on the given start and end times and start and end values. If
+   * the given time is greater than the end time, the value at the end time will be returned.
+   * @param currentTime given time point
+   * @param startTime given start time
+   * @param endTime given end time
+   * @param startValue given start value
+   * @param endValue given end value
+   * @return the value corresponding to the given time
+   */
   @Override
   public int formula(int currentTime, int startTime, int endTime,
-                        double startValue, double endValue) {
+                        double startValue, double endValue){
     if(currentTime > endTime) {
       return (int)endValue;
     }
@@ -263,7 +270,6 @@ public abstract class AAnimation implements IAnimation {
   }
   @Override
   public boolean isAnimationPresent(int time) {
-    //return time >= this.startTime && time <= this.endTime;
     return time >= this.startTime;
   }
 

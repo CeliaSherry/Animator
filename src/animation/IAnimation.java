@@ -15,8 +15,9 @@ public interface IAnimation {
    * Determine whether one animation starts before the other animation. Return true if this
    * animation starts first, otherwise false.
    *
+   * @param other the other animation
    * @return true if this animation starts before the other animation, otherwise false
-   * @other the other animation
+   *
    */
   boolean startBefore(IAnimation other);
 
@@ -55,7 +56,7 @@ public interface IAnimation {
   /**
    * Getter for endTime of this animation.
    *
-   * @return end time of the animation
+   * @return end time (tick) of the animation
    */
   int getEndTime();
 
@@ -79,7 +80,7 @@ public interface IAnimation {
   /**
    * Getter for type of this animation.
    *
-   * @return tyoe of the animation
+   * @return type of the animation
    */
   AnimType getType();
 
@@ -118,14 +119,32 @@ public interface IAnimation {
    */
   String toStringSvg(int speed, IShape shape);
 
-/*
-  IAnimation getClone();
-  */
 
+  /**
+   * Update the shape information of the given shape corresponding to the given time.
+   * @param shape given shape
+   * @param time given time
+   */
   void updateAtTime(IShape shape, int time);
 
+
+  /**
+   * Calculates the current value based on the given start and end times and start and end values.
+   * @param currentTime given time point
+   * @param startTime given start time
+   * @param endTime given end time
+   * @param startValue given start value
+   * @param endValue given end value
+   * @return the value corresponding to the given time
+   */
   int formula(int currentTime, int startTime, int endTime,
                         double startValue, double endValue);
 
+
+  /**
+   * Return whether this animation is present at the given time.
+   * @param time the given time
+   * @return true if this animation has started or before this given time.
+   */
   boolean isAnimationPresent(int time);
 }

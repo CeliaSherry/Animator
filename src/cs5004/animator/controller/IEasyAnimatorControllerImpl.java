@@ -74,6 +74,10 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       this.currentSpeed = speedInt;
 
       overallTimer = new Timer(1000/speedInt, new ActionListener() {
+        /**
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
           if (((EasyAnimatorViewGui) view).Start()) {
@@ -100,14 +104,16 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       });
       this.startTimer(overallTimer);
 
-
       timer = new Timer(1000 / speedInt, new ActionListener() {
 
+        /**
+         * Set data of the shapes at the current frame tick to the view.
+         * @param e given action
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
           ((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(frameTick));
           frameTick++;
-          //view.render();
         }
 
       });
@@ -181,5 +187,3 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   }
 
 }
-
-//joptionpane.showinputdialog

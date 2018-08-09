@@ -138,15 +138,11 @@ public class MoveAnimation extends AAnimation {
     return result;
   }
 
-/*
-  @Override
-  public IAnimation getClone(){
-    return new MoveAnimation(startTime,endTime,shapeID,
-            new Point2D.Double(this.startPosition.getX(), this.startPosition.getY()),
-            new Point2D.Double(this.endPosition.getX(), this.endPosition.getY()));
-  }
-  */
-
+  /**
+   * Update the shape position of the given shape corresponding to the given time.
+   * @param shape given shape
+   * @param time given time
+   */
   @Override
   public void updateAtTime(IShape shape, int time) {
     double startX = startPosition.getX();
@@ -156,7 +152,6 @@ public class MoveAnimation extends AAnimation {
 
     int currentX = formula(time,this.startTime,this.endTime,startX,endX);
     int currentY = formula(time,this.startTime,this.endTime,startY,endY);
-
 
     shape.setPosition(currentX,currentY);
   }
