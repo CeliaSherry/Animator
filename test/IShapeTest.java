@@ -1,14 +1,14 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Color;
 import java.awt.geom.Point2D;
 
 import shape.IShape;
 import shape.Oval;
 import shape.Rectangle;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * A Junit test for the IShape interface. It test the newly added methods such as setters and clone

@@ -1,13 +1,14 @@
 package cs5004.animator.view;
 
 
-import java.awt.*;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  * This class represents a toolbar which extends JPanel. A ToolBar is created to implement the
@@ -17,13 +18,7 @@ import javax.swing.*;
  */
 public class ToolBar extends JPanel {
 
-  private MyDrawingPanel panel;
-  private JButton start;
-  private JButton pause;
-  private JButton restart;
-  private JButton increaseSpeed;
-  private JButton decreaseSpeed;
-  private JButton save;
+
   private List<ISubscriber> subscribers;
 
 
@@ -32,13 +27,15 @@ public class ToolBar extends JPanel {
    *
    * @param subscriber given subscriber
    */
-  public void addSubscriber(ISubscriber subscriber) {
+  void addSubscriber(ISubscriber subscriber) {
     subscribers.add(subscriber);
   }
 
+
   /**
+   * Notify a list of subscribers when an action occurs based on the given payload.
    *
-   * @param payload
+   * @param payload given payload
    */
   private void emitEvent(String payload) {
     for (ISubscriber subscriber : subscribers) {
@@ -49,8 +46,8 @@ public class ToolBar extends JPanel {
 
   /**
    * This class represents a ToolBarListener that implements the ActionListener interface. It
-   * implements the method actionPerformed. When an action on any button occurs, it will emit an
-   * payload immediately and view will be notified.
+   * implements the method actionPerformed. When an action on any button occurs, the view will be
+   * notified, as well as all subscribers.
    */
   class ToolBarListener implements ActionListener {
     /**
@@ -79,6 +76,8 @@ public class ToolBar extends JPanel {
         case "save":
           emitEvent("SAVE");
           break;
+        default://do nothing by default
+          break;
       }
     }
   }
@@ -90,7 +89,15 @@ public class ToolBar extends JPanel {
    * @param panel given panel
    */
   public ToolBar(MyDrawingPanel panel) {
-    this.panel = panel;
+    //MyDrawingPanel panel;
+    JButton start;
+    JButton pause;
+    JButton restart;
+    JButton increaseSpeed;
+    JButton decreaseSpeed;
+    JButton save;
+
+    //this.panel = panel;
     subscribers = new ArrayList<>();
     setLayout(new FlowLayout());
 
@@ -100,19 +107,19 @@ public class ToolBar extends JPanel {
     start.setActionCommand("startButton");
     start.addActionListener(toolBarListener);
 
-    pause = new JButton("Pause");
+    pause = new JButton("pause");
     pause.setActionCommand("pauseButton");
     pause.addActionListener(toolBarListener);
 
-    restart = new JButton("Restart");
+    restart = new JButton("restart");
     restart.setActionCommand("restartButton");
     restart.addActionListener(toolBarListener);
 
-    increaseSpeed = new JButton("Increase Speed");
+    increaseSpeed = new JButton("increase Speed");
     increaseSpeed.setActionCommand("increaseSpeed");
     increaseSpeed.addActionListener(toolBarListener);
 
-    decreaseSpeed = new JButton("Decrease Speed");
+    decreaseSpeed = new JButton("decrease Speed");
     decreaseSpeed.setActionCommand("decreaseSpeed");
     decreaseSpeed.addActionListener(toolBarListener);
 

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -325,7 +324,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     Map<String, IShape> shapesPresentCopy = new LinkedHashMap<>();
     for (ITransitionalShape transShape : transShapes) {
       if (transShape.isPresent(time)) {
-        shapesPresentCopy.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
+        shapesPresentCopy.put(transShape.getShapeID(),
+                shapes.get(transShape.getShapeID()).getClone());
       }
     }
     return shapesPresentCopy;
@@ -341,10 +341,9 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       shapesAtTime.add(shape.getValue());
     }
 
-    if (!(this.animations == null)) {
-
+    if (this.animations != null) {
       for (IAnimation animation : animations) { //need to update exact the same current shape object
-        if (animation.isAnimationPresent(time)) {//check if animation is valid at this time
+        if (animation.isAnimationPresent(time)) { //check if animation is valid at this time
           IShape shapePresent = shapesPresentCopy.get(animation.getShapeID());
           if (shapePresent != null) {
             animation.updateAtTime(shapePresent, time);
@@ -355,20 +354,6 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return shapesAtTime;
   }
 
-  /*
-  @Override
-  public int maxTime() {
-   int maxTime = 0;
-   int temp;
-   for(IAnimation animation : animations) {
-    temp = animation.getEndTime();
-    if(temp > maxTime) {
-      maxTime = temp;
-    }
-   }
-   return maxTime;
-  }
-  */
 
 
   /**

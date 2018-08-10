@@ -7,7 +7,7 @@ package cs5004.animator.view;
 public interface ISubscriber {
 
   /**
-   * Notify changes of status based on the information provided by a payload string
+   * Notify changes of status based on the information provided by a payload string.
    *
    * @param payload given payload string
    */

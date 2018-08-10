@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
-import javax.swing.*;
+
+import javax.swing.Timer;
+import javax.swing.JOptionPane;
 
 import cs5004.animator.model.IEasyAnimatorModel;
 import cs5004.animator.view.EasyAnimatorViewGui;
@@ -78,19 +80,19 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-          if (((EasyAnimatorViewGui) view).Start()) {
+          if (((EasyAnimatorViewGui) view).start()) {
             startTimer(timer);
             ((EasyAnimatorViewGui) view).setStart(false);
-          } else if (((EasyAnimatorViewGui) view).Pause()) {
+          } else if (((EasyAnimatorViewGui) view).pause()) {
             stopTimer(timer);
             ((EasyAnimatorViewGui) view).setPause(false);
-          } else if (((EasyAnimatorViewGui) view).Restart()) {
+          } else if (((EasyAnimatorViewGui) view).restart()) {
             restartTimer(timer);
             ((EasyAnimatorViewGui) view).setRestart(false);
-          } else if (((EasyAnimatorViewGui) view).Increase()) {
+          } else if (((EasyAnimatorViewGui) view).increase()) {
             increaseSpeed(timer);
             ((EasyAnimatorViewGui) view).setIncrease(false);
-          } else if (((EasyAnimatorViewGui) view).Decrease()) {
+          } else if (((EasyAnimatorViewGui) view).decrease()) {
             decreaseSpeed(timer);
             ((EasyAnimatorViewGui) view).setDecrease(false);
           } else if (((EasyAnimatorViewGui) view).save()) {

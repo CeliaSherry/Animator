@@ -1,9 +1,11 @@
 package cs5004.animator.view;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 
 import shape.IShape;
 
@@ -52,6 +54,8 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
         case "SAVE":
           setSave(true);
           break;
+        default: //do nothing if the given payload does not belong to any case above
+          break;
       }
     }
   }
@@ -97,7 +101,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    *
    * @return true if the button is set to true, otherwise false
    */
-  public boolean Increase() {
+  public boolean increase() {
     return this.isIncrease;
   }
 
@@ -113,7 +117,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    *
    * @return true if the button is set to true, otherwise false
    */
-  public boolean Decrease() {
+  public boolean decrease() {
     return this.isDecrease;
   }
 
@@ -129,7 +133,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    *
    * @return true if the button is set to true, otherwise false
    */
-  public boolean Restart() {
+  public boolean restart() {
     return this.isRestart;
   }
 
@@ -145,7 +149,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    *
    * @return true if the button is set to true, otherwise false
    */
-  public boolean Pause() {
+  public boolean pause() {
     return this.isPause;
   }
 
@@ -161,7 +165,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    *
    * @return true if the button is set to true, otherwise false
    */
-  public boolean Start() {
+  public boolean start() {
     return this.isStart;
   }
 
@@ -191,7 +195,7 @@ public class EasyAnimatorViewGui extends JFrame implements IEasyAnimatorView {
    */
   @Override
   public void render() throws IllegalArgumentException {
-
+    //A dummy render method for the view.
   }
 
 
