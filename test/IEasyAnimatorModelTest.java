@@ -25,7 +25,7 @@ public class IEasyAnimatorModelTest {
   private String strCShape;
   private String strR2Shape;
   private String strAnim;
-  private List<IShape> shapes;
+
 
   /**
    * Predefine the model to be tested. Predefine string to be compared with the output of the
@@ -643,7 +643,7 @@ public class IEasyAnimatorModelTest {
     model.addScaleAnimation("R", 40, 100,
             20, 100, 51, 70);
 
-
+    List<IShape> shapes;
     //time 0
     shapes = model.shapesAtFrame(0);
     assertEquals("", shapesToString(shapes));
