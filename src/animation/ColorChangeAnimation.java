@@ -84,8 +84,8 @@ public class ColorChangeAnimation extends AAnimation {
 
   /**
    * Takes a speed and IShape and returns the svg representation of the animation in String form.
-   * This class includes the color information, including starting color and ending color in
-   * the proper format.
+   * This class includes the color information, including starting color and ending color in the
+   * proper format.
    *
    * @param speed given speed.
    * @param shape given IShape.
@@ -117,8 +117,9 @@ public class ColorChangeAnimation extends AAnimation {
 
   /**
    * Update the shape color of the given shape corresponding to the given time.
+   *
    * @param shape given shape
-   * @param time given time
+   * @param time  given time
    */
   @Override
   public void updateAtTime(IShape shape, int time) {
@@ -129,9 +130,9 @@ public class ColorChangeAnimation extends AAnimation {
     int endGreen = this.endColor.getGreen();
     int endBlue = this.endColor.getBlue();
 
-    int currentRed = formula(time,this.startTime,this.endTime,startRed,endRed);
-    int currentGreen = formula(time,this.startTime,this.endTime,startGreen,endGreen);
-    int currentBlue = formula(time,this.startTime,this.endTime,startBlue,endBlue);
+    int currentRed = formula(time, this.startTime, this.endTime, startRed, endRed);
+    int currentGreen = formula(time, this.startTime, this.endTime, startGreen, endGreen);
+    int currentBlue = formula(time, this.startTime, this.endTime, startBlue, endBlue);
 
     shape.setColor(currentRed, currentGreen, currentBlue);
   }

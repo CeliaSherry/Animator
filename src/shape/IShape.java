@@ -53,12 +53,14 @@ public interface IShape {
 
   /**
    * Getter for the green component of the shape's color.
+   *
    * @return int that represents the green component of the shape's color.
    */
   int getGreen();
 
   /**
    * Getter for the blue component of the shape's color.
+   *
    * @return int that represents the blue component of the shape's color.
    */
   int getBlue();
@@ -71,13 +73,36 @@ public interface IShape {
   ShapeType getShapeType();
 
 
+  /**
+   * Return a copy of this IShape as a new object.
+   *
+   * @return a copy of this IShape
+   */
+  IShape getClone();
 
-IShape getClone();
-
-
+  /**
+   * Set the color of this IShape to be the given RGB value.
+   *
+   * @param newRed   given red component
+   * @param newGreen given green component
+   * @param newBlue  given blue component
+   */
   void setColor(int newRed, int newGreen, int newBlue);
 
+
+  /**
+   * Set the position of this IShape to be the given X and Y.
+   *
+   * @param newX given x
+   * @param newY given y
+   */
   void setPosition(double newX, double newY);
 
+  /**
+   * Set the scale of this IShape to be the given width and height.
+   *
+   * @param newWidth  given width
+   * @param newHeight given height
+   */
   void setScale(double newWidth, double newHeight);
 }

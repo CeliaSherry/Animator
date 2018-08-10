@@ -2,10 +2,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import animation.IAnimation;
-import animation.MoveAnimation;
+import java.util.List;
+
 import cs5004.animator.model.EasyAnimatorModelImpl;
 import cs5004.animator.model.IEasyAnimatorModel;
+import shape.IShape;
 
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
@@ -24,6 +25,7 @@ public class IEasyAnimatorModelTest {
   private String strCShape;
   private String strR2Shape;
   private String strAnim;
+  private List<IShape> shapes;
 
   /**
    * Predefine the model to be tested. Predefine string to be compared with the output of the
@@ -559,8 +561,8 @@ public class IEasyAnimatorModelTest {
 
 
   /**
-   * Test that the toStringSvg method works correctly with a given speed of two and only shapes
-   * are present.
+   * Test that the toStringSvg method works correctly with a given speed of two and only shapes are
+   * present.
    */
   @Test
   public void testToStringSvgShapesOnly() {
@@ -612,29 +614,113 @@ public class IEasyAnimatorModelTest {
     assertEquals(str1, model.toStringSvg(speed));
   }
 
+  /**
+   * Test the shapesAtFrame method by comparing the expected and actual shapes in the model at
+   * several time points: time 0, 1, 6, 10, 20, 51, 100, 101, which represent the initial state,
+   * appearance of two rectangles, starting time of two move animation, starting time of a move and
+   * a color change animation, starting time of a scale change animation, the last time frame that
+   * has shapes, and one tick after the last time frame, respectively.
+   */
   @Test
   public void testShapesAtFrame() {
     model.addRectangle("R", 200f, 200f, 50f,
-          100f, 1.0f, 0.0f, 0.0f, 1, 100);
+            100f, 1.0f, 0.0f, 0.0f, 1, 100);
     model.addRectangle("R2", 200f, 200f, 20f,
             20f, 0.1f, 0.2f, 0.0f, 1, 50);
     model.addOval("C", 500f, 100f, 60f,
             30f, 0.0f, 0.0f, 1.0f, 6, 100);
     //adding animations
     model.addMove("R", 200f, 200f,
-           300f, 300f, 10, 50);
+            300f, 300f, 10, 50);
     model.addMove("R2", 200f, 200f,
-           300f, 300f, 10, 50);
+            300f, 300f, 10, 50);
     model.addMove("C", 500f, 100f,
             500f, 400f, 20, 70);
     model.addMove("R", 300f, 300f,
-           200f, 200f, 70, 100);
+            200f, 200f, 70, 100);
     model.addChangeColor("C", 0.0f, 0.0f,
-           1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
+            1.0f, 0.0f, 1.0f, 0.0f, 20, 80);
     model.addScaleAnimation("R", 40, 100,
             20, 100, 51, 70);
-    model.shapesAtFrame(101);
 
 
+    //time 0
+    shapes = model.shapesAtFrame(0);
+    assertEquals("", shapesToString(shapes));
+
+    //time 1
+    shapes = model.shapesAtFrame(1);
+    String str1 = "Type: Rectangle\n" +
+            "Min Corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n" +
+            "Type: Rectangle\n" +
+            "Min Corner: (200.0,200.0), Width: 20.0, Height: 20.0, Color: (0.1,0.2,0.0)\n";
+    assertEquals(str1, shapesToString(shapes));
+
+    //time 6
+    shapes = model.shapesAtFrame(6);
+    String str6 = "Type: Rectangle\n" +
+            "Min Corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n" +
+            "Type: Rectangle\n" +
+            "Min Corner: (200.0,200.0), Width: 20.0, Height: 20.0, Color: (0.1,0.2,0.0)\n" +
+            "Type: Oval\n" +
+            "Center: (500.0,100.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,0.0,1.0)\n";
+    assertEquals(str6, shapesToString(shapes));
+
+
+    //time 10
+    shapes = model.shapesAtFrame(10);
+    assertEquals(str6, shapesToString(shapes));
+
+
+    //time 20
+    shapes = model.shapesAtFrame(20);
+    String str20 = "Type: Rectangle\n" +
+            "Min Corner: (225.0,225.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n" +
+            "Type: Rectangle\n" +
+            "Min Corner: (225.0,225.0), Width: 20.0, Height: 20.0, Color: (0.1,0.2,0.0)\n" +
+            "Type: Oval\n" +
+            "Center: (500.0,100.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,0.0,1.0)\n";
+    assertEquals(str20, shapesToString(shapes));
+
+
+    //time 51
+    shapes = model.shapesAtFrame(51);
+    String str51 = "Type: Rectangle\n" +
+            "Min Corner: (300.0,300.0), Width: 40.0, Height: 100.0, Color: (1.0,0.0,0.0)\n" +
+            "Type: Oval\n" +
+            "Center: (500.0,286.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,0.5,0.5)\n";
+    assertEquals(str51, shapesToString(shapes));
+
+    //time 100
+    shapes = model.shapesAtFrame(100);
+    String str100 = "Type: Rectangle\n" +
+            "Min Corner: (200.0,200.0), Width: 20.0, Height: 100.0, Color: (1.0,0.0,0.0)\n" +
+            "Type: Oval\n" +
+            "Center: (500.0,400.0), X radius: 60.0, Y radius: 30.0, Color: (0.0,1.0,0.0)\n";
+    assertEquals(str100, shapesToString(shapes));
+
+
+    //time 101
+    shapes = model.shapesAtFrame(101);
+    assertEquals("", shapesToString(shapes));
+
+  }
+
+  /**
+   * Helper function that converts that given list of shape in string format for comparison
+   * purpose.
+   *
+   * @param shapes given shapes
+   * @return shapes in String format
+   */
+  private static String shapesToString(List<IShape> shapes) {
+    String str = "";
+    if (shapes == null) {
+      return "";
+    }
+    for (IShape shape : shapes) {
+      str += shape.toString();
+    }
+    return str;
   }
 }

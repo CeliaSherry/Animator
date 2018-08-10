@@ -9,8 +9,8 @@ public class EasyAnimatorViewImplOut implements IEasyAnimatorView {
   private String input;
 
   /**
-   * Constructs an EasyAnimatorViewImplOut.  Takes a string representation of the model data
-   * and prints it to the screen.
+   * Constructs an EasyAnimatorViewImplOut. Takes a string representation of the model data and
+   * prints it to the screen.
    *
    * @param input given model data.
    */
@@ -19,8 +19,8 @@ public class EasyAnimatorViewImplOut implements IEasyAnimatorView {
   }
 
   /**
-   * Renders the data in IEasyAnimatorModel in a form that is understandable for the user.
-   * Prints model data to System.out.
+   * Renders the data in IEasyAnimatorModel in a form that is understandable for the user. Prints
+   * model data to System.out.
    */
   @Override
   public void render() {

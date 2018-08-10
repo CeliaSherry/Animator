@@ -119,8 +119,8 @@ public abstract class AAnimation implements IAnimation {
   }
 
   /**
-   * Return the ITransitionalShape in the list with the shapeId of this shape.  If not found,
-   * null will be returned.
+   * Return the ITransitionalShape in the list with the shapeId of this shape.  If not found, null
+   * will be returned.
    *
    * @param transShapes given list of ITransitionalShapes.
    * @return ITransitionalShape in the list with the same shapeID. Return null if not found.
@@ -162,8 +162,8 @@ public abstract class AAnimation implements IAnimation {
 
 
   /**
-   * Takes a speed and returns the text representation of the animation in String form with
-   * the start and end times in seconds.
+   * Takes a speed and returns the text representation of the animation in String form with the
+   * start and end times in seconds.
    *
    * @param speed given speed.
    * @return text representation of the animation.
@@ -248,26 +248,28 @@ public abstract class AAnimation implements IAnimation {
 
 
   /**
-   * Calculates the current value based on the given start and end times and start and end values. If
-   * the given time is greater than the end time, the value at the end time will be returned.
+   * Calculates the current value based on the given start and end times and start and end values.
+   * If the given time is greater than the end time, the value at the end time will be returned.
+   *
    * @param currentTime given time point
-   * @param startTime given start time
-   * @param endTime given end time
-   * @param startValue given start value
-   * @param endValue given end value
+   * @param startTime   given start time
+   * @param endTime     given end time
+   * @param startValue  given start value
+   * @param endValue    given end value
    * @return the value corresponding to the given time
    */
   @Override
   public int formula(int currentTime, int startTime, int endTime,
-                        double startValue, double endValue){
-    if(currentTime > endTime) {
-      return (int)endValue;
+                     double startValue, double endValue) {
+    if (currentTime > endTime) {
+      return (int) endValue;
     }
 
-    double leftValue = (endTime - currentTime) * startValue  / (endTime - startTime);
+    double leftValue = (endTime - currentTime) * startValue / (endTime - startTime);
     double rightValue = (currentTime - startTime) * endValue / (endTime - startTime);
-    return (int)(leftValue + rightValue);
+    return (int) (leftValue + rightValue);
   }
+
   @Override
   public boolean isAnimationPresent(int time) {
     return time >= this.startTime;

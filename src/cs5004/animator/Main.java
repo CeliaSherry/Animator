@@ -1,7 +1,6 @@
 package cs5004.animator;
 
 
-
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
@@ -19,13 +18,12 @@ import parser.Parser;
 public class Main {
 
   /**
-   * This method parses the command line input and creates the model and controller.
-   * It then passes control to the controller along with the output file, input file,
-   * view type, and speed.
+   * This method parses the command line input and creates the model and controller. It then passes
+   * control to the controller along with the output file, input file, view type, and speed.
    *
    * @param args given input array.
    */
-  public static void main(String []args) {
+  public static void main(String[] args) {
 
     IEasyAnimatorModel model;
     String[] argsInOrder = null;
@@ -39,7 +37,6 @@ public class Main {
     }
 
     try {
-      //System.out.println("Filename is: " + argsInOrder[0] + "\n");
       model = new AnimationFileReader().readFile(argsInOrder[0],
               new EasyAnimatorModelImpl.TweenModelBuilderImpl<>());
     } catch (Exception e) {
@@ -48,7 +45,6 @@ public class Main {
 
     IEasyAnimatorController controller = new IEasyAnimatorControllerImpl();
 
-    //view,output file, speed
-    controller.start(model,argsInOrder[1],argsInOrder[2],argsInOrder[3]);
+    controller.start(model, argsInOrder[1], argsInOrder[2], argsInOrder[3]);
   }
 }

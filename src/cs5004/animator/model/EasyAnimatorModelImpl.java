@@ -252,10 +252,10 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
   }
 
   /**
-   * Takes a speed and returns the text representation of the model in String form with
-   * the start and end times in seconds.  Returns a text representation of the shapes with the
-   * appear time and disappear time in seconds and a text representation of the animations with
-   * the start and end times of the animations in seconds.
+   * Takes a speed and returns the text representation of the model in String form with the start
+   * and end times in seconds.  Returns a text representation of the shapes with the appear time and
+   * disappear time in seconds and a text representation of the animations with the start and end
+   * times of the animations in seconds.
    *
    * @param speed given speed
    * @return text representation of the animation
@@ -289,8 +289,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   /**
    * Takes a speed and IShape and returns the svg representation of the model in String form.
-   * Returns a String with the svg representation of each shape and its animations with the
-   * proper formatting.
+   * Returns a String with the svg representation of each shape and its animations with the proper
+   * formatting.
    *
    * @param speed given speed.
    * @return String with svg representation of model.
@@ -318,15 +318,13 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
 
   /**
    * Return the shapes that are present at instance t.
-   * @param time
-   * @return
    */
 
- private Map<String, IShape> shapesPresentAtFrame(int time) {
+  private Map<String, IShape> shapesPresentAtFrame(int time) {
     //list of clones of shapes present at time
     Map<String, IShape> shapesPresentCopy = new LinkedHashMap<>();
-    for(ITransitionalShape transShape : transShapes) {
-      if(transShape.isPresent(time)) {
+    for (ITransitionalShape transShape : transShapes) {
+      if (transShape.isPresent(time)) {
         shapesPresentCopy.put(transShape.getShapeID(), shapes.get(transShape.getShapeID()).getClone());
       }
     }
@@ -339,16 +337,16 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     List<IShape> shapesAtTime = new ArrayList<>();
     Map<String, IShape> shapesPresentCopy = this.shapesPresentAtFrame(time);
 
-    for (Map.Entry<String, IShape> shape: shapesPresentCopy.entrySet()) {
+    for (Map.Entry<String, IShape> shape : shapesPresentCopy.entrySet()) {
       shapesAtTime.add(shape.getValue());
     }
 
-    if(!(this.animations == null)) {
+    if (!(this.animations == null)) {
 
       for (IAnimation animation : animations) { //need to update exact the same current shape object
         if (animation.isAnimationPresent(time)) {//check if animation is valid at this time
           IShape shapePresent = shapesPresentCopy.get(animation.getShapeID());
-          if(shapePresent != null) {
+          if (shapePresent != null) {
             animation.updateAtTime(shapePresent, time);
           }
         }
@@ -357,6 +355,7 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
     return shapesAtTime;
   }
 
+  /*
   @Override
   public int maxTime() {
    int maxTime = 0;
@@ -369,15 +368,8 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
    }
    return maxTime;
   }
+  */
 
-  //take shapes from tick before, check to see if any new shapes have been added
-  //in paint component in MyDrawingPanel- check if shape is null- if it is, skip
-  //make list of all shapes present, find position at time 0, use this list as input into next frame
-  //issue is only checking for animations for time- need to find previous animation and get last position
-  //may at each tick add all previous animations - if animation is passed, then should just be end position
-  // run them in order so all previous animations go first and put shapes in proper positions and then currently running animations go
-//ends with exception
-  //might want max time and then stop timer at max time --> MIGHT NOT NEED MAX TIME
 
   /**
    * Takes a shapeId and adds the shape specific information for the shape to the beginning of the
@@ -719,9 +711,6 @@ public class EasyAnimatorModelImpl implements IEasyAnimatorModel {
       return (T) model;
     }
   }
-
-
-
 
 
 }

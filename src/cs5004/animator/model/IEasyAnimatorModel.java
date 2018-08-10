@@ -2,7 +2,6 @@ package cs5004.animator.model;
 
 
 import java.util.List;
-import java.util.Map;
 
 import shape.IShape;
 
@@ -156,8 +155,8 @@ public interface IEasyAnimatorModel {
 
 
   /**
-   * Takes a speed and returns the text representation of the model in String form with
-   * the start and end times in seconds.
+   * Takes a speed and returns the text representation of the model in String form with the start
+   * and end times in seconds.
    *
    * @param speed given speed.
    * @return text representation of the model.
@@ -172,8 +171,14 @@ public interface IEasyAnimatorModel {
    */
   String toStringSvg(int speed);
 
+
+  /**
+   * Return a list of copy of shapes in the model that are present at the given time frame.
+   *
+   * @param time given time frames
+   * @return a list of copy of shapes present at the given time
+   */
   List<IShape> shapesAtFrame(int time);
 
-  int maxTime();
 
 }

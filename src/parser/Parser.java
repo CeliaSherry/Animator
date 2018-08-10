@@ -6,7 +6,7 @@ package parser;
  */
 public class Parser implements IParser {
 
-  private String []newArray;
+  private String[] newArray;
 
   /**
    * Constructs a Parser object by creating a String array.  Sets the positions that represent the

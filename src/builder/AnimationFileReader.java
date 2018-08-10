@@ -8,10 +8,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * This class represents a file reader for the animation file. This reads in the
- * file in the prescribed file format, and relies on a model builder interface.
- * The user of this class should create a model builder that implements this
- * interface.
+ * This class represents a file reader for the animation file. This reads in the file in the
+ * prescribed file format, and relies on a model builder interface. The user of this class should
+ * create a model builder that implements this interface.
  */
 
 public class AnimationFileReader {
@@ -24,8 +23,7 @@ public class AnimationFileReader {
    * @param <T>      the type of model
    * @return the model
    * @throws FileNotFoundException  if the specified file cannot be read
-   * @throws InputMismatchException if some data value is not of the expected
-   *                                type
+   * @throws InputMismatchException if some data value is not of the expected type
    * @throws IllegalStateException  if an illegal token is read from the file
    */
   public <T> T readFile(String fileName, TweenModelBuilder<T> builder) throws
@@ -103,7 +101,7 @@ public class AnimationFileReader {
    *
    * @param sc given scanner.
    * @return RectangleInfo
-   * @throws IllegalStateException If invalid attribute.
+   * @throws IllegalStateException  If invalid attribute.
    * @throws InputMismatchException if there is an input mismatch.
    */
   private RectangleInfo readRectangleInfo(Scanner sc) throws
@@ -153,7 +151,7 @@ public class AnimationFileReader {
    *
    * @param sc given scanner.
    * @return OvalInfo.
-   * @throws IllegalStateException If invalid attribute.
+   * @throws IllegalStateException  If invalid attribute.
    * @throws InputMismatchException if there is an input mismatch.
    */
   private OvalInfo readOvalInfo(Scanner sc) throws
@@ -200,9 +198,10 @@ public class AnimationFileReader {
 
   /**
    * Returns MoveInfo read from scanner.
+   *
    * @param sc given scanner.
    * @return MoveInfo.
-   * @throws IllegalStateException if invalid attribute.
+   * @throws IllegalStateException  if invalid attribute.
    * @throws InputMismatchException if there is an input mismatch.
    */
   private MoveInfo readMoveInfo(Scanner sc) throws

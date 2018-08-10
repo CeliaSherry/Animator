@@ -7,8 +7,8 @@ import parser.Parser;
 import static org.junit.Assert.assertEquals;
 
 /**
- * A Junit test for the IParser interface.  It tests whether the Parser class correctly
- * parses given String arrays.
+ * A Junit test for the IParser interface.  It tests whether the Parser class correctly parses given
+ * String arrays.
  */
 public class IParserTest {
 

@@ -12,21 +12,20 @@ import cs5004.animator.view.EasyAnimatorViewGui;
 import cs5004.animator.view.EasyAnimatorViewImplFile;
 import cs5004.animator.view.EasyAnimatorViewImplOut;
 import cs5004.animator.view.IEasyAnimatorView;
-import shape.IShape;
 
 /**
  * This class represents a controller that runs an animation.  It takes in a model and passes
  * information to a view for the user to see.
  */
 public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
-  Timer timer;
-  Timer overallTimer;
+  private Timer timer;
+  private Timer overallTimer;
   private int frameTick = 0;
   private int currentSpeed;
 
   /**
    * Takes a model, string that specifies a view, an output file, and the speed and runs an
-   * animation.  Creates a view and an output file if needed and uses the speed to have the model
+   * animation. Creates a view and an output file if needed and uses the speed to have the model
    * produce the necessary input for the view and the view displays the correct output.
    *
    * @param model    given model.
@@ -69,14 +68,13 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       view.render();
     } else if (viewMode.equals("visual")) {
       view = new EasyAnimatorViewGui();
-      //((EasyAnimatorViewGui) view).setData(model.shapesAtFrame(20));
-      //view.render();
       this.currentSpeed = speedInt;
 
-      overallTimer = new Timer(1000/speedInt, new ActionListener() {
+      overallTimer = new Timer(1000 / speedInt, new ActionListener() {
         /**
+         * Invoked when an action occurs.
          *
-         * @param e
+         * @param e the event to be processed
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -92,10 +90,10 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
           } else if (((EasyAnimatorViewGui) view).Increase()) {
             increaseSpeed(timer);
             ((EasyAnimatorViewGui) view).setIncrease(false);
-          }else if (((EasyAnimatorViewGui) view).Decrease()) {
+          } else if (((EasyAnimatorViewGui) view).Decrease()) {
             decreaseSpeed(timer);
             ((EasyAnimatorViewGui) view).setDecrease(false);
-          }else if (((EasyAnimatorViewGui) view).save()) {
+          } else if (((EasyAnimatorViewGui) view).save()) {
             makeSave(model);
             ((EasyAnimatorViewGui) view).setSave(false);
           }
@@ -119,7 +117,6 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
       });
 
 
-
     } else {
       view = new EasyAnimatorViewImplFile(output, modelInfo);
       view.render();
@@ -129,18 +126,18 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   }
 
 
-  public void startTimer(Timer timer) {
+  private void startTimer(Timer timer) {
     timer.start();
 
   }
 
-  public void restartTimer(Timer timer) {
+  private void restartTimer(Timer timer) {
     this.frameTick = 0;
     this.startTimer(timer);
   }
 
 
-  public void stopTimer(Timer timer) {
+  private void stopTimer(Timer timer) {
     timer.stop();
   }
 
@@ -148,26 +145,26 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
   private void increaseSpeed(Timer timer) {
     int temp = this.currentSpeed;
     this.currentSpeed = temp + 5;
-    timer.setDelay(1000/this.currentSpeed);
+    timer.setDelay(1000 / this.currentSpeed);
 
   }
 
   private void decreaseSpeed(Timer timer) {
-    if(this.currentSpeed >= 6) {
+    if (this.currentSpeed >= 6) {
       int temp = this.currentSpeed;
       this.currentSpeed = temp - 5;
-      timer.setDelay(1000/this.currentSpeed);
+      timer.setDelay(1000 / this.currentSpeed);
     }
   }
 
-  private void makeSave(IEasyAnimatorModel model) throws IllegalArgumentException{
+  private void makeSave(IEasyAnimatorModel model) throws IllegalArgumentException {
     stopTimer(timer);
 
     PrintStream writer;
-    String fileName = JOptionPane.showInputDialog(null,"Save Animation to SVG"
-            ,"Input File Name Without Extension: ",JOptionPane.PLAIN_MESSAGE);
+    String fileName = JOptionPane.showInputDialog(null, "Save Animation to SVG"
+            , "Input File Name Without Extension: ", JOptionPane.PLAIN_MESSAGE);
 
-    if(fileName == null) {
+    if (fileName == null) {
       startTimer(timer);
       return;
 
@@ -176,7 +173,7 @@ public class IEasyAnimatorControllerImpl implements IEasyAnimatorController {
     fileName = fileName + ".svg";
 
 
-    try{
+    try {
       writer = new PrintStream(fileName);
     } catch (FileNotFoundException e) {
       throw new IllegalArgumentException("Output file name is not valid.");

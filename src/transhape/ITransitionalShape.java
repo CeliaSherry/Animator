@@ -1,8 +1,6 @@
 package transhape;
 
 
-import shape.IShape;
-
 /**
  * This interface represents a shape of a certain ID in transition phases, such as appearing and
  * disappearing.
@@ -10,12 +8,14 @@ import shape.IShape;
 public interface ITransitionalShape {
   /**
    * Return the appearing time of the shape following Svg format.
+   *
    * @return the appearing time of the shape following Svg format
    */
   String toStringSvgAppear(int speed);
 
   /**
    * Return the disappearing time of the shape following Svg format.
+   *
    * @return the disappearing time of the shape following Svg format
    */
   String toStringSvgDisappear(int speed);
@@ -59,13 +59,15 @@ public interface ITransitionalShape {
    */
   String toStringText(int speed);
 
-/*
-  ITransitionalShape getClone();
-*/
+
+  /**
+   * Determines whether this transShape is present at the given time (frame tick). A shape is
+   * between its appearing time and disappearing time(inclusive).
+   *
+   * @param time given time
+   * @return true if this tranShape is present, otherwise false.
+   */
   boolean isPresent(int time);
-
-
-
 
 
 }

@@ -86,10 +86,10 @@ public class MoveAnimation extends AAnimation {
 
 
   /**
-   * Returns a string that represents the portion of an Svg file that contains information
-   * about the change in X during the move.  If the shape is a rectangle, the attribute
-   * and start and end positions are filled out accordingly.  If the shape is an oval, the
-   * attribute name and start and end positions are filled out accordingly.
+   * Returns a string that represents the portion of an Svg file that contains information about the
+   * change in X during the move.  If the shape is a rectangle, the attribute and start and end
+   * positions are filled out accordingly.  If the shape is an oval, the attribute name and start
+   * and end positions are filled out accordingly.
    *
    * @param shape given IShape.
    * @return String that represents the change in X during a move according to an Svg file.
@@ -114,10 +114,10 @@ public class MoveAnimation extends AAnimation {
 
 
   /**
-   * Returns a string that represents the portion of an Svg file that contains information
-   * about the change in Y during the move.  If the shape is a rectangle, the attribute
-   * and start and end positions are filled out accordingly.  If the shape is an oval, the
-   * attribute name and start and end positions are filled out accordingly.
+   * Returns a string that represents the portion of an Svg file that contains information about the
+   * change in Y during the move.  If the shape is a rectangle, the attribute and start and end
+   * positions are filled out accordingly.  If the shape is an oval, the attribute name and start
+   * and end positions are filled out accordingly.
    *
    * @param shape given IShape.
    * @return String that represents the change in Y during a move according to an Svg file.
@@ -140,8 +140,9 @@ public class MoveAnimation extends AAnimation {
 
   /**
    * Update the shape position of the given shape corresponding to the given time.
+   *
    * @param shape given shape
-   * @param time given time
+   * @param time  given time
    */
   @Override
   public void updateAtTime(IShape shape, int time) {
@@ -150,20 +151,11 @@ public class MoveAnimation extends AAnimation {
     double endX = endPosition.getX();
     double endY = endPosition.getY();
 
-    int currentX = formula(time,this.startTime,this.endTime,startX,endX);
-    int currentY = formula(time,this.startTime,this.endTime,startY,endY);
+    int currentX = formula(time, this.startTime, this.endTime, startX, endX);
+    int currentY = formula(time, this.startTime, this.endTime, startY, endY);
 
-    shape.setPosition(currentX,currentY);
+    shape.setPosition(currentX, currentY);
   }
-
-
-
-
-
-
-
-
-
 
 
 }

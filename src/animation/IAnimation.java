@@ -17,7 +17,6 @@ public interface IAnimation {
    *
    * @param other the other animation
    * @return true if this animation starts before the other animation, otherwise false
-   *
    */
   boolean startBefore(IAnimation other);
 
@@ -69,8 +68,8 @@ public interface IAnimation {
 
 
   /**
-   * Return the ITransitionalShape in the list with the shapeId of this shape.  If not found,
-   * null will be returned.
+   * Return the ITransitionalShape in the list with the shapeId of this shape.  If not found, null
+   * will be returned.
    *
    * @param transShapes given list of ITransitionalShapes.
    * @return ITransitionalShape in the list with the same shapeID. Return null if not found.
@@ -102,8 +101,8 @@ public interface IAnimation {
   String toStringAnimationChange();
 
   /**
-   * Takes a speed and returns the text representation of the animation in String form with
-   * the start and end times in seconds.
+   * Takes a speed and returns the text representation of the animation in String form with the
+   * start and end times in seconds.
    *
    * @param speed given speed.
    * @return text representation of the animation.
@@ -122,27 +121,30 @@ public interface IAnimation {
 
   /**
    * Update the shape information of the given shape corresponding to the given time.
+   *
    * @param shape given shape
-   * @param time given time
+   * @param time  given time
    */
   void updateAtTime(IShape shape, int time);
 
 
   /**
    * Calculates the current value based on the given start and end times and start and end values.
+   *
    * @param currentTime given time point
-   * @param startTime given start time
-   * @param endTime given end time
-   * @param startValue given start value
-   * @param endValue given end value
+   * @param startTime   given start time
+   * @param endTime     given end time
+   * @param startValue  given start value
+   * @param endValue    given end value
    * @return the value corresponding to the given time
    */
   int formula(int currentTime, int startTime, int endTime,
-                        double startValue, double endValue);
+              double startValue, double endValue);
 
 
   /**
    * Return whether this animation is present at the given time.
+   *
    * @param time the given time
    * @return true if this animation has started or before this given time.
    */

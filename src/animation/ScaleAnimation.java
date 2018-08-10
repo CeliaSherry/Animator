@@ -65,8 +65,8 @@ public class ScaleAnimation extends AAnimation {
 
   /**
    * Takes a speed and IShape and returns the svg representation of the animation in String form.
-   * This class includes the scale information, including starting and ending width and height
-   * using the from (x,y) and the to (x,y).
+   * This class includes the scale information, including starting and ending width and height using
+   * the from (x,y) and the to (x,y).
    *
    * @param speed given speed.
    * @param shape given IShape.
@@ -91,12 +91,11 @@ public class ScaleAnimation extends AAnimation {
   }
 
 
-
   /**
-   * Returns a string that represents the portion of an Svg file that contains information
-   * about the change in X during the scale change.  If the shape is a rectangle, the attribute
-   * and start and end positions are filled out accordingly.  If the shape is an oval, the
-   * attribute name and start and end positions are filled out accordingly.
+   * Returns a string that represents the portion of an Svg file that contains information about the
+   * change in X during the scale change.  If the shape is a rectangle, the attribute and start and
+   * end positions are filled out accordingly.  If the shape is an oval, the attribute name and
+   * start and end positions are filled out accordingly.
    *
    * @param shape given IShape.
    * @return String that represents the change in X during a move according to an Svg file.
@@ -127,10 +126,10 @@ public class ScaleAnimation extends AAnimation {
 
 
   /**
-   * Returns a string that represents the portion of an Svg file that contains information
-   * about the change in Y during the scale change.  If the shape is a rectangle, the attribute
-   * and start and end positions are filled out accordingly.  If the shape is an oval, the
-   * attribute name and start and end positions are filled out accordingly.
+   * Returns a string that represents the portion of an Svg file that contains information about the
+   * change in Y during the scale change.  If the shape is a rectangle, the attribute and start and
+   * end positions are filled out accordingly.  If the shape is an oval, the attribute name and
+   * start and end positions are filled out accordingly.
    *
    * @param shape given IShape.
    * @return String that represents the change in Y during a move according to an Svg file.
@@ -160,16 +159,17 @@ public class ScaleAnimation extends AAnimation {
 
 
   /**
-   * Update the shape scale of the given shape corresponding to the given time.
+   * Update the scale of the given shape corresponding to the given time.
+   *
    * @param shape given shape
-   * @param time given time
+   * @param time  given time
    */
   @Override
   public void updateAtTime(IShape shape, int time) {
-    int currentSx = formula(time,this.startTime,this.endTime,this.fromSx,this.toSx);
-    int currentSy = formula(time,this.startTime,this.endTime,this.fromSy,this.toSy);
+    int currentSx = formula(time, this.startTime, this.endTime, this.fromSx, this.toSx);
+    int currentSy = formula(time, this.startTime, this.endTime, this.fromSy, this.toSy);
 
-    shape.setScale(currentSx,currentSy);
+    shape.setScale(currentSx, currentSy);
   }
 
 }
